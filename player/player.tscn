@@ -363,6 +363,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(237, 122)
+collision_mask = 16
 script = ExtResource("1_3tk1n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -384,3 +385,5 @@ walk_state = NodePath("../Walk")
 [node name="Walk" type="Node" parent="PlayerStateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("10_ujy0g")
 idle_state = NodePath("../Idle")
+
+[node name="Camera2D" type="Camera2D" parent="."]
