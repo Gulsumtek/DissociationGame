@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1kjun11rc2rm"]
+
+[ext_resource type="Script" path="res://move.gd" id="1_yw36x"]
+[ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="2_bg80m"]
+[ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://Tile Maps/grass.tscn" id="3_btbuv"]
+[ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="4_442kw"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yw36x")
+
+[node name="Player" parent="." instance=ExtResource("2_bg80m")]
+position = Vector2(221, 238)
+
+[node name="Grass" parent="." instance=ExtResource("3_btbuv")]
+layer_0/tile_data = PackedInt32Array(196614, 524290, 5, 131078, 524290, 4, 65542, 524290, 4, 6, 524290, 4, -65530, 589826, 3, -65536, 524290, 3, -65531, 393218, 2, -65532, 393218, 2, -65533, 393218, 2, -65534, 393218, 2, -65535, 393218, 2, 0, 589826, 4, 65536, 589826, 4, 131072, 589826, 4, 196608, 589826, 5, 196609, 327682, 3, 196610, 327682, 3, 196611, 393218, 3, 196612, 327682, 3, 196613, 327682, 3, 131074, 262146, 5, 131073, 262146, 5, 65537, 262146, 5, 1, 262146, 5, 2, 262146, 5, 3, 262146, 5, 4, 262146, 5, 5, 262146, 5, 65541, 262146, 5, 131077, 262146, 5, 131076, 262146, 5, 131075, 262146, 5, 65538, 262146, 5, 65539, 262146, 5, 65540, 262146, 5)
+
+[node name="Area2D" parent="." instance=ExtResource("4_442kw")]
+position = Vector2(222, 242)
+target_scene_path = "play_ground.tscn"
+door_id = "1_enter"
+
+[node name="1_exit" type="Marker2D" parent="."]
+position = Vector2(222, 238)
+gizmo_extents = 33.8
