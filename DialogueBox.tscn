@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://jla0cngguhau"]
+
+[ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="1_uxxsd"]
+[ext_resource type="FontFile" uid="uid://dh0nes3lk61pi" path="res://interact/m5x7.ttf" id="2_8dpjo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e55jw"]
+bg_color = Color(0.635854, 0.518555, 0.377224, 0.905882)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ql0u4"]
+font = ExtResource("2_8dpjo")
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 128
+visible = false
+script = ExtResource("1_uxxsd")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 15
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e55jw")
+
+[node name="Label" type="Label" parent="Panel"]
+z_index = 23
+layout_mode = 0
+offset_left = 32.0
+offset_top = 7.0
+offset_right = 458.0
+offset_bottom = 60.0
+label_settings = SubResource("LabelSettings_ql0u4")

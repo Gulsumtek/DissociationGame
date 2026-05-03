@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 TransitionScreen="*res://Environment/transition_screen.tscn"
 Global="*res://global.gd"
+DialogueBox="*res://DialogueBox.tscn"
+InteractionArea="*res://scripts/interaction_area.tscn"
 
 [display]
 
@@ -30,6 +32,10 @@ window/canvas_textures/default_texture_filter=1
 [dotnet]
 
 project/assembly_name="Dissociation"
+
+[global_group]
+
+Player=""
 
 [input]
 

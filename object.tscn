@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl24ibprmsjdc"]
+
+[ext_resource type="Script" path="res://scripts/inspectable.gd" id="1_qb7hk"]
+[ext_resource type="PackedScene" uid="uid://bco0f1rxp3m1c" path="res://scripts/interaction_area.tscn" id="2_j8cvw"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_qb7hk")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_j8cvw")]

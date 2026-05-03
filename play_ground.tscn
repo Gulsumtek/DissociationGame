@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ycq6q4o78n7t"]
+[gd_scene load_steps=6 format=3 uid="uid://ycq6q4o78n7t"]
 
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_8nxn0"]
 [ext_resource type="Script" path="res://move.gd" id="1_bfrdj"]
 [ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://Tile Maps/grass.tscn" id="2_v6jle"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_yv3nb"]
+[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="5_atec8"]
 
 [node name="PlayGround" type="Node2D"]
 script = ExtResource("1_bfrdj")
@@ -19,11 +20,15 @@ layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(5, 262146, 2, 6, 327682, 2, 7, 393218, 2, 8, 262146, 5, 9, 262146, 1, 10, 393218, 2, 11, 327682, 2, 12, 458754, 2, 65541, 262146, 3, 65542, 327682, 3, 131077, 262146, 4, 131078, 327682, 4, 131083, 393218, 4, 131084, 458754, 4, 65548, 458754, 3, 65547, 393218, 3, 65543, 262146, 5, 65544, 262146, 5, 65545, 262146, 5, 65546, 262146, 5, 131080, 393218, 5, 131081, 393218, 5, 131082, 458754, 5, 196616, 393218, 5, 196617, 393218, 5, 196618, 458754, 5, 131079, 327682, 5, 196615, 327682, 5, -65528, 589826, 4, -65527, 524290, 4, -131063, 524290, 4, -131064, 589826, 4, -458745, 3, 0, -393209, 3, 1, -327673, 3, 2, -262137, 3, 3, -458744, 65539, 0, -393208, 65539, 1, -327672, 65539, 2, -262136, 65539, 3, -458743, 131075, 0, -393207, 131075, 1, -327671, 131075, 2, -262135, 131075, 3, -458742, 196611, 0, -393206, 196611, 1, -327670, 196611, 2, -262134, 196611, 3)
 
-[node name="Area2D" parent="." instance=ExtResource("3_yv3nb")]
-position = Vector2(546, -193)
+[node name="1_enter" type="Marker2D" parent="."]
+position = Vector2(544, -197)
+gizmo_extents = 69.6
+
+[node name="Door" parent="." instance=ExtResource("3_yv3nb")]
+position = Vector2(545, -198)
 target_scene_path = "house.tscn"
 door_id = "1_exit"
 
-[node name="1_enter" type="Marker2D" parent="."]
-position = Vector2(546, -190)
-gizmo_extents = 69.6
+[node name="StaticBody2D" parent="." instance=ExtResource("5_atec8")]
+position = Vector2(442, 33)
+inspect_text = "Dümdüz duvar.aaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaababababkbdajsdhkas,"
