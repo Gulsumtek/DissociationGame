@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1kjun11rc2rm"]
+[gd_scene load_steps=6 format=3 uid="uid://c1kjun11rc2rm"]
 
 [ext_resource type="Script" path="res://move.gd" id="1_yw36x"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="2_bg80m"]
 [ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://Tile Maps/grass.tscn" id="3_btbuv"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="4_442kw"]
+[ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="5_yhpa5"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yw36x")
@@ -18,7 +19,24 @@ layer_0/tile_data = PackedInt32Array(196614, 524290, 5, 131078, 524290, 4, 65542
 position = Vector2(222, 242)
 target_scene_path = "play_ground.tscn"
 door_id = "1_enter"
+required_fragments = 7
 
 [node name="1_exit" type="Marker2D" parent="."]
 position = Vector2(222, 238)
 gizmo_extents = 33.8
+
+[node name="SoulFragment" parent="." instance=ExtResource("5_yhpa5")]
+position = Vector2(97, 146)
+fragment_id = "4"
+
+[node name="SoulFragment2" parent="." instance=ExtResource("5_yhpa5")]
+position = Vector2(189, 53)
+fragment_id = "5"
+
+[node name="SoulFragment3" parent="." instance=ExtResource("5_yhpa5")]
+position = Vector2(380, 53)
+fragment_id = "6"
+
+[node name="SoulFragment4" parent="." instance=ExtResource("5_yhpa5")]
+position = Vector2(55, 1)
+fragment_id = "7"

@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-var move_speed: float = 100.0
+var move_speed = 100.0 + (Global.soul_fragments_collected * 5.0)
 var last_direction: String = "down"
 var is_frozen: bool = false
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D

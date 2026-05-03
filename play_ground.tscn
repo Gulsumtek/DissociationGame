@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ycq6q4o78n7t"]
+[gd_scene load_steps=7 format=3 uid="uid://ycq6q4o78n7t"]
 
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_8nxn0"]
 [ext_resource type="Script" path="res://move.gd" id="1_bfrdj"]
 [ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://Tile Maps/grass.tscn" id="2_v6jle"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_yv3nb"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="5_atec8"]
+[ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="6_d18g5"]
 
 [node name="PlayGround" type="Node2D"]
 script = ExtResource("1_bfrdj")
@@ -28,7 +29,20 @@ gizmo_extents = 69.6
 position = Vector2(545, -198)
 target_scene_path = "house.tscn"
 door_id = "1_exit"
+required_fragments = 3
 
 [node name="StaticBody2D" parent="." instance=ExtResource("5_atec8")]
 position = Vector2(442, 33)
 inspect_text = "Dümdüz duvar.aaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaababababkbdajsdhkas,"
+
+[node name="SoulFragment" parent="." instance=ExtResource("6_d18g5")]
+position = Vector2(636, 79)
+fragment_id = "1"
+
+[node name="SoulFragment2" parent="." instance=ExtResource("6_d18g5")]
+position = Vector2(562, -47)
+fragment_id = "2"
+
+[node name="SoulFragment3" parent="." instance=ExtResource("6_d18g5")]
+position = Vector2(552, -167)
+fragment_id = "3"

@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://csvkhb5f7lgre"]
+
+[ext_resource type="Script" path="res://scripts/soul_fragment.gd" id="1_hixlh"]
+[ext_resource type="Texture2D" uid="uid://ds48hjrt6scc0" path="res://sprites/soulflame.png" id="1_ooqn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vicxp"]
+atlas = ExtResource("1_ooqn5")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nltvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vicxp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdkm6"]
+radius = 6.08276
+
+[sub_resource type="Curve" id="Curve_s8kd5"]
+_data = [Vector2(0.208696, 0.956044), 0.0, 0.0, 0, 0, Vector2(0.834783, 0.153846), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4h6yx"]
+curve = SubResource("Curve_s8kd5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m38ad"]
+particle_flag_disable_z = true
+angle_min = -2.99999
+angle_max = 3.00001
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, -20, 0)
+scale_min = 0.2
+scale_max = 0.8
+color = Color(1, 1, 1, 0.619608)
+alpha_curve = SubResource("CurveTexture_4h6yx")
+
+[node name="SoulFragment" type="Area2D"]
+script = ExtResource("1_hixlh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_nltvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cdkm6")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 5
+emitting = false
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_m38ad")
+texture = ExtResource("1_ooqn5")
+lifetime = 0.8

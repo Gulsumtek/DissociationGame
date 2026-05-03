@@ -4,12 +4,16 @@ extends StaticBody2D
 @export var target_scene_path : String 
 @export var door_id : String # Bu kapının benzersiz adı
 @onready var interaction_area = $InteractionArea
+@export var required_fragments: int # Bu kapı için gereken parça sayısı
 #@onready var audio_player = $AudioStreamPlayer2D
 func _ready():
 	interaction_area.interact.connect(_on_door_interacted)
 
 func _on_door_interacted():
-		if target_scene_path == "":
+	if target_scene_path == "":
 			print("Hata: Hedef sahne yolu girilmemiş!")
-		Global.entrance_name = door_id 
+	Global.entrance_name = door_id 
+	if Global.soul_fragments_collected >= required_fragments:
 		TransitionScreen.transition_to(target_scene_path)
+	else:# Oyuncuya henüz hazır olmadığını söyleyen bir diyalog çıkar
+		DialogueBox.show_text("Henüz tüm parçalarımı bulamadım. Kendimi çok ağır hissediyorum...")
