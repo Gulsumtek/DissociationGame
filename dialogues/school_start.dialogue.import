@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cpmp2rvd4ov3h"
+path="res://.godot/imported/school_start.dialogue-fb39b653301f4f385e3b6a60610b5f65.tres"
+
+[deps]
+
+source_file="res://dialogues/school_start.dialogue"
+dest_files=["res://.godot/imported/school_start.dialogue-fb39b653301f4f385e3b6a60610b5f65.tres"]
+
+[params]
+
+defaults=true

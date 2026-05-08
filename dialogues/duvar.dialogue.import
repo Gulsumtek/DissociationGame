@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://4f04yrc3r7nf"
+path="res://.godot/imported/duvar.dialogue-13851a044c5a302c36543ff64ef6feb9.tres"
+
+[deps]
+
+source_file="res://dialogues/duvar.dialogue"
+dest_files=["res://.godot/imported/duvar.dialogue-13851a044c5a302c36543ff64ef6feb9.tres"]
+
+[params]
+
+defaults=true

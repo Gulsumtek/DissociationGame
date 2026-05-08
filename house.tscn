@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1kjun11rc2rm"]
+[gd_scene load_steps=7 format=3 uid="uid://c1kjun11rc2rm"]
 
 [ext_resource type="Script" path="res://move.gd" id="1_yw36x"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="2_bg80m"]
 [ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://Tile Maps/grass.tscn" id="3_btbuv"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="4_442kw"]
+[ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="5_k20pu"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="5_yhpa5"]
 
 [node name="Node2D" type="Node2D"]
@@ -20,6 +21,7 @@ position = Vector2(222, 242)
 target_scene_path = "play_ground.tscn"
 door_id = "1_enter"
 required_fragments = 7
+door_dialogue = ExtResource("5_k20pu")
 
 [node name="1_exit" type="Marker2D" parent="."]
 position = Vector2(222, 238)

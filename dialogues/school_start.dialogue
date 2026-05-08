@@ -1,0 +1,7 @@
+~ start
+Beden: Bu anı... daha önce de yaşamıştım.
+# Burada kendi fonksiyonunu çağırıyoruz
+do CutsceneManager.show_memory_visual("res://dialogues/blank.jpg")
+Ruh: Hatırla... Parçaların burada.
+do CutsceneManager.hide_visual()
+=> END

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://dxrqnccfgpoho"
+path="res://.godot/imported/not_enough_fragments.dialogue-56bfcf8f143044f71833d3c069a283c2.tres"
+
+[deps]
+
+source_file="res://dialogues/not_enough_fragments.dialogue"
+dest_files=["res://.godot/imported/not_enough_fragments.dialogue-56bfcf8f143044f71833d3c069a283c2.tres"]
+
+[params]
+
+defaults=true

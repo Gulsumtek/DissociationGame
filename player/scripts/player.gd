@@ -9,6 +9,7 @@ var is_soul_mode: bool = false
 # Ruh ve Beden için hız değerleri
 @export var body_speed: float = 100.0
 @export var soul_speed: float = 180.0
+const MY_BALLOON = preload("res://dialogues/balloon.tscn")
 
 # player.gd
 func _physics_process(delta):
@@ -39,44 +40,73 @@ func drop_soul_fragment():
 	# Sahneye ekle
 	get_tree().current_scene.add_child(fragment)
 
-
 func _input(event):
-	# 1. DİALOG KONTROLÜ (En yüksek öncelik)
-	if is_frozen and DialogueBox.visible:
-		# Herhangi bir tuşa basıldı mı? (Sadece basılma anı, basılı tutma değil)
-		if event.is_pressed() and not event.is_echo():
-			_handle_dialogue_logic()
-			# KRİTİK: Girişi burada tüketiyoruz. State Machine bunu duymayacak.
-			get_viewport().set_input_as_handled() 
+	# 1. DİALOG KONTROLÜ (Dialogue Manager zaten kendi içinden yönetir)
+	# Eğer is_frozen ise ve bir diyalog eklentisi açıksa, 
+	# hareket tuşlarının aşağıya sızmasını engellemek yeterlidir.
+	if is_frozen:
+		# Sadece etkileşim tuşuna tekrar basılmasını engellemek için tüketiyoruz
+		if event.is_action_pressed("interact"):
+			get_viewport().set_input_as_handled()
 		return
-		
-	# RUH MODUNA GEÇİŞ (Geçici olarak 'Q' tuşu)
+
+	# RUH MODUNA GEÇİŞ
 	if event is InputEventKey and event.pressed and event.keycode == KEY_Q:
-		toggle_soul_mode()
-		
-	# 2. ETKİLEŞİM BAŞLATMA (Sadece is_frozen değilse çalışır)
+		toggle_soul_mode() 
+
+	# 2. ETKİLEŞİM BAŞLATMA
 	if event.is_action_pressed("interact"):
+		# Eğer Ruh modundaysak parça bırak [cite: 12, 15]
+		if is_soul_mode:
+			drop_soul_fragment()
+			return
+
 		var areas = $InteractionDetector.get_overlapping_areas()
 		for area in areas:
 			var parent = area.get_parent()
+			# Piano gibi nesnelerde trigger_inspect kullanılır
 			if parent and parent.has_method("trigger_inspect"):
-				is_frozen = true
-				parent.trigger_inspect()
-				return # Bir etkileşim bulduysak döngüden çık
+				parent.trigger_inspect() # start_dialogue burada tetiklenecek
+				return
+			# InteractionArea sahnesi yerleştirildiyse trigger_interact kullanılır
 			if area and area.has_method("trigger_interact"):
-				is_frozen = true
 				area.trigger_interact()
-				return # Bir etkileşim bulduysak döngüden çık
-		
-	if is_soul_mode and event.is_action_pressed("interact"):
-		drop_soul_fragment()
-		
-func _handle_dialogue_logic():
-	if DialogueBox.is_typing:
-		DialogueBox.skip_typing()
+				return
+func start_dialogue(resource: DialogueResource, title: String):
+	if is_frozen: return
+	
+	is_frozen = true
+	
+	# Balonu (diyalog kutusunu) değişkene atayarak açıyoruz
+	var balloon = MY_BALLOON.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(resource, title) # Kendi balonunun start fonksiyonunu çağır
+	
+	# Eklenti sürümüne göre en güvenli yol: Balonun ağaçtan çıkışını beklemek
+	if balloon:
+		balloon.tree_exited.connect(_on_dialogue_finished)
 	else:
-		DialogueBox.close()
+		# Eğer balon oluşmadıysa karakteri hemen çöz ki takılı kalmasın
 		is_frozen = false
 
+func _on_dialogue_finished():
+	# Diyalog kapandıktan milisaniyeler sonra karakteri çözmek 
+	# "E" tuşunun yanlışlıkla tekrar tetiklenmesini önler
+	await get_tree().create_timer(0.1).timeout
+	is_frozen = false
+	print("Diyalog bitti, karakter çözüldü.")
+	
+	
+	
+	
+	
+#func _handle_dialogue_logic():
+	#if DialogueBox.is_typing:
+		#DialogueBox.skip_typing()
+	#else:
+		#DialogueBox.close()
+		#is_frozen = false
+
+	
 func _ready() -> void:
 	state_machine.Initialize(self)

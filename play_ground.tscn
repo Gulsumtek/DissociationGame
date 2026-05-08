@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://ycq6q4o78n7t"]
+[gd_scene load_steps=11 format=3 uid="uid://ycq6q4o78n7t"]
 
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_8nxn0"]
 [ext_resource type="Script" path="res://move.gd" id="1_bfrdj"]
 [ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://Tile Maps/grass.tscn" id="2_v6jle"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_yv3nb"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="5_atec8"]
+[ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="5_qcyuf"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="6_d18g5"]
 [ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="7_3n87j"]
+[ext_resource type="Resource" uid="uid://4f04yrc3r7nf" path="res://dialogues/duvar.dialogue" id="7_08yl2"]
+[ext_resource type="PackedScene" uid="uid://dldu7t3omfw5t" path="res://Scenes/piano.tscn" id="8_2chgs"]
 
 [node name="PlayGround" type="Node2D"]
 script = ExtResource("1_bfrdj")
@@ -35,10 +38,12 @@ position = Vector2(545, -198)
 target_scene_path = "house.tscn"
 door_id = "1_exit"
 required_fragments = 3
+door_dialogue = ExtResource("5_qcyuf")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("5_atec8")]
 position = Vector2(442, 33)
 inspect_text = "Dümdüz duvar.aaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaababababkbdajsdhkas,"
+dialogue = ExtResource("7_08yl2")
 
 [node name="SoulFragment" parent="." instance=ExtResource("6_d18g5")]
 position = Vector2(636, 79)
@@ -60,3 +65,6 @@ position = Vector2(661, 48)
 
 [node name="StreetLamp3" parent="." instance=ExtResource("7_3n87j")]
 position = Vector2(477, 48)
+
+[node name="Node2D" parent="." instance=ExtResource("8_2chgs")]
+position = Vector2(315, 123)

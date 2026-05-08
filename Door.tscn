@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp68nwjhlg1nt"]
 
 [ext_resource type="Script" path="res://interact/door.gd" id="1_gm5pn"]
-[ext_resource type="PackedScene" uid="uid://bco0f1rxp3m1c" path="res://scripts/interaction_area.tscn" id="2_mfpj1"]
+[ext_resource type="PackedScene" uid="uid://bco0f1rxp3m1c" path="res://Scenes/interaction_area.tscn" id="2_mfpj1"]
 
 [node name="Door" type="StaticBody2D"]
 collision_layer = 2
