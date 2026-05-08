@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ycq6q4o78n7t"]
+[gd_scene load_steps=8 format=3 uid="uid://ycq6q4o78n7t"]
 
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_8nxn0"]
 [ext_resource type="Script" path="res://move.gd" id="1_bfrdj"]
@@ -6,9 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_yv3nb"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="5_atec8"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="6_d18g5"]
+[ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="7_3n87j"]
 
 [node name="PlayGround" type="Node2D"]
 script = ExtResource("1_bfrdj")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(396, 46)
+color = Color(0.579827, 0.589907, 0.902398, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_8nxn0")]
 motion_mode = 1
@@ -46,3 +51,12 @@ fragment_id = "2"
 [node name="SoulFragment3" parent="." instance=ExtResource("6_d18g5")]
 position = Vector2(552, -167)
 fragment_id = "3"
+
+[node name="StreetLamp" parent="." instance=ExtResource("7_3n87j")]
+position = Vector2(396, 46)
+
+[node name="StreetLamp2" parent="." instance=ExtResource("7_3n87j")]
+position = Vector2(661, 48)
+
+[node name="StreetLamp3" parent="." instance=ExtResource("7_3n87j")]
+position = Vector2(477, 48)

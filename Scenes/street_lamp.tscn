@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://ihcgw4m6b1jq"]
+
+[ext_resource type="Script" path="res://scripts/street_lamp.gd" id="1_5xbst"]
+[ext_resource type="Texture2D" uid="uid://dw5kcp33fv21d" path="res://sprites/streetlamp1.png" id="1_dyatu"]
+[ext_resource type="Texture2D" uid="uid://dgxh43rp8s4g" path="res://sprites/light.png" id="2_um43l"]
+[ext_resource type="Texture2D" uid="uid://bmtu8hx5g8nf8" path="res://sprites/streetlamp.png" id="2_v7qiu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j550"]
+atlas = ExtResource("1_dyatu")
+region = Rect2(0, 0, 32, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jbke"]
+atlas = ExtResource("2_v7qiu")
+region = Rect2(0, 0, 32, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xtgq"]
+atlas = ExtResource("2_v7qiu")
+region = Rect2(32, 0, 32, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydft0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j550")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xtgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xtgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jbke")
+}],
+"loop": true,
+"name": &"flicker",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtkrc"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vmv3k"]
+radius = 14.0357
+
+[node name="StreetLamp" type="StaticBody2D"]
+script = ExtResource("1_5xbst")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2.75, -65.25)
+scale = Vector2(1.46354, 1.46354)
+color = Color(1, 0.756863, 0.443137, 0.709804)
+energy = 1.55
+texture = ExtResource("2_um43l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -45)
+sprite_frames = SubResource("SpriteFrames_ydft0")
+frame_progress = 0.965085
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_xtkrc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vmv3k")

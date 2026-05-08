@@ -21,7 +21,10 @@ func Physics(_delta: float) -> State:
 	
 	# Animasyon mantığı
 	if abs(direction.x) > abs(direction.y):
-		player.anim_sprite.play("run_right")
+		if player.is_soul_mode==true:
+			player.anim_sprite.play("soul_run_right")
+		else:
+			player.anim_sprite.play("run_right")
 		if direction.x > 0: # Sağa gidiyor
 			player.anim_sprite.flip_h = false
 			player.last_direction = "right"
@@ -30,10 +33,16 @@ func Physics(_delta: float) -> State:
 			player.last_direction = "left"
 	else:
 		if direction.y > 0: # Aşağı gidiyor
-			player.anim_sprite.play("run_down")
+			if player.is_soul_mode==true:
+				player.anim_sprite.play("soul_run_down")
+			else:
+				player.anim_sprite.play("run_down")
 			player.last_direction = "down"
 		else: # Yukarı gidiyor
-			player.anim_sprite.play("run_up")
+			if player.is_soul_mode==true:
+				player.anim_sprite.play("soul_run_up")
+			else:
+				player.anim_sprite.play("run_up")
 			player.last_direction = "up"
 			
 	# State değişmeyeceği için null döndürüyoruz

@@ -14,6 +14,14 @@ func _ready():
 func _on_area_entered(area):
 	if area.name == "InteractionDetector" or area.get_parent().is_in_group("Player"):
 	# En güvenli yöntem: Eğer giren alanın adı InteractionDetector ise göster
+		# Karakterin bağlı olduğu ana düğüme (Player) erişelim
+		var player = area.get_parent()
+		
+		# EĞER RUH MODUNDAYSA: Etrafındaki nesneyi otomatik tetikle
+		if player.is_soul_mode:
+			var object = get_parent()
+			if object.has_method("trigger_echo"):
+				object.trigger_echo()
 		prompt.show()
 
 func _on_area_exited(area):

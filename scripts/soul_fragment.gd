@@ -11,10 +11,14 @@ func _ready():
 	# Player'ın InteractionDetector'ı değil, gövdesi çarpsın istiyoruz
 	body_entered.connect(_on_body_entered)
 	particles.emitting = true
+
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
+		# KRİTİK KONTROL: Eğer oyuncu Ruh modundaysa toplama işlemini yapma
+		if body.is_soul_mode:
+			return
 		collect()
-			
+		
 func collect():
 	Global.collected_fragment_ids.append(fragment_id)
 	Global.soul_fragments_collected += 1
@@ -25,5 +29,5 @@ func collect():
 	# Varsa partikül efektini çalıştır
 	particles.emitting = true
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.3).timeout
 	queue_free()
