@@ -64,12 +64,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtkrc"]
-radius = 6.0
+radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vmv3k"]
-radius = 14.0357
+radius = 5.0
 
 [node name="StreetLamp" type="StaticBody2D"]
+y_sort_enabled = true
+collision_layer = 16
 script = ExtResource("1_5xbst")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -80,7 +82,7 @@ energy = 1.55
 texture = ExtResource("2_um43l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -45)
+position = Vector2(1, -48)
 sprite_frames = SubResource("SpriteFrames_ydft0")
 frame_progress = 0.965085
 

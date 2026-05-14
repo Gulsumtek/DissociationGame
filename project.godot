@@ -36,8 +36,8 @@ general/balloon_path="res://dialogues/balloon.tscn"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=240
+window/size/viewport_width=640
+window/size/viewport_height=320
 window/stretch/mode="viewport"
 window/canvas_textures/default_texture_filter=1
 

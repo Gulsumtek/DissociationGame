@@ -715,7 +715,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ting"]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-z_index = 1
 y_sort_enabled = true
 position = Vector2(237, 122)
 collision_mask = 16
@@ -723,10 +722,11 @@ script = ExtResource("1_3tk1n")
 soul_speed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_x11vo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
-position = Vector2(0, -31)
+position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_d6d5g")
 animation = &"soul_run_right"
 frame_progress = 0.130332
@@ -748,4 +748,5 @@ idle_state = NodePath("../Idle")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector" groups=["Player"]]
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_3ting")
