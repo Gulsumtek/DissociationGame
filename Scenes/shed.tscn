@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cb4yiokj0inci"]
+[gd_scene load_steps=23 format=4 uid="uid://cb4yiokj0inci"]
 
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://Tile Maps/Sprites/rendered.jpeg" id="1_cxjgq"]
 [ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://Tile Maps/Sprites/mountainsandroads.jpeg" id="2_3qnba"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://crvidurnjd8yj" path="res://Tile Maps/Sprites/props.png" id="9_i1mxk"]
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="10_ww7p5"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="11_v4fde"]
+[ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="12_5tyw2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dbmx"]
 texture = ExtResource("1_cxjgq")
@@ -765,8 +766,11 @@ tile_map_data = PackedByteArray("AADp/wAAAgAEAAIAAADr/wAAAgAEAAIAAADt/wAAAgAEAAI
 tile_map_data = PackedByteArray("AADY//H/AQAGAAQAAADY//L/AQAGAAUAAADY//P/AQAGAAYAAADY//T/AQAGAAcAAADY//X/AQAGAAgAAADZ//H/AQAHAAQAAADZ//L/AQAHAAUAAADZ//P/AQAHAAYAAADZ//T/AQAHAAcAAADZ//X/AQAHAAgAAADa//H/AQAIAAQAAADa//L/AQAIAAUAAADa//P/AQAIAAYAAADa//T/AQAIAAcAAADa//X/AQAIAAgAAADb//H/AQAJAAQAAADb//L/AQAJAAUAAADb//P/AQAJAAYAAADb//T/AQAJAAcAAADb//X/AQAJAAgAAADf//j/AgABAAMAAFDX//b/AgADAAAAAADX//f/AgADAAEAAADc//T/AgABAAMAAGDc//X/AgABAAMAAFDZ//b/AgABAAMAAFDc//r/AgABAAMAAFDc//n/AgABAAMAAFDa//f/AgACAAAAAADa//j/AgACAAEAAADc//L/AgACAAAAABDc//P/AgACAAEAABDd//X/AgABAAAAABDd//b/AgABAAEAABDX//L/AgABAAAAAADX//P/AgABAAEAAADg//f/AgABAAAAABDg//j/AgABAAEAABDf//z/AgABAAAAABDf//3/AgABAAEAABDd//v/AgABAAAAAADd//z/AgABAAEAAADZ//7/AgABAAAAAADZ////AgABAAEAAADc//z/AgADAAAAAADc//3/AgADAAEAAADb//3/AgAAAAAAAADb////AgAAAAAAABDf//7/AgAAAAAAABDX//7/AgAAAAAAAADZ//3/AgAEAAAAABDa//3/AgAEAAAAABA=")
 
 [node name="Player" parent="." instance=ExtResource("11_v4fde")]
-position = Vector2(-1693, -303)
+position = Vector2(-1822, -358)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(396, 46)
 color = Color(0.428929, 0.421298, 0.81071, 1)
+
+[node name="Area2D" parent="." instance=ExtResource("12_5tyw2")]
+position = Vector2(-1738, -324)

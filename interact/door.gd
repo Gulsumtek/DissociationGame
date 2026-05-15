@@ -17,7 +17,7 @@ func _on_door_interacted():
 			print("Hata: Hedef sahne yolu girilmemiş!")
 	Global.entrance_name = door_id 
 	if Global.soul_fragments_collected >= required_fragments:
-		TransitionScreen.transition_to(target_scene_path)
+		TransitionScreen.transition_to(target_scene_path) 
 	else:# Oyuncuya henüz hazır olmadığını söyleyen bir diyalog çıkar
 		#DialogueBox.show_text("Henüz tüm parçalarımı bulamadım. Kendimi çok ağır hissediyorum...")
 		var player = get_tree().get_first_node_in_group("Player")
