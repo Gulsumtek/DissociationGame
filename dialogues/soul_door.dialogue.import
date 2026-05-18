@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c7f77e8kwq5pa"
+path="res://.godot/imported/soul_door.dialogue-fc6788ad7b32f0f7a1ca2e05213ca614.tres"
+
+[deps]
+
+source_file="res://dialogues/soul_door.dialogue"
+dest_files=["res://.godot/imported/soul_door.dialogue-fc6788ad7b32f0f7a1ca2e05213ca614.tres"]
+
+[params]
+
+defaults=true

@@ -10,8 +10,16 @@ var is_soul_mode: bool = false
 @export var body_speed: float = 100.0
 @export var soul_speed: float = 180.0
 const MY_BALLOON = preload("res://dialogues/balloon.tscn")
-
+signal dialogue_finished
 # player.gd
+
+func _ready() -> void:
+	state_machine.Initialize(self)
+	$InteractionDetector.collision_mask = 10
+	var soul_layer = get_tree().current_scene.get_node_or_null("SoulLayer")
+	if soul_layer:
+		soul_layer.visible = false
+
 func _physics_process(delta):
 	if is_frozen:
 		velocity = Vector2.ZERO
@@ -20,26 +28,30 @@ func _physics_process(delta):
 
 func toggle_soul_mode():
 	is_soul_mode = !is_soul_mode
+	var body_layer = get_tree().current_scene.get_node_or_null("BodyLayer")
+	var soul_layer = get_tree().current_scene.get_node_or_null("SoulLayer")
+	
 	if is_soul_mode:
 		move_speed = soul_speed
+		$InteractionDetector.collision_mask = 12
+		if body_layer:
+			body_layer.visible = false
+		if soul_layer:
+			soul_layer.visible = true
 	else:
 		move_speed = body_speed + (Global.soul_fragments_collected * 5.0)
-		# set_collision_layer_value(1, true)
+		$InteractionDetector.collision_mask = 10
+		if body_layer:
+			body_layer.visible = true
+		if soul_layer:
+			soul_layer.visible = false
 
 func drop_soul_fragment():
-	# SoulFragment sahnesini yükle (Yolun doğru olduğundan emin ol)
 	var fragment_scene = load("res://Scenes/soul_fragment.tscn")
 	var fragment = fragment_scene.instantiate()
-	
-	# Parçayı oyuncunun şu anki yerine koy
 	fragment.global_position = global_position
-	
-	# Benzersiz bir ID ver ki geri dönünce silinmesin
 	fragment.fragment_id = "dropped_" + str(Time.get_ticks_msec())
-	
-	# Sahneye ekle
-	get_tree().current_scene.add_child(fragment)
-
+	get_tree().current_scene.call_deferred("add_child", fragment)
 func _input(event):
 	# 1. DİALOG KONTROLÜ (Dialogue Manager zaten kendi içinden yönetir)
 	# Eğer is_frozen ise ve bir diyalog eklentisi açıksa, 
@@ -57,13 +69,15 @@ func _input(event):
 	# 2. ETKİLEŞİM BAŞLATMA
 	if event.is_action_pressed("interact"):
 		# Eğer Ruh modundaysak parça bırak [cite: 12, 15]
-		if is_soul_mode:
-			drop_soul_fragment()
-			return
+		#if is_soul_mode:
+			#drop_soul_fragment()
+			#return
 
 		var areas = $InteractionDetector.get_overlapping_areas()
+		print("Toplam area sayısı: ", areas.size())
 		for area in areas:
 			var parent = area.get_parent()
+			print("Area: ", area.name, " Parent: ", area.get_parent().name)
 			# Piano gibi nesnelerde trigger_inspect kullanılır
 			if parent and parent.has_method("trigger_inspect"):
 				parent.trigger_inspect() # start_dialogue burada tetiklenecek
@@ -72,6 +86,7 @@ func _input(event):
 			if area and area.has_method("trigger_interact"):
 				area.trigger_interact()
 				return
+				
 func start_dialogue(resource: DialogueResource, title: String):
 	if is_frozen: return
 	
@@ -90,16 +105,14 @@ func start_dialogue(resource: DialogueResource, title: String):
 		is_frozen = false
 
 func _on_dialogue_finished():
-	# Diyalog kapandıktan milisaniyeler sonra karakteri çözmek 
-	# "E" tuşunun yanlışlıkla tekrar tetiklenmesini önler
+	if not is_inside_tree():
+		return
 	await get_tree().create_timer(0.1).timeout
+	if not is_inside_tree():
+		return
 	is_frozen = false
 	print("Diyalog bitti, karakter çözüldü.")
-	
-	
-	
-	
-	
+	dialogue_finished.emit()
 #func _handle_dialogue_logic():
 	#if DialogueBox.is_typing:
 		#DialogueBox.skip_typing()
@@ -108,5 +121,3 @@ func _on_dialogue_finished():
 		#is_frozen = false
 
 	
-func _ready() -> void:
-	state_machine.Initialize(self)

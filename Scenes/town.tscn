@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=4 uid="uid://d2ld51npwe75y"]
+[gd_scene load_steps=25 format=4 uid="uid://d2ld51npwe75y"]
 
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_32v61"]
+[ext_resource type="Script" path="res://move.gd" id="1_oablm"]
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="2_evpwj"]
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://Tile Maps/Sprites/rendered.jpeg" id="3_1yke7"]
 [ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://Tile Maps/Sprites/mountainsandroads.jpeg" id="4_we6nt"]
@@ -741,11 +742,11 @@ sources/8 = SubResource("TileSetAtlasSource_h25gp")
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_oablm")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(396, 46)
-color = Color(0.428929, 0.421298, 0.81071, 1)
+color = Color(0.627451, 0.639216, 0.921569, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_32v61")]
 position = Vector2(-510, -298)
@@ -810,6 +811,7 @@ position = Vector2(-1314, -591)
 [node name="Area2D" parent="." instance=ExtResource("13_rvvrp")]
 position = Vector2(321, 315)
 hedef_harita_yolu = "res://Scenes/School.tscn"
+door_id = "school_up"
 
 [node name="Area2D2" parent="." instance=ExtResource("13_rvvrp")]
 position = Vector2(-1190, -808)
@@ -818,3 +820,15 @@ hedef_harita_yolu = "res://Scenes/park.tscn"
 [node name="Area2D3" parent="." instance=ExtResource("13_rvvrp")]
 position = Vector2(-1634, -213)
 hedef_harita_yolu = "res://Scenes/shed.tscn"
+
+[node name="town_down" type="Marker2D" parent="."]
+position = Vector2(325, 274)
+gizmo_extents = 69.6
+
+[node name="town_side" type="Marker2D" parent="."]
+position = Vector2(-1560, -146)
+gizmo_extents = 69.6
+
+[node name="town_up" type="Marker2D" parent="."]
+position = Vector2(-1224, -841)
+gizmo_extents = 69.6

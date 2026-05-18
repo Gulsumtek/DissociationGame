@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d2jywexjq0mri"
+path="res://.godot/imported/tablo.dialogue-1731bb37117938d29051b7c5d99cf309.tres"
+
+[deps]
+
+source_file="res://dialogues/tablo.dialogue"
+dest_files=["res://.godot/imported/tablo.dialogue-1731bb37117938d29051b7c5d99cf309.tres"]
+
+[params]
+
+defaults=true

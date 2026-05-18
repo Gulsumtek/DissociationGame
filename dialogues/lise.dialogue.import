@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b1f12c1duer1u"
+path="res://.godot/imported/lise.dialogue-a17ad92545d7299bd694193b22ae16d0.tres"
+
+[deps]
+
+source_file="res://dialogues/lise.dialogue"
+dest_files=["res://.godot/imported/lise.dialogue-a17ad92545d7299bd694193b22ae16d0.tres"]
+
+[params]
+
+defaults=true

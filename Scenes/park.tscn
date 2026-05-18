@@ -1,5 +1,6 @@
-[gd_scene load_steps=34 format=4 uid="uid://brifylr4espa"]
+[gd_scene load_steps=35 format=4 uid="uid://brifylr4espa"]
 
+[ext_resource type="Script" path="res://move.gd" id="1_njrt0"]
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://Tile Maps/Sprites/rendered.jpeg" id="1_rwmcc"]
 [ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://Tile Maps/Sprites/mountainsandroads.jpeg" id="2_48brb"]
 [ext_resource type="Texture2D" uid="uid://dw0p4gfxv54ju" path="res://Tile Maps/Sprites/mountainsandroads.png" id="3_wlaw7"]
@@ -1467,6 +1468,7 @@ sources/8 = SubResource("TileSetAtlasSource_ox0ea")
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_njrt0")
 
 [node name="Layer 0" type="TileMapLayer" parent="."]
 z_index = -1
@@ -1500,9 +1502,8 @@ tile_map_data = PackedByteArray("AADq/93/AgABAAAAAADq/97/AgABAAEAAADt/97/AgABAAA
 position = Vector2(-636, -792)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(396, 46)
-color = Color(0.428929, 0.421298, 0.81071, 1)
+color = Color(0.643137, 0.654902, 0.921569, 1)
 
 [node name="StreetLamp" parent="." instance=ExtResource("12_f5v8p")]
 position = Vector2(533, -829)
@@ -1555,7 +1556,17 @@ position = Vector2(1913, -755)
 [node name="Area2D" parent="." instance=ExtResource("13_4d86n")]
 position = Vector2(-701, 87)
 hedef_harita_yolu = "res://Scenes/School.tscn"
+door_id = "town_up"
+
+[node name="park_down" type="Marker2D" parent="."]
+position = Vector2(323, 244)
+gizmo_extents = 69.6
+
+[node name="park_side" type="Marker2D" parent="."]
+position = Vector2(-696, 50)
+gizmo_extents = 69.6
 
 [node name="Area2D2" parent="." instance=ExtResource("13_4d86n")]
 position = Vector2(318, 279)
 hedef_harita_yolu = "res://Scenes/town.tscn"
+door_id = "town_up"

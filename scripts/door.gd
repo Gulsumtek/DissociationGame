@@ -13,6 +13,7 @@ func _ready():
 	interaction_area.interact.connect(_on_door_interacted)
 
 func _on_door_interacted():
+	var player = get_tree().get_first_node_in_group("Player")
 	if target_scene_path == "":
 			print("Hata: Hedef sahne yolu girilmemiş!")
 	Global.entrance_name = door_id 
@@ -20,7 +21,6 @@ func _on_door_interacted():
 		TransitionScreen.transition_to(target_scene_path) 
 	else:# Oyuncuya henüz hazır olmadığını söyleyen bir diyalog çıkar
 		#DialogueBox.show_text("Henüz tüm parçalarımı bulamadım. Kendimi çok ağır hissediyorum...")
-		var player = get_tree().get_first_node_in_group("Player")
 		if player and door_dialogue:
 			player.start_dialogue(door_dialogue, "fragments")
 		else:

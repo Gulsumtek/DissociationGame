@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://drxex2ojisbst"]
+
+[ext_resource type="Script" path="res://scripts/basla.gd" id="1_a2orj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+mouse_filter = 1
+script = ExtResource("1_a2orj")
+
+[node name="start_button" type="Button" parent="."]
+z_index = 5
+layout_mode = 2
+offset_left = 235.0
+offset_top = 147.0
+offset_right = 483.0
+offset_bottom = 178.0
+mouse_default_cursor_shape = 2
+text = "BAŞLA"
+
+[node name="end_button" type="Button" parent="."]
+z_index = 5
+layout_mode = 2
+offset_left = 235.0
+offset_top = 182.0
+offset_right = 483.0
+offset_bottom = 213.0
+text = "OYUNDAN ÇIK"
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="end_button" to="." method="_on_end_button_pressed"]

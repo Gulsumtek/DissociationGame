@@ -1,10 +1,12 @@
-[gd_scene load_steps=24 format=4 uid="uid://b8cjy3d4jy1jn"]
+[gd_scene load_steps=31 format=4 uid="uid://b8cjy3d4jy1jn"]
 
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_ksq0n"]
 [ext_resource type="Script" path="res://scripts/schoolinside.gd" id="1_xcthg"]
-[ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="2_1l7r0"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_g4cls"]
+[ext_resource type="Script" path="res://scripts/soul_door.gd" id="4_7wubf"]
+[ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="4_bvs1d"]
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://Tile Maps/Sprites/rendered.jpeg" id="4_m6vxq"]
+[ext_resource type="Resource" uid="uid://c7f77e8kwq5pa" path="res://dialogues/soul_door.dialogue" id="5_3f6v6"]
 [ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://Tile Maps/Sprites/mountainsandroads.jpeg" id="5_amdq0"]
 [ext_resource type="Texture2D" uid="uid://dw0p4gfxv54ju" path="res://Tile Maps/Sprites/mountainsandroads.png" id="6_jb5nx"]
 [ext_resource type="Texture2D" uid="uid://d3cdk1nu6ievx" path="res://Environment/sprites/houses.png" id="7_1otkv"]
@@ -13,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://4o8lg3877akf" path="res://Tile Maps/Sprites/propsv3.png" id="10_p548k"]
 [ext_resource type="Texture2D" uid="uid://iwc36elb8jlt" path="res://Tile Maps/Sprites/propsv2.png" id="11_i3spp"]
 [ext_resource type="Texture2D" uid="uid://crvidurnjd8yj" path="res://Tile Maps/Sprites/props.png" id="12_73wvt"]
+[ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="14_34agm"]
+[ext_resource type="Resource" uid="uid://d2jywexjq0mri" path="res://dialogues/tablo.dialogue" id="15_01g26"]
+[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="15_7kbtx"]
+[ext_resource type="PackedScene" uid="uid://dex6n8aq1x2rg" path="res://Scenes/trigger_fragment.tscn" id="17_hsa5r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ydjfo"]
 texture = ExtResource("4_m6vxq")
@@ -740,20 +746,14 @@ sources/6 = SubResource("TileSetAtlasSource_gkv36")
 sources/7 = SubResource("TileSetAtlasSource_gn8lj")
 sources/8 = SubResource("TileSetAtlasSource_8iyfc")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dumb"]
+size = Vector2(208, 20)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xcthg")
 
 [node name="Player" parent="." instance=ExtResource("1_ksq0n")]
 position = Vector2(320, 293)
-
-[node name="Props" parent="." instance=ExtResource("2_1l7r0")]
-visible = false
-tile_map_data = PackedByteArray("AAAAAAIAAQAAAAIAAAAAAAMAAQAAAAMAAAABAAIAAQABAAIAAAABAAMAAQABAAMAAAACAAIAAQACAAIAAAACAAMAAQACAAMAAAADAAIAAQADAAIAAAADAAMAAQADAAMAAAAEAAIAAQAEAAIAAAAEAAMAAQAEAAMAAAAFAAIAAQAFAAIAAAAFAAMAAQAFAAMAAAAGAAIAAQAGAAIAAAAGAAMAAQAGAAMAAAAHAAIAAQAHAAIAAAAHAAMAAQAHAAMAAAAIAAIAAQAIAAIAAAAIAAMAAQAIAAMAAAAJAAIAAQAJAAIAAAAJAAMAAQAJAAMAAAA=")
-
-[node name="Door" parent="." instance=ExtResource("3_g4cls")]
-position = Vector2(318, 312)
-target_scene_path = "res://Scenes/School.tscn"
-door_id = "school_in"
 
 [node name="Layer 1" type="TileMapLayer" parent="."]
 z_index = -1
@@ -764,3 +764,57 @@ tile_set = SubResource("TileSet_yy76s")
 [node name="school_out" type="Marker2D" parent="."]
 position = Vector2(317, 310)
 gizmo_extents = 69.6
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(324, 329)
+shape = SubResource("RectangleShape2D_2dumb")
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("15_7kbtx")]
+position = Vector2(130, 99)
+soul_dialogue = ExtResource("15_01g26")
+inspect_dialogue = ExtResource("15_01g26")
+gives_fragment = true
+
+[node name="InteractionArea" parent="StaticBody2D2" index="0"]
+collision_layer = 8
+
+[node name="BodyLayer" type="Node2D" parent="."]
+position = Vector2(318, 312)
+
+[node name="SoulFragment" parent="BodyLayer" instance=ExtResource("14_34agm")]
+position = Vector2(-288, -28)
+
+[node name="SoulFragment2" parent="BodyLayer" instance=ExtResource("14_34agm")]
+position = Vector2(231, -126)
+
+[node name="Door" parent="BodyLayer" instance=ExtResource("3_g4cls")]
+target_scene_path = "res://Scenes/School.tscn"
+door_id = "school_in"
+required_fragments = 3
+door_dialogue = ExtResource("4_bvs1d")
+
+[node name="SoulLayer" type="Node2D" parent="."]
+position = Vector2(318, 312)
+
+[node name="Door" parent="SoulLayer" instance=ExtResource("3_g4cls")]
+script = ExtResource("4_7wubf")
+target_scene_path = "res://Scenes/School.tscn"
+door_id = "school_in"
+required_drops = 3
+door_dialogue = ExtResource("5_3f6v6")
+
+[node name="InteractionArea" parent="SoulLayer/Door" index="0"]
+collision_layer = 4
+
+[node name="TriggerFragment" parent="SoulLayer" instance=ExtResource("17_hsa5r")]
+position = Vector2(-287, -27)
+
+[node name="TriggerFragment2" parent="SoulLayer" instance=ExtResource("17_hsa5r")]
+position = Vector2(231, -126)
+
+[editable path="StaticBody2D2"]
+[editable path="BodyLayer/Door"]
+[editable path="SoulLayer/Door"]

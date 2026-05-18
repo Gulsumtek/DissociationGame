@@ -769,8 +769,15 @@ tile_map_data = PackedByteArray("AADY//H/AQAGAAQAAADY//L/AQAGAAUAAADY//P/AQAGAAY
 position = Vector2(-1822, -358)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2(396, 46)
-color = Color(0.428929, 0.421298, 0.81071, 1)
+color = Color(0.641936, 0.65517, 0.923066, 1)
+
+[node name="shed" type="Marker2D" parent="."]
+position = Vector2(-1836, -373)
+gizmo_extents = 69.6
 
 [node name="Area2D" parent="." instance=ExtResource("12_5tyw2")]
 position = Vector2(-1738, -324)
+hedef_harita_yolu = "res://Scenes/town.tscn"
+door_id = "town_side"

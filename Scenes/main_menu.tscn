@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqkho35cn3sfq"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jwck5"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jwck5")
+
+[node name="start" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "BASLA
+"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]

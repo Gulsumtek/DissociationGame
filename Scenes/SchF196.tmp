@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b2blnta4shigh"]
+[gd_scene load_steps=30 format=4 uid="uid://b2blnta4shigh"]
 
 [ext_resource type="Script" path="res://scripts/school.gd" id="1_needf"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_yr3ky"]
@@ -18,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="16_1y8ly"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="17_pxowm"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="18_kv1w0"]
+[ext_resource type="Resource" uid="uid://b1f12c1duer1u" path="res://dialogues/lise.dialogue" id="19_0h6il"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx20x"]
 texture = ExtResource("4_3x6hx")
@@ -791,6 +792,7 @@ position = Vector2(-120, -67)
 position = Vector2(-254, -213)
 target_scene_path = "res://Scenes/schoolinside.tscn"
 door_id = "school_out"
+required_fragments = 1
 door_dialogue = ExtResource("16_1y8ly")
 
 [node name="school_in" type="Marker2D" parent="."]
@@ -821,14 +823,10 @@ gizmo_extents = 69.6
 position = Vector2(66, -586)
 gizmo_extents = 69.6
 
+[node name="SoulFragment" parent="." instance=ExtResource("17_pxowm")]
+position = Vector2(-12, -91)
+
 [node name="StaticBody2D" parent="." instance=ExtResource("18_kv1w0")]
 position = Vector2(-323, -214)
 inspect_text = "start"
-
-[node name="BodyLayer" type="Node2D" parent="."]
-
-[node name="SoulFragment" parent="BodyLayer" instance=ExtResource("17_pxowm")]
-position = Vector2(-12, -91)
-fragment_id = "1"
-
-[node name="SoulLayer" type="Node2D" parent="."]
+dialogue = ExtResource("19_0h6il")
