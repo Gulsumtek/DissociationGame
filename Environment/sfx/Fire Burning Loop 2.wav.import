@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://83hk6bhgesgi"
-path="res://.godot/imported/Fire Burning Loop 2.wav-d97bc7d0bf1a193e19a3dcb5aa1b09c4.sample"
+path="res://.godot/imported/Fire Burning Loop 2.wav-8d6a6780f9551f508060d67813eb5eed.sample"
 
 [deps]
 
-source_file="res://Environment/sfx/Fire Burning Loop 2.wav"
-dest_files=["res://.godot/imported/Fire Burning Loop 2.wav-d97bc7d0bf1a193e19a3dcb5aa1b09c4.sample"]
+source_file="res://environment/sfx/Fire Burning Loop 2.wav"
+dest_files=["res://.godot/imported/Fire Burning Loop 2.wav-8d6a6780f9551f508060d67813eb5eed.sample"]
 
 [params]
 

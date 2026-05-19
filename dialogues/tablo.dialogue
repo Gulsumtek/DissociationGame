@@ -1,7 +1,5 @@
 ~ start
-do CutsceneManager.show_memory_visual("res://dialogues/blank.jpg")
-Beden: Ne kadar güzel çizmişler... Lisedeki çocuklar çok yetenekli sanırım...
+Beden: Ne kadar tatlı çizmişler... Lisedeki çocuklar çok yetenekli sanırım...
 Beden: Bir zamanlar ben de çok severdim çizmeyi. Neden bıraktım ki?
-Beden: Bir dakika... Bu Mahalledeki park değil mi?
-do CutsceneManager.hide_visual()
+Beden: Bir dakika... Bu mahalledeki park değil mi?
 => END

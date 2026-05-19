@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://bu0dsbrijb03d"]
+[gd_scene load_steps=115 format=3 uid="uid://bu0dsbrijb03d"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_3tk1n"]
 [ext_resource type="Texture2D" uid="uid://dsm5uvrwtrk56" path="res://player/sprites/topdownidle.png" id="2_8gmya"]
@@ -16,9 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://b4uimx1kv4dti" path="res://player/sprites/ghostrunningseffaf.png" id="11_7rf74"]
 [ext_resource type="Texture2D" uid="uid://pwfdxvwkah7k" path="res://player/sprites/ghostrunningsideseffaf.png" id="12_g8p8u"]
 [ext_resource type="Texture2D" uid="uid://b2um7827nqdji" path="res://player/sprites/ghostrunningbackseffaf.png" id="13_42qny"]
-[ext_resource type="AudioStream" uid="uid://c3tlx3j78pmvc" path="res://Environment/sfx/footstep_concrete_000.ogg" id="17_3n7xh"]
-[ext_resource type="AudioStream" uid="uid://cxg77yqtxfsnl" path="res://Environment/sfx/footstep_concrete_003.ogg" id="19_6i5i3"]
-[ext_resource type="AudioStream" uid="uid://dugvombxemm4k" path="res://Environment/sfx/footstep_concrete_004.ogg" id="20_s2m3r"]
+[ext_resource type="AudioStream" uid="uid://c3tlx3j78pmvc" path="res://environment/sfx/footstep_concrete_000.ogg" id="17_3n7xh"]
+[ext_resource type="AudioStream" uid="uid://cxg77yqtxfsnl" path="res://environment/sfx/footstep_concrete_003.ogg" id="19_6i5i3"]
+[ext_resource type="Texture2D" uid="uid://dgxh43rp8s4g" path="res://sprites/light.png" id="20_pjeoo"]
+[ext_resource type="AudioStream" uid="uid://dugvombxemm4k" path="res://environment/sfx/footstep_concrete_004.ogg" id="20_s2m3r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x11vo"]
 
@@ -738,7 +739,7 @@ shape = SubResource("CircleShape2D_x11vo")
 position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_d6d5g")
 animation = &"soul_run_right"
-frame_progress = 0.130332
+frame_progress = 0.877655
 
 [node name="PlayerStateMachine" type="Node" parent="." groups=["Player"]]
 script = ExtResource("8_p4lqt")
@@ -764,3 +765,11 @@ shape = SubResource("CircleShape2D_3ting")
 stream = SubResource("AudioStreamRandomizer_fn7jm")
 autoplay = true
 playback_type = 1
+
+[node name="soulLight" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 1, 0.227451)
+position = Vector2(5.72205e-06, -13)
+scale = Vector2(0.901774, 0.914766)
+color = Color(0, 0.937255, 0.827451, 0.156863)
+energy = 1.55
+texture = ExtResource("20_pjeoo")

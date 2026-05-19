@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cgdfiprr03uw6"
+path="res://.godot/imported/tablo_soul.dialogue-5f263b7eab39ef27e24b0174b65da8e9.tres"
+
+[deps]
+
+source_file="res://dialogues/tablo_soul.dialogue"
+dest_files=["res://.godot/imported/tablo_soul.dialogue-5f263b7eab39ef27e24b0174b65da8e9.tres"]
+
+[params]
+
+defaults=true

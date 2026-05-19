@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpmsib2sd56da"
-path="res://.godot/imported/roadandtunnel-export.png-eb01aeaddd3e9c985aebeeca157190f8.ctex"
+path="res://.godot/imported/roadandtunnel-export.png-44e40d848bed911da41229c71b8f726c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Maps/Sprites/roadandtunnel-export.png"
-dest_files=["res://.godot/imported/roadandtunnel-export.png-eb01aeaddd3e9c985aebeeca157190f8.ctex"]
+source_file="res://tile maps/Sprites/roadandtunnel-export.png"
+dest_files=["res://.godot/imported/roadandtunnel-export.png-44e40d848bed911da41229c71b8f726c.ctex"]
 
 [params]
 

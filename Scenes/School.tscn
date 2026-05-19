@@ -1,18 +1,18 @@
-[gd_scene load_steps=31 format=4 uid="uid://b2blnta4shigh"]
+[gd_scene load_steps=33 format=4 uid="uid://b2blnta4shigh"]
 
 [ext_resource type="Script" path="res://scripts/school.gd" id="1_needf"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_yr3ky"]
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="2_2vry6"]
 [ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="3_nn0yc"]
-[ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://Tile Maps/Sprites/rendered.jpeg" id="4_3x6hx"]
-[ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://Tile Maps/Sprites/mountainsandroads.jpeg" id="5_ixxo1"]
-[ext_resource type="Texture2D" uid="uid://dw0p4gfxv54ju" path="res://Tile Maps/Sprites/mountainsandroads.png" id="6_cbg8i"]
-[ext_resource type="Texture2D" uid="uid://d3cdk1nu6ievx" path="res://Environment/sprites/houses.png" id="7_rcd47"]
-[ext_resource type="Texture2D" uid="uid://bb2oitlp7ir3c" path="res://Tile Maps/Sprites/sahill.png" id="8_n7boc"]
-[ext_resource type="Texture2D" uid="uid://bpmsib2sd56da" path="res://Tile Maps/Sprites/roadandtunnel-export.png" id="9_7nr1b"]
-[ext_resource type="Texture2D" uid="uid://4o8lg3877akf" path="res://Tile Maps/Sprites/propsv3.png" id="10_upyb6"]
-[ext_resource type="Texture2D" uid="uid://iwc36elb8jlt" path="res://Tile Maps/Sprites/propsv2.png" id="11_5x20k"]
-[ext_resource type="Texture2D" uid="uid://crvidurnjd8yj" path="res://Tile Maps/Sprites/props.png" id="12_whe1g"]
+[ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="4_3x6hx"]
+[ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://tile maps/Sprites/mountainsandroads.jpeg" id="5_ixxo1"]
+[ext_resource type="Texture2D" uid="uid://dw0p4gfxv54ju" path="res://tile maps/Sprites/mountainsandroads.png" id="6_cbg8i"]
+[ext_resource type="Texture2D" uid="uid://d3cdk1nu6ievx" path="res://environment/sprites/houses.png" id="7_rcd47"]
+[ext_resource type="Texture2D" uid="uid://bb2oitlp7ir3c" path="res://tile maps/Sprites/sahill.png" id="8_n7boc"]
+[ext_resource type="Texture2D" uid="uid://bpmsib2sd56da" path="res://tile maps/Sprites/roadandtunnel-export.png" id="9_7nr1b"]
+[ext_resource type="Texture2D" uid="uid://4o8lg3877akf" path="res://tile maps/Sprites/propsv3.png" id="10_upyb6"]
+[ext_resource type="Texture2D" uid="uid://iwc36elb8jlt" path="res://tile maps/Sprites/propsv2.png" id="11_5x20k"]
+[ext_resource type="Texture2D" uid="uid://crvidurnjd8yj" path="res://tile maps/Sprites/props.png" id="12_whe1g"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="13_qeg1t"]
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="15_n5vrl"]
 [ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="16_1y8ly"]
@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="17_pxowm"]
 [ext_resource type="Resource" uid="uid://b1f12c1duer1u" path="res://dialogues/lise.dialogue" id="18_huutv"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="18_kv1w0"]
+[ext_resource type="Resource" uid="uid://cahjajhsktse7" path="res://dialogues/Ev.dialogue" id="21_wtq5j"]
+[ext_resource type="Resource" uid="uid://dbtet440kxx4o" path="res://dialogues/car.dialogue" id="22_gl54l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx20x"]
 texture = ExtResource("4_3x6hx")
@@ -768,7 +770,7 @@ tile_set = SubResource("TileSet_uyvcm")
 
 [node name="Props2" parent="." instance=ExtResource("2_2vry6")]
 texture_repeat = 2
-tile_map_data = PackedByteArray("AADs//f/AgADAAEAABDp//b/AgADAAAAABDp//f/AgADAAEAABDo//T/AgACAAAAAADo//X/AgACAAEAAADu//f/AgABAAAAAADu//j/AgABAAEAAADv//f/AgACAAAAAADv//j/AgACAAEAAADm//3/AgABAAEAAADm//z/AgABAAAAAADp//z/AwADAAMAAADp//3/AwADAAQAAADs//r/AgABAAEAAADs//n/AgABAAAAAAD2//r/AgABAAAAAAD2//v/AgABAAEAAAD2//X/AgACAAAAAAD3//b/AgACAAAAABD5//b/AgAAAAAAABD6//b/AgAAAAAAABD9//X/AgACAAAAABD+//b/AgADAAAAABD2//b/AgACAAEAAAD3//f/AgACAAEAABD4//b/AgAEAAAAAAD5//f/AgAEAAAAAAD6//f/AgAAAAAAABD7//b/AgAAAAAAAAD9//b/AgACAAEAABD+//f/AgADAAEAABD///b/AgAEAAAAAADy//X/AgABAAAAABDy//b/AgABAAEAABDs//b/AgADAAAAABDu//X/AgABAAAAABDu//b/AgABAAEAABDw//r/AgABAAMAABDt//r/AgABAAMAADADAPn/AgADAAEAAAAFAPj/AgAEAAAAAAABAPr/AgACAAAAAAABAPv/AgACAAEAAAACAPz/AgAEAAAAABADAPT/AgADAAAAABADAPX/AgADAAEAABADAPj/AgADAAAAAAAEAPX/AgADAAAAAAAEAPb/AgADAAEAAAAEAPz/AgACAAAAAAAEAP3/AgACAAEAAAAFAPn/AgACAAAAAAAFAPr/AgACAAEAAAAFAPv/AgAEAAAAABAFAP7/AgABAAMAAADh//f/AgADAAAAAADh//j/AgADAAEAAADi//T/AgADAAAAAADi//X/AgADAAEAAADj//f/AgADAAAAAADj//j/AgADAAEAAADg//T/AgADAAAAAADg//X/AgADAAEAAADf//T/AgADAAAAAADf//X/AgADAAEAAADY//f/AgADAAAAABDY//j/AgADAAEAABDZ//j/AgAAAAAAAADf//j/AgAAAAAAABDg//b/AgAAAAAAAADd//P/AgAAAAAAAADW//r/AgAAAAAAAADV//j/AgAAAAAAAADV//n/AgAAAAAAABDW//j/AgAAAAAAABDi//b/AgADAAAAABDi//f/AgADAAEAABDX//n/AgABAAMAAADj//X/AgABAAMAAADa//P/AgABAAMAADD1//z/AgABAAMAABDl//r/AgADAAEAAADl//n/AgADAAAAAAD1/+7/AgAAAAMAAAD1/+//AgAAAAMAAAD1//D/AgAAAAQAAAD3//D/AgABAAQAAAD4//D/AgABAAQAAAD5//D/AgABAAQAAAD6/+7/AgACAAMAAAD6/+//AgACAAMAAAD6//D/AgACAAQAAAD3//n/AQAAAAAAAAD3//r/AQAAAAEAAAD3//v/AQAAAAIAAAD3//z/AQAAAAMAAAD4//n/AQABAAAAAAD4//r/AQABAAEAAAD4//v/AQABAAIAAAD4//z/AQABAAMAAAD5//n/AQACAAAAAAD5//r/AQACAAEAAAD5//v/AQACAAIAAAD5//z/AQACAAMAAAD6//n/AQADAAAAAAD6//r/AQADAAEAAAD6//v/AQADAAIAAAD6//z/AQADAAMAAAD7//n/AQAEAAAAAAD7//r/AQAEAAEAAAD7//v/AQAEAAIAAAD7//z/AQAEAAMAAAD8//n/AQAFAAAAAAD8//r/AQAFAAEAAAD8//v/AQAFAAIAAAD8//z/AQAFAAMAAAD9//n/AQAGAAAAAAD9//r/AQAGAAEAAAD9//v/AQAGAAIAAAD9//z/AQAGAAMAAAD+//n/AQAHAAAAAAD+//r/AQAHAAEAAAD+//v/AQAHAAIAAAD+//z/AQAHAAMAAAD///n/AQAIAAAAAAD///r/AQAIAAEAAAD///v/AQAIAAIAAAD///z/AQAIAAMAAAAAAPn/AQAJAAAAAAAAAPr/AQAJAAEAAAAAAPv/AQAJAAIAAAAAAPz/AQAJAAMAAAA=")
+tile_map_data = PackedByteArray("AADs//f/AgADAAEAABDp//b/AgADAAAAABDp//f/AgADAAEAABDo//T/AgACAAAAAADo//X/AgACAAEAAADu//f/AgABAAAAAADu//j/AgABAAEAAADv//f/AgACAAAAAADv//j/AgACAAEAAADm//3/AgABAAEAAADm//z/AgABAAAAAADp//z/AwADAAMAAADp//3/AwADAAQAAADs//r/AgABAAEAAADs//n/AgABAAAAAAD2//r/AgABAAAAAAD2//v/AgABAAEAAAD2//X/AgACAAAAAAD3//b/AgACAAAAABD5//b/AgAAAAAAABD6//b/AgAAAAAAABD9//X/AgACAAAAABD+//b/AgADAAAAABD2//b/AgACAAEAAAD3//f/AgACAAEAABD4//b/AgAEAAAAAAD5//f/AgAEAAAAAAD6//f/AgAAAAAAABD7//b/AgAAAAAAAAD9//b/AgACAAEAABD+//f/AgADAAEAABD///b/AgAEAAAAAADy//X/AgABAAAAABDy//b/AgABAAEAABDs//b/AgADAAAAABDu//X/AgABAAAAABDu//b/AgABAAEAABDw//r/AgABAAMAABDt//r/AgABAAMAADADAPn/AgADAAEAAAAFAPj/AgAEAAAAAAABAPr/AgACAAAAAAABAPv/AgACAAEAAAACAPz/AgAEAAAAABADAPT/AgADAAAAABADAPX/AgADAAEAABADAPj/AgADAAAAAAAEAPX/AgADAAAAAAAEAPb/AgADAAEAAAAEAPz/AgACAAAAAAAEAP3/AgACAAEAAAAFAPn/AgACAAAAAAAFAPr/AgACAAEAAAAFAPv/AgAEAAAAABAFAP7/AgABAAMAAADh//f/AgADAAAAAADh//j/AgADAAEAAADi//T/AgADAAAAAADi//X/AgADAAEAAADj//f/AgADAAAAAADj//j/AgADAAEAAADg//T/AgADAAAAAADg//X/AgADAAEAAADf//T/AgADAAAAAADf//X/AgADAAEAAADY//f/AgADAAAAABDY//j/AgADAAEAABDZ//j/AgAAAAAAAADf//j/AgAAAAAAABDg//b/AgAAAAAAAADd//P/AgAAAAAAAADW//r/AgAAAAAAAADV//j/AgAAAAAAAADV//n/AgAAAAAAABDW//j/AgAAAAAAABDi//b/AgADAAAAABDi//f/AgADAAEAABDX//n/AgABAAMAAADj//X/AgABAAMAAADa//P/AgABAAMAADD1//z/AgABAAMAABDl//r/AgADAAEAAADl//n/AgADAAAAAAD1/+7/AgAAAAMAAAD1/+//AgAAAAMAAAD1//D/AgAAAAQAAAD3//D/AgABAAQAAAD4//D/AgABAAQAAAD5//D/AgABAAQAAAD6/+7/AgACAAMAAAD6/+//AgACAAMAAAD6//D/AgACAAQAAAD3//n/AQAAAAAAAAD3//r/AQAAAAEAAAD3//v/AQAAAAIAAAD3//z/AQAAAAMAAAD4//n/AQABAAAAAAD4//r/AQABAAEAAAD4//v/AQABAAIAAAD4//z/AQABAAMAAAD5//n/AQACAAAAAAD5//r/AQACAAEAAAD5//v/AQACAAIAAAD5//z/AQACAAMAAAD6//n/AQADAAAAAAD6//r/AQADAAEAAAD6//v/AQADAAIAAAD6//z/AQADAAMAAAD7//n/AQAEAAAAAAD7//r/AQAEAAEAAAD7//v/AQAEAAIAAAD7//z/AQAEAAMAAAD8//n/AQAFAAAAAAD8//r/AQAFAAEAAAD8//v/AQAFAAIAAAD8//z/AQAFAAMAAAD9//n/AQAGAAAAAAD9//r/AQAGAAEAAAD9//v/AQAGAAIAAAD9//z/AQAGAAMAAAD+//n/AQAHAAAAAAD+//r/AQAHAAEAAAD+//v/AQAHAAIAAAD+//z/AQAHAAMAAAD///n/AQAIAAAAAAD///r/AQAIAAEAAAD///v/AQAIAAIAAAD///z/AQAIAAMAAAAAAPn/AQAJAAAAAAAAAPr/AQAJAAEAAAAAAPv/AQAJAAIAAAAAAPz/AQAJAAMAAAD///7/AgAEAAEAAAA=")
 
 [node name="Props" parent="." instance=ExtResource("2_2vry6")]
 tile_map_data = PackedByteArray("AAAFAAoAAAADAAEAAADl//v/AgAEAAAAAADo//v/AgAAAAAAAADj//r/AgAAAAAAAAD2//n/AgAAAAIAAAD2//3/AgAAAAQAAAD3//n/AgABAAIAAAD3//3/AgABAAQAAAD4//n/AgABAAIAAAD4//3/AgABAAQAAAD5//n/AgABAAIAAAD6//n/AgABAAIAAAD7//n/AgABAAIAAAD8//n/AgABAAIAAAD9//n/AgABAAIAAAD+//n/AgABAAIAAAD+//3/AgABAAQAAAD///n/AgABAAIAAAD///3/AgABAAQAAAAAAPn/AgABAAIAAAAAAP3/AgABAAQAAAD2//r/AgAAAAMAAAD2//v/AgAAAAMAAAD2//z/AgAAAAMAAAD5//3/AgABAAQAAAABAPn/AgABAAIAAAABAP3/AgABAAQAAAACAPn/AgACAAIAAAACAPr/AgACAAMAAAACAPv/AgACAAMAAAACAPz/AgACAAMAAAACAP3/AgACAAQAAADo/wIAAgABAAIAAADp/wIAAgACAAIAAADp/wMAAgACAAMAAADi/wIAAgAAAAIAAADi/wMAAgAAAAMAAADj/wQAAgADAAIAAADl/wMAAgADAAIAAADl/wQAAgABAAMAAADn/wMAAgADAAIAAADo/wMAAgABAAMAAADo/wQAAgABAAMAAADp/wQAAgACAAMAAADp/wUAAgACAAQAAADx/wEAAgADAAAAAADt/wIAAgABAAAAAADt/wMAAgABAAEAAADu/wIAAgAAAAAAAADv/wIAAgADAAAAAADv/wMAAgADAAEAAADx/wIAAgADAAEAAADx/wMAAgAEAAAAAADy/wIAAgAEAAAAAADz/wMAAgABAAAAAADz/wQAAgABAAEAAAD5/wMAAgACAAEAAAD8/wEAAgADAAAAAAD8/wIAAgADAAEAAAD0/wMAAgABAAEAAAD2/wMAAgABAAEAABD4/wMAAgACAAAAAAD4/wQAAgACAAEAAAD7/wIAAgACAAAAAAD7/wMAAgACAAEAAAD9/wMAAgAEAAAAAAD//wMAAgAEAAAAAAD5/wIAAgACAAAAAAD2/wIAAgABAAAAABD0/wIAAgACAAAAAADw/wMAAgABAAAAABDw/wQAAgABAAEAABDs/wEAAgABAAAAABDs/wIAAgABAAEAABDi/wQAAgAAAAMAAADi/wUAAgAAAAQAAADo/wUAAgABAAQAAADm/wUAAgABAAQAAADl/wUAAgABAAQAAADk/wUAAgABAAQAAADj/wUAAgABAAQAAADn/wUAAgABAAQAAADc/wEAAgABAAAAAADc/wIAAgABAAEAAADa//7/AgABAAAAAADa////AgABAAEAAADY//7/AgABAAAAABDY////AgABAAEAABDc////AgADAAEAABDc//7/AgADAAAAAADb//v/AgACAAAAAADa//z/AgABAAEAAADa//v/AgABAAAAAADb//z/AgACAAEAAADZ/wAAAgABAAAAAADZ/wEAAgABAAEAAADb////AgADAAAAAADb/wAAAgADAAEAAADZ/wMAAgADAAAAABDZ/wQAAgADAAEAABDY/wMAAgADAAAAAADY/wQAAgADAAEAAADb/wMAAgADAAAAAADb/wQAAgADAAEAAADY/wEAAgADAAAAAADY/wIAAgADAAEAAADe/wMAAgADAAAAABDe/wQAAgADAAEAABDg/wIAAgADAAAAABDg/wMAAgADAAEAABDj/wIAAgABAAMAABDu//n/AgABAAIAAADu//r/AgACAAUAAADu//v/AgACAAYAAADu//z/AgACAAcAAADu//3/AgACAAgAAADv//n/AgABAAIAAADv//r/AgADAAUAAADv//v/AgADAAYAAADv//z/AgADAAcAAADv//3/AgADAAgAAADw//n/AgACAAIAAADw//r/AgACAAMAAADw//v/AgACAAMAAADw//z/AgACAAMAAADw//3/AgACAAQAAADs//n/AgAAAAIAAADs//r/AgAAAAMAAADs//v/AgAAAAMAAADs//z/AgAAAAMAAADs//3/AgAAAAQAAADt//n/AgABAAIAAADt//r/AgABAAUAAADt//v/AgABAAYAAADt//z/AgABAAcAAADt//3/AgABAAgAAADl//3/AgAEAAIAAADn//3/AgAEAAIAAADo//7/AgAEAAEAAAA=")
@@ -805,7 +807,7 @@ position = Vector2(65, -625)
 collision_layer = 16
 hedef_harita_yolu = "res://Scenes/town.tscn"
 door_id = "town_down"
-required_fragments = 8
+required_fragments = 9
 door_dialogue = ExtResource("16_1y8ly")
 demo = ExtResource("17_4nira")
 
@@ -814,8 +816,9 @@ position = Vector2(-2114, -250)
 collision_layer = 16
 hedef_harita_yolu = "res://Scenes/park.tscn"
 door_id = "park_side"
-required_fragments = 8
+required_fragments = 9
 door_dialogue = ExtResource("16_1y8ly")
+demo = ExtResource("17_4nira")
 
 [node name="school_side" type="Marker2D" parent="."]
 position = Vector2(-2111, -241)
@@ -855,3 +858,26 @@ fragment_id = "33"
 [node name="SoulFragment4" parent="CityLayer" instance=ExtResource("17_pxowm")]
 position = Vector2(219, -444)
 fragment_id = "44"
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("18_kv1w0")]
+position = Vector2(-1124, -128)
+collision_layer = 9
+soul_dialogue = ExtResource("21_wtq5j")
+inspect_dialogue = ExtResource("21_wtq5j")
+fragment_reward = 0
+
+[node name="InteractionArea" parent="StaticBody2D5" index="0"]
+collision_layer = 8
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("18_kv1w0")]
+position = Vector2(-1441, -134)
+collision_layer = 9
+soul_dialogue = ExtResource("22_gl54l")
+inspect_dialogue = ExtResource("22_gl54l")
+fragment_reward = 0
+
+[node name="InteractionArea" parent="StaticBody2D6" index="0"]
+collision_layer = 8
+
+[editable path="StaticBody2D5"]
+[editable path="StaticBody2D6"]

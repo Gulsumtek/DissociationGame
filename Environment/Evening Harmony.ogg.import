@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ddi4dsvrxvntt"
-path="res://.godot/imported/Evening Harmony.ogg-67cd375e098489f37bd52b2197dec0fd.oggvorbisstr"
+path="res://.godot/imported/Evening Harmony.ogg-1a9fee9315ff9feaeafae8c1112ea516.oggvorbisstr"
 
 [deps]
 
-source_file="res://Environment/Evening Harmony.ogg"
-dest_files=["res://.godot/imported/Evening Harmony.ogg-67cd375e098489f37bd52b2197dec0fd.oggvorbisstr"]
+source_file="res://environment/Evening Harmony.ogg"
+dest_files=["res://.godot/imported/Evening Harmony.ogg-1a9fee9315ff9feaeafae8c1112ea516.oggvorbisstr"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfrfic0gkkteb"
-path="res://.godot/imported/mountainsandroads.jpeg-abd25d90ab18169287ff438b1e5eba57.ctex"
+path="res://.godot/imported/mountainsandroads.jpeg-af692155da394d2757f59cfc60dad576.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Maps/Sprites/mountainsandroads.jpeg"
-dest_files=["res://.godot/imported/mountainsandroads.jpeg-abd25d90ab18169287ff438b1e5eba57.ctex"]
+source_file="res://tile maps/Sprites/mountainsandroads.jpeg"
+dest_files=["res://.godot/imported/mountainsandroads.jpeg-af692155da394d2757f59cfc60dad576.ctex"]
 
 [params]
 

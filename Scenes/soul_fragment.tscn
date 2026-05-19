@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://csvkhb5f7lgre"]
+[gd_scene load_steps=12 format=3 uid="uid://csvkhb5f7lgre"]
 
 [ext_resource type="Script" path="res://scripts/soul_fragment.gd" id="1_hixlh"]
 [ext_resource type="Texture2D" uid="uid://ds48hjrt6scc0" path="res://sprites/soulflame.png" id="1_ooqn5"]
 [ext_resource type="Texture2D" uid="uid://c03d8fmx3ojr7" path="res://sprites/soulflame2.png" id="3_12vu5"]
-[ext_resource type="AudioStream" uid="uid://83hk6bhgesgi" path="res://Environment/sfx/Fire Burning Loop 2.wav" id="4_di6pv"]
+[ext_resource type="AudioStream" uid="uid://83hk6bhgesgi" path="res://environment/sfx/Fire Burning Loop 2.wav" id="4_di6pv"]
+[ext_resource type="Texture2D" uid="uid://dgxh43rp8s4g" path="res://sprites/light.png" id="5_xgf05"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vicxp"]
 atlas = ExtResource("1_ooqn5")
@@ -70,3 +71,17 @@ autoplay = true
 max_distance = 150.0
 attenuation = 0.659754
 max_polyphony = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+scale = Vector2(0.116048, 0.109899)
+color = Color(0, 0.937255, 0.827451, 0.180392)
+energy = 1.55
+texture = ExtResource("5_xgf05")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+scale = Vector2(0.586263, 0.584381)
+color = Color(0, 0.937255, 0.827451, 0.156863)
+energy = 1.55
+texture = ExtResource("5_xgf05")

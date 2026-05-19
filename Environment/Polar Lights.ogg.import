@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://olx3tyt1wg1l"
-path="res://.godot/imported/Polar Lights.ogg-af6445b75209729cf42ec092b874a24a.oggvorbisstr"
+path="res://.godot/imported/Polar Lights.ogg-20a19915297b652d26337d7809dce317.oggvorbisstr"
 
 [deps]
 
-source_file="res://Environment/Polar Lights.ogg"
-dest_files=["res://.godot/imported/Polar Lights.ogg-af6445b75209729cf42ec092b874a24a.oggvorbisstr"]
+source_file="res://environment/Polar Lights.ogg"
+dest_files=["res://.godot/imported/Polar Lights.ogg-20a19915297b652d26337d7809dce317.oggvorbisstr"]
 
 [params]
 

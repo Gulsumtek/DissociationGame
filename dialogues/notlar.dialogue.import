@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bbkkaj4tfdjv7"
+path="res://.godot/imported/notlar.dialogue-218b6a482ca27b10cd19809dc9ba227f.tres"
+
+[deps]
+
+source_file="res://dialogues/notlar.dialogue"
+dest_files=["res://.godot/imported/notlar.dialogue-218b6a482ca27b10cd19809dc9ba227f.tres"]
+
+[params]
+
+defaults=true

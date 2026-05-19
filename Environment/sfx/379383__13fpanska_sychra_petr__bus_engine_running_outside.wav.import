@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cdf5ilqdapwpm"
-path="res://.godot/imported/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav-65b2a83d26ca473a643f811d4f40d74f.sample"
+path="res://.godot/imported/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav-b8d03805bd837801503872fddf6776a3.sample"
 
 [deps]
 
-source_file="res://Environment/sfx/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav"
-dest_files=["res://.godot/imported/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav-65b2a83d26ca473a643f811d4f40d74f.sample"]
+source_file="res://environment/sfx/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav"
+dest_files=["res://.godot/imported/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav-b8d03805bd837801503872fddf6776a3.sample"]
 
 [params]
 

@@ -12,11 +12,17 @@ var is_soul_mode: bool = false
 const MY_BALLOON = preload("res://dialogues/balloon.tscn")
 signal dialogue_finished
 # player.gd
+@onready var soul_light = $soulLight
 
 func _ready() -> void:
+	soul_light.visible=false
 	state_machine.Initialize(self)
 	$InteractionDetector.collision_mask = 10
 	var soul_layer = get_tree().current_scene.get_node_or_null("SoulLayer")
+	var blackboard_layer = get_tree().current_scene.get_node_or_null("BlackboardLayer")
+	if blackboard_layer:
+		if is_soul_mode:
+			blackboard_layer.visible = false
 	if soul_layer:
 		soul_layer.visible = false
 
@@ -30,8 +36,14 @@ func toggle_soul_mode():
 	is_soul_mode = !is_soul_mode
 	var body_layer = get_tree().current_scene.get_node_or_null("BodyLayer")
 	var soul_layer = get_tree().current_scene.get_node_or_null("SoulLayer")
-	
+	var blackboard_layer = get_tree().current_scene.get_node_or_null("BlackboardLayer")
+	if blackboard_layer:
+		if is_soul_mode:
+			blackboard_layer.visible = false
+		else:
+			blackboard_layer.visible = true
 	if is_soul_mode:
+		soul_light.visible=true
 		move_speed = soul_speed
 		$InteractionDetector.collision_mask = 12
 		if body_layer:
@@ -39,6 +51,7 @@ func toggle_soul_mode():
 		if soul_layer:
 			soul_layer.visible = true
 	else:
+		soul_light.visible=false
 		move_speed = body_speed + (Global.soul_fragments_collected * 5.0)
 		$InteractionDetector.collision_mask = 10
 		if body_layer:

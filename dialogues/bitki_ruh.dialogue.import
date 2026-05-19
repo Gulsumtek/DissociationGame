@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b6naqsknbb08l"
+path="res://.godot/imported/bitki_ruh.dialogue-ae7f4ab86b2e163b6feeb9dbc716760a.tres"
+
+[deps]
+
+source_file="res://dialogues/bitki_ruh.dialogue"
+dest_files=["res://.godot/imported/bitki_ruh.dialogue-ae7f4ab86b2e163b6feeb9dbc716760a.tres"]
+
+[params]
+
+defaults=true

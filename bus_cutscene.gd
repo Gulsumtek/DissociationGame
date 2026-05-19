@@ -10,9 +10,6 @@ var dialogue_shown = false
 func _ready():
 	bus_sound.play()
 	animation_player.play("drive")
-	print("Body visible: ", body.visible)
-	print("Body pozisyon: ", body.position)
-	print("Body modulate: ", body.modulate)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
 	animation_player.animation_finished.connect(_on_animation_finished)
 	animation_player.play("black")
@@ -21,6 +18,7 @@ func _on_animation_finished(anim_name):
 	print("Animasyon bitti: ", anim_name)
 	match anim_name:
 		"black":
+			bus_sound.play()
 			DialogueManager.show_dialogue_balloon(
 				preload("res://dialogues/bus_cutscene.dialogue"), "stop1"
 			)
@@ -43,7 +41,7 @@ func _on_animation_finished(anim_name):
 		"bus_last":
 			bus_sound.play()
 			# Cutscene bitti
-			TransitionScreen.transition_to("res://scenes/School.tscn")
+			TransitionScreen.transition_to("res://Scenes/School.tscn")
 
 func _on_dialogue_finished(resource):
 	if not dialogue_shown:

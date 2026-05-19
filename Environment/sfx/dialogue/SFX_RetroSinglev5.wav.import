@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ceg1kp3dv0h2l"
-path="res://.godot/imported/SFX_RetroSinglev5.wav-2c0119fc16b2e33735888bd9e1343fc8.sample"
+path="res://.godot/imported/SFX_RetroSinglev5.wav-123799a1029d0b3b3f75229a0bcdfb3b.sample"
 
 [deps]
 
-source_file="res://Environment/sfx/dialogue/SFX_RetroSinglev5.wav"
-dest_files=["res://.godot/imported/SFX_RetroSinglev5.wav-2c0119fc16b2e33735888bd9e1343fc8.sample"]
+source_file="res://environment/sfx/dialogue/SFX_RetroSinglev5.wav"
+dest_files=["res://.godot/imported/SFX_RetroSinglev5.wav-123799a1029d0b3b3f75229a0bcdfb3b.sample"]
 
 [params]
 

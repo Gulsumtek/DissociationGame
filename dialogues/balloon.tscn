@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="FontFile" uid="uid://dh0nes3lk61pi" path="res://interact/m5x7.ttf" id="2_dtqf7"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="AudioStream" uid="uid://cry6wxqe1w2mn" path="res://Environment/sfx/dialogue/SFX_RetroSinglev1.wav" id="5_5oot3"]
-[ext_resource type="AudioStream" uid="uid://cp7n6guocphct" path="res://Environment/sfx/dialogue/SFX_RetroSinglev2.wav" id="6_6hiy7"]
-[ext_resource type="AudioStream" uid="uid://b1n7fh8uw3mat" path="res://Environment/sfx/dialogue/SFX_RetroSinglev3.wav" id="7_lmpyt"]
-[ext_resource type="AudioStream" uid="uid://du8xhftofsr3w" path="res://Environment/sfx/dialogue/SFX_RetroSinglev4.wav" id="8_fdsv6"]
+[ext_resource type="AudioStream" uid="uid://cry6wxqe1w2mn" path="res://environment/sfx/dialogue/SFX_RetroSinglev1.wav" id="5_5oot3"]
+[ext_resource type="AudioStream" uid="uid://cp7n6guocphct" path="res://environment/sfx/dialogue/SFX_RetroSinglev2.wav" id="6_6hiy7"]
+[ext_resource type="AudioStream" uid="uid://b1n7fh8uw3mat" path="res://environment/sfx/dialogue/SFX_RetroSinglev3.wav" id="7_lmpyt"]
+[ext_resource type="AudioStream" uid="uid://du8xhftofsr3w" path="res://environment/sfx/dialogue/SFX_RetroSinglev4.wav" id="8_fdsv6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0.688169, 0.618891, 0.907996, 1)

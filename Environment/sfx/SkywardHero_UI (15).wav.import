@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dfd1qga0dk4ax"
-path="res://.godot/imported/SkywardHero_UI (15).wav-f17029edcfb1045facf76c8656a936ad.sample"
+path="res://.godot/imported/SkywardHero_UI (15).wav-9cbce9302faf17a65de8c50451c22135.sample"
 
 [deps]
 
-source_file="res://Environment/sfx/SkywardHero_UI (15).wav"
-dest_files=["res://.godot/imported/SkywardHero_UI (15).wav-f17029edcfb1045facf76c8656a936ad.sample"]
+source_file="res://environment/sfx/SkywardHero_UI (15).wav"
+dest_files=["res://.godot/imported/SkywardHero_UI (15).wav-9cbce9302faf17a65de8c50451c22135.sample"]
 
 [params]
 

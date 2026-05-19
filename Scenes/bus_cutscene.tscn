@@ -1,22 +1,22 @@
 [gd_scene load_steps=70 format=4 uid="uid://bj2akcs8jplpx"]
 
-[ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://Tile Maps/Sprites/mountainsandroads.jpeg" id="1_bj43o"]
+[ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://tile maps/Sprites/mountainsandroads.jpeg" id="1_bj43o"]
 [ext_resource type="Script" path="res://bus_cutscene.gd" id="1_bx4y0"]
 [ext_resource type="Texture2D" uid="uid://bc113fphq60xb" path="res://sprites/bus.png" id="2_jgtg4"]
-[ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://Tile Maps/Sprites/rendered.jpeg" id="4_jw28s"]
+[ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="4_jw28s"]
 [ext_resource type="Texture2D" uid="uid://ccksahkry4t8q" path="res://player/sprites/topdownidleback.png" id="4_xhtgd"]
 [ext_resource type="Texture2D" uid="uid://bey5sru71g6ac" path="res://player/sprites/ghostidlebackseffaf.png" id="5_wgv8e"]
-[ext_resource type="Texture2D" uid="uid://dw0p4gfxv54ju" path="res://Tile Maps/Sprites/mountainsandroads.png" id="5_x0w14"]
+[ext_resource type="Texture2D" uid="uid://dw0p4gfxv54ju" path="res://tile maps/Sprites/mountainsandroads.png" id="5_x0w14"]
 [ext_resource type="Texture2D" uid="uid://b2um7827nqdji" path="res://player/sprites/ghostrunningbackseffaf.png" id="6_5ecoq"]
-[ext_resource type="Texture2D" uid="uid://d3cdk1nu6ievx" path="res://Environment/sprites/houses.png" id="6_gyqqw"]
-[ext_resource type="Texture2D" uid="uid://bb2oitlp7ir3c" path="res://Tile Maps/Sprites/sahill.png" id="7_7m2y1"]
-[ext_resource type="Texture2D" uid="uid://bpmsib2sd56da" path="res://Tile Maps/Sprites/roadandtunnel-export.png" id="8_70141"]
-[ext_resource type="Texture2D" uid="uid://4o8lg3877akf" path="res://Tile Maps/Sprites/propsv3.png" id="9_g8nuw"]
-[ext_resource type="Texture2D" uid="uid://iwc36elb8jlt" path="res://Tile Maps/Sprites/propsv2.png" id="10_c8gyy"]
-[ext_resource type="Texture2D" uid="uid://crvidurnjd8yj" path="res://Tile Maps/Sprites/props.png" id="11_3vxri"]
+[ext_resource type="Texture2D" uid="uid://d3cdk1nu6ievx" path="res://environment/sprites/houses.png" id="6_gyqqw"]
+[ext_resource type="Texture2D" uid="uid://bb2oitlp7ir3c" path="res://tile maps/Sprites/sahill.png" id="7_7m2y1"]
+[ext_resource type="Texture2D" uid="uid://bpmsib2sd56da" path="res://tile maps/Sprites/roadandtunnel-export.png" id="8_70141"]
+[ext_resource type="Texture2D" uid="uid://4o8lg3877akf" path="res://tile maps/Sprites/propsv3.png" id="9_g8nuw"]
+[ext_resource type="Texture2D" uid="uid://iwc36elb8jlt" path="res://tile maps/Sprites/propsv2.png" id="10_c8gyy"]
+[ext_resource type="Texture2D" uid="uid://crvidurnjd8yj" path="res://tile maps/Sprites/props.png" id="11_3vxri"]
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="12_8rfwi"]
 [ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="16_fg5jx"]
-[ext_resource type="AudioStream" uid="uid://cdf5ilqdapwpm" path="res://Environment/sfx/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav" id="17_ogify"]
+[ext_resource type="AudioStream" uid="uid://cdf5ilqdapwpm" path="res://environment/sfx/379383__13fpanska_sychra_petr__bus_engine_running_outside.wav" id="17_ogify"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7vn4"]
 atlas = ExtResource("2_jgtg4")
@@ -45,7 +45,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_cdsxg"]
+[sub_resource type="Animation" id="Animation_p0rix"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -57,7 +57,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(131, 367)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -74,139 +74,55 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Characters/Soul:position")
+tracks/2/path = NodePath("Characters/Body:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(2, -132)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Characters/Body:visible")
+tracks/3/path = NodePath("Characters/Soul:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(409, -477)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Characters/Soul:animation")
+tracks/4/path = NodePath("black:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"walk"]
+"values": [false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Characters/Body:position")
+tracks/5/path = NodePath("CanvasModulate:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(2, -132)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Characters/Body:animation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Characters/Soul:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Characters/Body:modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("black:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("CanvasModulate:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("StreetLamp4:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("StreetLamp5:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_1d7ad"]
+[sub_resource type="Animation" id="Animation_412so"]
 resource_name = "black"
-length = 0.2
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -231,33 +147,111 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("StreetLamp4:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
+
+[sub_resource type="Animation" id="Animation_f8t7h"]
+resource_name = "bus_last_2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1600, -10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bus/Sprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1600, -100), Vector2(-1600, -150)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("StreetLamp5:visible")
+tracks/3/path = NodePath("Characters/Soul:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(800, -477)]
 }
 
-[sub_resource type="Animation" id="Animation_bh07x"]
-resource_name = "body_exit"
+[sub_resource type="Animation" id="Animation_n7bn6"]
+resource_name = "bus_last"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1600, -10), Vector2(-2100, -10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Bus/Sprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1600, -150)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/Soul:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, -477)]
+}
+
+[sub_resource type="Animation" id="Animation_3cxwp"]
+resource_name = "drive"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -266,138 +260,10 @@ tracks/0/path = NodePath("Bus:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.0666667),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.0333333, 1.16667, 2.26667),
+"transitions": PackedFloat32Array(1, 0.594604, 1),
 "update": 0,
-"values": [Vector2(-1550, 10)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Characters/Body:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(-0.1, 0.933333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1550, -40), Vector2(-1550, -130)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Characters/Body:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(-0.1, 0.866667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"walk", &"default"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Characters/Body:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(-0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Characters/Body:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(-0.1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_bndf3"]
-resource_name = "bus_last"
-length = 2.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bus:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.46667, 2.06667),
-"transitions": PackedFloat32Array(0.68302, 1.8025, 1),
-"update": 0,
-"values": [Vector2(-1550, 10), Vector2(-2110, 20), Vector2(-2100, -100)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Characters/Body:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Bus/Sprite2D:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.43333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [&"default", &"up"]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Characters/Body:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1550, -130)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Characters/Body:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_eij0o"]
-resource_name = "drive"
-length = 4.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bus:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.2, 3.66667, 4.23333),
-"transitions": PackedFloat32Array(1, 0.353554, 0.535887, 0.25),
-"update": 0,
-"values": [Vector2(150, 270), Vector2(150, 10), Vector2(0, 10), Vector2(0, 10)]
+"values": [Vector2(150, 270), Vector2(120, -10), Vector2(0, -10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -406,87 +272,63 @@ tracks/1/path = NodePath("Bus/Sprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.2),
-"transitions": PackedFloat32Array(1, 0.217638),
+"times": PackedFloat32Array(0.0333333, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"up", &"default"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Characters/Body:visible")
+tracks/2/path = NodePath("Characters/Body:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0333333),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(800, -132)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Characters/Soul:visible")
+tracks/3/path = NodePath("Characters/Soul:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(800, -477)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("black:visible")
+tracks/4/path = NodePath("CanvasModulate:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(0.784584),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CanvasModulate:visible")
+tracks/5/path = NodePath("black:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("StreetLamp4:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("StreetLamp5:visible")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_8fhpf"]
-resource_name = "drive_2"
-length = 5.0
+[sub_resource type="Animation" id="Animation_1r1sx"]
+resource_name = "drive_3"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -494,10 +336,10 @@ tracks/0/path = NodePath("Bus:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.7, 4.1, 4.43333),
-"transitions": PackedFloat32Array(1.56917, 0.68302, 0.435275, 1.51572),
+"times": PackedFloat32Array(-0.0333333, 2.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 10), Vector2(-1000, 10), Vector2(-1550, 10), Vector2(-1550, 10)]
+"values": [Vector2(0, -10), Vector2(-1600, -10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -514,124 +356,89 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Characters/Soul:position")
+tracks/2/path = NodePath("Characters/Body:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.0666667),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -140)]
+"values": [Vector2(800, -132)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Characters/Soul:visible")
+tracks/3/path = NodePath("Characters/Soul:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.1),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(0, -150)]
 }
 
-[sub_resource type="Animation" id="Animation_gdg0v"]
-resource_name = "soul_exit"
+[sub_resource type="Animation" id="Animation_5gm1g"]
+resource_name = "soul_leave"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Bus/Sprite2D:animation")
+tracks/0/path = NodePath("Bus:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(-0.0333333),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
+"update": 0,
+"values": [Vector2(0, -10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Bus:position")
+tracks/1/path = NodePath("Bus/Sprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 10)]
+"update": 1,
+"values": [&"default"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Characters/Soul:position")
+tracks/2/path = NodePath("Characters/Body:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(-0.0333333, 0.533333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(-0.0666667),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -100), Vector2(0, -140)]
+"values": [Vector2(800, -132)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Characters/Body:visible")
+tracks/3/path = NodePath("Characters/Soul:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Characters/Soul:animation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(-0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk"]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Characters/Body:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(-0.0333333),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(500, 500)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Characters/Soul:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"values": [Vector2(0, -100), Vector2(0, -150)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nq7nc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylo3l"]
 _data = {
-"RESET": SubResource("Animation_cdsxg"),
-"black": SubResource("Animation_1d7ad"),
-"body_exit": SubResource("Animation_bh07x"),
-"bus_last": SubResource("Animation_bndf3"),
-"drive": SubResource("Animation_eij0o"),
-"drive_2": SubResource("Animation_8fhpf"),
-"soul_exit": SubResource("Animation_gdg0v")
+"RESET": SubResource("Animation_p0rix"),
+"black": SubResource("Animation_412so"),
+"body_exit": SubResource("Animation_f8t7h"),
+"bus_last": SubResource("Animation_n7bn6"),
+"drive": SubResource("Animation_3cxwp"),
+"drive_2": SubResource("Animation_1r1sx"),
+"soul_exit": SubResource("Animation_5gm1g")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neta4"]
@@ -1594,7 +1401,6 @@ position = Vector2(0, -4)
 script = ExtResource("1_bx4y0")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(396, 46)
 color = Color(0.62803, 0.641019, 0.92015, 1)
 
@@ -1606,6 +1412,7 @@ texture = ExtResource("1_bj43o")
 [node name="Bus" type="Node2D" parent="."]
 z_index = 2
 y_sort_enabled = true
+position = Vector2(131, 367)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Bus"]
 sprite_frames = SubResource("SpriteFrames_xh7ei")
@@ -1615,7 +1422,7 @@ position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_nq7nc")
+"": SubResource("AnimationLibrary_ylo3l")
 }
 
 [node name="DialogueBox" type="CanvasLayer" parent="."]
@@ -1631,7 +1438,7 @@ texture_repeat = 2
 tile_map_data = PackedByteArray("AAD4//n/AQABAAAAAAD4//r/AQABAAEAAADs//f/AgADAAEAABDp//b/AgADAAAAABDp//f/AgADAAEAABDo//T/AgACAAAAAADo//X/AgACAAEAAADu//f/AgABAAAAAADu//j/AgABAAEAAADv//f/AgACAAAAAADv//j/AgACAAEAAADm//3/AgABAAEAAADm//z/AgABAAAAAADp//z/AwADAAMAAADp//3/AwADAAQAAADs//r/AgABAAEAAADs//n/AgABAAAAAAD5//n/AQACAAAAAAD5//r/AQACAAEAAAD6//n/AQADAAAAAAD6//r/AQADAAEAAAD7//n/AQAEAAAAAAD7//r/AQAEAAEAAAD8//n/AQAFAAAAAAD8//r/AQAFAAEAAAD9//n/AQAGAAAAAAD9//r/AQAGAAEAAAD+//n/AQAHAAAAAAD+//r/AQAHAAEAAAD///n/AQAIAAAAAAD///r/AQAIAAEAAAAAAPn/AQAJAAAAAAAAAPr/AQAJAAEAAAD3//n/AQAAAAAAAAD3//r/AQAAAAEAAAD3//v/AQAAAAIAAAD3//z/AQAAAAMAAAD4//v/AQABAAIAAAD4//z/AQABAAMAAAD5//v/AQACAAIAAAD5//z/AQACAAMAAAD6//v/AQADAAIAAAD6//z/AQADAAMAAAD7//v/AQAEAAIAAAD7//z/AQAEAAMAAAD8//v/AQAFAAIAAAD8//z/AQAFAAMAAAD9//v/AQAGAAIAAAD9//z/AQAGAAMAAAD+//v/AQAHAAIAAAD+//z/AQAHAAMAAAD///v/AQAIAAIAAAD///z/AQAIAAMAAAAAAPv/AQAJAAIAAAAAAPz/AQAJAAMAAAD2//r/AgABAAAAAAD2//v/AgABAAEAAAD2//X/AgACAAAAAAD3//b/AgACAAAAABD5//b/AgAAAAAAABD6//b/AgAAAAAAABD9//X/AgACAAAAABD+//b/AgADAAAAABD2//b/AgACAAEAAAD3//f/AgACAAEAABD4//b/AgAEAAAAAAD5//f/AgAEAAAAAAD6//f/AgAAAAAAABD7//b/AgAAAAAAAAD9//b/AgACAAEAABD+//f/AgADAAEAABD///b/AgAEAAAAAADy//X/AgABAAAAABDy//b/AgABAAEAABDs//b/AgADAAAAABDu//X/AgABAAAAABDu//b/AgABAAEAABDw//r/AgABAAMAABDt//r/AgABAAMAADADAPn/AgADAAEAAAAFAPj/AgAEAAAAAAABAPr/AgACAAAAAAABAPv/AgACAAEAAAACAPz/AgAEAAAAABADAPT/AgADAAAAABADAPX/AgADAAEAABADAPj/AgADAAAAAAAEAPX/AgADAAAAAAAEAPb/AgADAAEAAAAEAPz/AgACAAAAAAAEAP3/AgACAAEAAAAFAPn/AgACAAAAAAAFAPr/AgACAAEAAAAFAPv/AgAEAAAAABAFAP7/AgABAAMAAADh//f/AgADAAAAAADh//j/AgADAAEAAADi//T/AgADAAAAAADi//X/AgADAAEAAADj//f/AgADAAAAAADj//j/AgADAAEAAADg//T/AgADAAAAAADg//X/AgADAAEAAADf//T/AgADAAAAAADf//X/AgADAAEAAADY//f/AgADAAAAABDY//j/AgADAAEAABDZ//j/AgAAAAAAAADf//j/AgAAAAAAABDg//b/AgAAAAAAAADd//P/AgAAAAAAAADW//r/AgAAAAAAAADV//j/AgAAAAAAAADV//n/AgAAAAAAABDW//j/AgAAAAAAABDi//b/AgADAAAAABDi//f/AgADAAEAABDX//n/AgABAAMAAADj//X/AgABAAMAAADa//P/AgABAAMAADD1//z/AgABAAMAABDl//r/AgADAAEAAADl//n/AgADAAAAAAD1/+7/AgAAAAMAAAD1/+//AgAAAAMAAAD1//D/AgAAAAQAAAD3//D/AgABAAQAAAD4//D/AgABAAQAAAD5//D/AgABAAQAAAD6/+7/AgACAAMAAAD6/+//AgACAAMAAAD6//D/AgACAAQAAAA=")
 
 [node name="Props" parent="." instance=ExtResource("12_8rfwi")]
-tile_map_data = PackedByteArray("AAAFAAoAAAADAAEAAADl//v/AgAEAAAAAADo//v/AgAAAAAAAADj//r/AgAAAAAAAAD2//n/AgAAAAIAAAD2//3/AgAAAAQAAAD3//n/AgABAAIAAAD3//3/AgABAAQAAAD4//n/AgABAAIAAAD4//3/AgABAAQAAAD5//n/AgABAAIAAAD6//n/AgABAAIAAAD7//n/AgABAAIAAAD8//n/AgABAAIAAAD9//n/AgABAAIAAAD+//n/AgABAAIAAAD+//3/AgABAAQAAAD///n/AgABAAIAAAD///3/AgABAAQAAAAAAPn/AgABAAIAAAAAAP3/AgABAAQAAAD2//r/AgAAAAMAAAD2//v/AgAAAAMAAAD2//z/AgAAAAMAAAD5//3/AgABAAQAAAABAPn/AgABAAIAAAABAP3/AgABAAQAAAACAPn/AgACAAIAAAACAPr/AgACAAMAAAACAPv/AgACAAMAAAACAPz/AgACAAMAAAACAP3/AgACAAQAAADo/wIAAgABAAIAAADp/wIAAgACAAIAAADp/wMAAgACAAMAAADi/wIAAgAAAAIAAADi/wMAAgAAAAMAAADj/wQAAgADAAIAAADl/wMAAgADAAIAAADl/wQAAgABAAMAAADn/wMAAgADAAIAAADo/wMAAgABAAMAAADo/wQAAgABAAMAAADp/wQAAgACAAMAAADp/wUAAgACAAQAAADx/wEAAgADAAAAAADt/wIAAgABAAAAAADt/wMAAgABAAEAAADu/wIAAgAAAAAAAADv/wIAAgADAAAAAADv/wMAAgADAAEAAADx/wIAAgADAAEAAADx/wMAAgAEAAAAAADy/wIAAgAEAAAAAADz/wMAAgABAAAAAADz/wQAAgABAAEAAAD5/wMAAgACAAEAAAD8/wEAAgADAAAAAAD8/wIAAgADAAEAAAD0/wMAAgABAAEAAAD2/wMAAgABAAEAABD4/wMAAgACAAAAAAD4/wQAAgACAAEAAAD7/wIAAgACAAAAAAD7/wMAAgACAAEAAAD9/wMAAgAEAAAAAAD//wMAAgAEAAAAAAD5/wIAAgACAAAAAAD2/wIAAgABAAAAABD0/wIAAgACAAAAAADw/wMAAgABAAAAABDw/wQAAgABAAEAABDs/wEAAgABAAAAABDs/wIAAgABAAEAABDi/wQAAgAAAAMAAADi/wUAAgAAAAQAAADo/wUAAgABAAQAAADm/wUAAgABAAQAAADl/wUAAgABAAQAAADk/wUAAgABAAQAAADj/wUAAgABAAQAAADn/wUAAgABAAQAAADc/wEAAgABAAAAAADc/wIAAgABAAEAAADa//7/AgABAAAAAADa////AgABAAEAAADY//7/AgABAAAAABDY////AgABAAEAABDc////AgADAAEAABDc//7/AgADAAAAAADb//v/AgACAAAAAADa//z/AgABAAEAAADa//v/AgABAAAAAADb//z/AgACAAEAAADZ/wAAAgABAAAAAADZ/wEAAgABAAEAAADb////AgADAAAAAADb/wAAAgADAAEAAADZ/wMAAgADAAAAABDZ/wQAAgADAAEAABDY/wMAAgADAAAAAADY/wQAAgADAAEAAADb/wMAAgADAAAAAADb/wQAAgADAAEAAADY/wEAAgADAAAAAADY/wIAAgADAAEAAADe/wMAAgADAAAAABDe/wQAAgADAAEAABDg/wIAAgADAAAAABDg/wMAAgADAAEAABDj/wIAAgABAAMAABDu//n/AgABAAIAAADu//r/AgACAAUAAADu//v/AgACAAYAAADu//z/AgACAAcAAADu//3/AgACAAgAAADv//n/AgABAAIAAADv//r/AgADAAUAAADv//v/AgADAAYAAADv//z/AgADAAcAAADv//3/AgADAAgAAADw//n/AgACAAIAAADw//r/AgACAAMAAADw//v/AgACAAMAAADw//z/AgACAAMAAADw//3/AgACAAQAAADs//n/AgAAAAIAAADs//r/AgAAAAMAAADs//v/AgAAAAMAAADs//z/AgAAAAMAAADs//3/AgAAAAQAAADt//n/AgABAAIAAADt//r/AgABAAUAAADt//v/AgABAAYAAADt//z/AgABAAcAAADt//3/AgABAAgAAADl//3/AgAEAAIAAADn//3/AgAEAAIAAADo//7/AgAEAAEAAAA=")
+tile_map_data = PackedByteArray("AADl//v/AgAEAAAAAADo//v/AgAAAAAAAADj//r/AgAAAAAAAAD2//n/AgAAAAIAAAD2//3/AgAAAAQAAAD3//n/AgABAAIAAAD3//3/AgABAAQAAAD4//n/AgABAAIAAAD4//3/AgABAAQAAAD5//n/AgABAAIAAAD6//n/AgABAAIAAAD7//n/AgABAAIAAAD8//n/AgABAAIAAAD9//n/AgABAAIAAAD+//n/AgABAAIAAAD+//3/AgABAAQAAAD///n/AgABAAIAAAD///3/AgABAAQAAAAAAPn/AgABAAIAAAAAAP3/AgABAAQAAAD2//r/AgAAAAMAAAD2//v/AgAAAAMAAAD2//z/AgAAAAMAAAD5//3/AgABAAQAAAABAPn/AgABAAIAAAABAP3/AgABAAQAAAACAPn/AgACAAIAAAACAPr/AgACAAMAAAACAPv/AgACAAMAAAACAPz/AgACAAMAAAACAP3/AgACAAQAAADo/wIAAgABAAIAAADp/wIAAgACAAIAAADp/wMAAgACAAMAAADi/wIAAgAAAAIAAADi/wMAAgAAAAMAAADj/wQAAgADAAIAAADl/wMAAgADAAIAAADl/wQAAgABAAMAAADn/wMAAgADAAIAAADo/wMAAgABAAMAAADo/wQAAgABAAMAAADp/wQAAgACAAMAAADp/wUAAgACAAQAAADx/wEAAgADAAAAAADt/wIAAgABAAAAAADt/wMAAgABAAEAAADu/wIAAgAAAAAAAADv/wIAAgADAAAAAADv/wMAAgADAAEAAADx/wIAAgADAAEAAADx/wMAAgAEAAAAAADy/wIAAgAEAAAAAADz/wMAAgABAAAAAADz/wQAAgABAAEAAAD5/wMAAgACAAEAAAD8/wEAAgADAAAAAAD8/wIAAgADAAEAAAD0/wMAAgABAAEAAAD2/wMAAgABAAEAABD4/wMAAgACAAAAAAD4/wQAAgACAAEAAAD7/wIAAgACAAAAAAD7/wMAAgACAAEAAAD9/wMAAgAEAAAAAAD//wMAAgAEAAAAAAD5/wIAAgACAAAAAAD2/wIAAgABAAAAABD0/wIAAgACAAAAAADw/wMAAgABAAAAABDw/wQAAgABAAEAABDs/wEAAgABAAAAABDs/wIAAgABAAEAABDi/wQAAgAAAAMAAADi/wUAAgAAAAQAAADo/wUAAgABAAQAAADm/wUAAgABAAQAAADl/wUAAgABAAQAAADk/wUAAgABAAQAAADj/wUAAgABAAQAAADn/wUAAgABAAQAAADc/wEAAgABAAAAAADc/wIAAgABAAEAAADa//7/AgABAAAAAADa////AgABAAEAAADY//7/AgABAAAAABDY////AgABAAEAABDc////AgADAAEAABDc//7/AgADAAAAAADb//v/AgACAAAAAADa//z/AgABAAEAAADa//v/AgABAAAAAADb//z/AgACAAEAAADZ/wAAAgABAAAAAADZ/wEAAgABAAEAAADb////AgADAAAAAADb/wAAAgADAAEAAADZ/wMAAgADAAAAABDZ/wQAAgADAAEAABDY/wMAAgADAAAAAADY/wQAAgADAAEAAADb/wMAAgADAAAAAADb/wQAAgADAAEAAADY/wEAAgADAAAAAADY/wIAAgADAAEAAADe/wMAAgADAAAAABDe/wQAAgADAAEAABDg/wIAAgADAAAAABDg/wMAAgADAAEAABDj/wIAAgABAAMAABDu//n/AgABAAIAAADu//r/AgACAAUAAADu//v/AgACAAYAAADu//z/AgACAAcAAADu//3/AgACAAgAAADv//n/AgABAAIAAADv//r/AgADAAUAAADv//v/AgADAAYAAADv//z/AgADAAcAAADv//3/AgADAAgAAADw//n/AgACAAIAAADw//r/AgACAAMAAADw//v/AgACAAMAAADw//z/AgACAAMAAADw//3/AgACAAQAAADs//n/AgAAAAIAAADs//r/AgAAAAMAAADs//v/AgAAAAMAAADs//z/AgAAAAMAAADs//3/AgAAAAQAAADt//n/AgABAAIAAADt//r/AgABAAUAAADt//v/AgABAAYAAADt//z/AgABAAcAAADt//3/AgABAAgAAADl//3/AgAEAAIAAADn//3/AgAEAAIAAADo//7/AgAEAAEAAAD///7/AgAEAAEAAAA=")
 
 [node name="Props3" parent="." instance=ExtResource("12_8rfwi")]
 tile_map_data = PackedByteArray("AADp/wIAAgABAAAAABDp/wMAAgABAAEAABDu/wMAAgADAAEAAAD0/wQAAgABAAEAABDY//v/AgABAAAAABDY//z/AgABAAEAABDY//3/AgABAAMAAADY////AgACAAAAABDY/wAAAgACAAEAABDZ//z/AgABAAAAABDZ//3/AgABAAEAABDZ//7/AgADAAAAAADZ////AgADAAEAAADZ/wEAAgACAAAAAADZ/wIAAgACAAEAAADa/wEAAgABAAMAAADa/wIAAgABAAAAABDa/wMAAgABAAEAABDb//z/AgADAAAAAADb//3/AgADAAEAAADb/wAAAgABAAAAABDb/wEAAgABAAEAABDc//z/AgADAAAAAADc//3/AgADAAEAAADc/wMAAgACAAAAAADc/wQAAgACAAEAAADd//r/BAAAAAQAAADd//v/BAAAAAUAAADd/wMAAgABAAMAAADe//n/BAABAAMAAADe//r/BAABAAQAAADe//v/BAABAAUAAADe/wIAAgABAAMAABDf//n/BAACAAMAAADf//r/BAACAAQAAADf//v/BAACAAUAAADf/wEAAgABAAMAAADf/wQAAgABAAMAAADg//r/BAADAAQAAADg//v/BAADAAUAAADh/wQAAgABAAMAAADi/wMAAgABAAAAAADi/wQAAgABAAEAAADk/wMAAgABAAAAAADk/wQAAgABAAEAAADl/wQAAgABAAMAABDm/wMAAgADAAAAAADm/wQAAgADAAEAAADo/wQAAgAAAAAAAADp/wQAAgAEAAAAAADu/wIAAgADAAAAAAD0/wMAAgABAAAAABD1/wMAAgADAAAAAAD1/wQAAgADAAEAAAD4/wEAAgADAAAAAAD4/wIAAgADAAEAAAD7/wMAAgABAAAAABD7/wQAAgABAAEAABA=")
@@ -1648,6 +1455,7 @@ frame_progress = 0.662748
 [node name="Soul" type="AnimatedSprite2D" parent="Characters"]
 z_as_relative = false
 y_sort_enabled = true
+position = Vector2(409, -477)
 sprite_frames = SubResource("SpriteFrames_pujka")
 animation = &"walk"
 
@@ -1666,6 +1474,7 @@ position = Vector2(-120, -67)
 
 [node name="black" type="CanvasModulate" parent="."]
 visible = false
+z_index = 1
 position = Vector2(396, 46)
 color = Color(0, 0, 0, 1)
 

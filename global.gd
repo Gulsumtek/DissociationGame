@@ -8,3 +8,4 @@ var soul_fragments_dropped: int = 0
 var dropped_fragment_ids: Array = []
 # global.gd'ye ekle
 var came_from_soul: bool = false
+var blackboard_drawn: bool = false

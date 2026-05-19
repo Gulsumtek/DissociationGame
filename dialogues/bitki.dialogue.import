@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://ccnde7bw8luca"
+path="res://.godot/imported/bitki.dialogue-ecf30ca9fff57f765838d207773734fd.tres"
+
+[deps]
+
+source_file="res://dialogues/bitki.dialogue"
+dest_files=["res://.godot/imported/bitki.dialogue-ecf30ca9fff57f765838d207773734fd.tres"]
+
+[params]
+
+defaults=true

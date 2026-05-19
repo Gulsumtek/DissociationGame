@@ -1,9 +1,14 @@
 extends Node2D
 
 @onready var player = $Player # Haritadaki oyuncu düğümün
+@onready var blackboard_layer = $BlackboardLayer  # node adını değiştir
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	# Ruh modundaysa ve çizim yapılmamışsa gizle
+	#if not Global.blackboard_drawn:
+		#blackboard_layer.visible = false
+	#else:
+		#blackboard_layer.visible = true
 	# Eğer daha önce bir kapıdan geçildiyses
 	if Global.entrance_name != "":
 		# Haritadaki tüm çocuk düğümleri kontrol et

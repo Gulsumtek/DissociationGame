@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1kjun11rc2rm"]
+[gd_scene load_steps=0 format=3 uid="uid://c1kjun11rc2rm"]
 
 [ext_resource type="Script" path="res://move.gd" id="1_yw36x"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="2_bg80m"]
-[ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://Tile Maps/grass.tscn" id="3_btbuv"]
+[ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://tile maps/grass.tscn" id="3_btbuv"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="4_442kw"]
 [ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="5_k20pu"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="5_yhpa5"]

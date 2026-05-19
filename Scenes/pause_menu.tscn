@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7v3pkf05jp5r"]
 
-[ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_8ek13"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_v0vg1"]
 [ext_resource type="FontFile" uid="uid://dh0nes3lk61pi" path="res://interact/m5x7.ttf" id="2_vctlc"]
 
 [sub_resource type="Theme" id="Theme_6lbil"]
@@ -13,7 +13,7 @@ Button/fonts/font = ExtResource("2_vctlc")
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_8ek13")
+script = ExtResource("1_v0vg1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

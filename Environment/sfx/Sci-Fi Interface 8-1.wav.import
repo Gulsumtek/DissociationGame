@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cu1rd7hci2dlu"
-path="res://.godot/imported/Sci-Fi Interface 8-1.wav-194d932e57ebcdbe802c2b6f7ace618b.sample"
+path="res://.godot/imported/Sci-Fi Interface 8-1.wav-b8894431dda5d0e69ebe8f84d95f6846.sample"
 
 [deps]
 
-source_file="res://Environment/sfx/Sci-Fi Interface 8-1.wav"
-dest_files=["res://.godot/imported/Sci-Fi Interface 8-1.wav-194d932e57ebcdbe802c2b6f7ace618b.sample"]
+source_file="res://environment/sfx/Sci-Fi Interface 8-1.wav"
+dest_files=["res://.godot/imported/Sci-Fi Interface 8-1.wav-b8894431dda5d0e69ebe8f84d95f6846.sample"]
 
 [params]
 

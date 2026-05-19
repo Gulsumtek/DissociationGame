@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iwc36elb8jlt"
-path="res://.godot/imported/propsv2.png-68874d7d61cfd4bcdad1ec606f2cf20a.ctex"
+path="res://.godot/imported/propsv2.png-b5ab358e7cd4d5d84bf748ee58c91521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Maps/Sprites/propsv2.png"
-dest_files=["res://.godot/imported/propsv2.png-68874d7d61cfd4bcdad1ec606f2cf20a.ctex"]
+source_file="res://tile maps/Sprites/propsv2.png"
+dest_files=["res://.godot/imported/propsv2.png-b5ab358e7cd4d5d84bf748ee58c91521.ctex"]
 
 [params]
 
