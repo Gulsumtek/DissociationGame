@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd40ryj3gu08o"]
+[gd_scene load_steps=7 format=3 uid="uid://dd40ryj3gu08o"]
 
 [ext_resource type="AudioStream" uid="uid://bv4w0r7g0473u" path="res://Environment/Strange Worlds.ogg" id="1_5tdhw"]
+[ext_resource type="AudioStream" uid="uid://dwx0feu7m6yb1" path="res://Environment/Drifting Memories.ogg" id="1_jgusg"]
+[ext_resource type="AudioStream" uid="uid://ddi4dsvrxvntt" path="res://Environment/Evening Harmony.ogg" id="2_b7loq"]
+[ext_resource type="AudioStream" uid="uid://olx3tyt1wg1l" path="res://Environment/Polar Lights.ogg" id="3_4b7rx"]
+[ext_resource type="AudioStream" uid="uid://p284q4yemiyl" path="res://Environment/Sunlight Through Leaves.ogg" id="5_hd4dm"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_efh17"]
+streams_count = 5
+stream_0/stream = ExtResource("1_jgusg")
+stream_1/stream = ExtResource("2_b7loq")
+stream_2/stream = ExtResource("3_4b7rx")
+stream_3/stream = ExtResource("1_5tdhw")
+stream_4/stream = ExtResource("5_hd4dm")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_5tdhw")
+stream = SubResource("AudioStreamRandomizer_efh17")
+volume_db = -2.496
 autoplay = true
+stream_paused = true

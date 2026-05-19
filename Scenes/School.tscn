@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://b2blnta4shigh"]
+[gd_scene load_steps=31 format=4 uid="uid://b2blnta4shigh"]
 
 [ext_resource type="Script" path="res://scripts/school.gd" id="1_needf"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_yr3ky"]
@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="13_qeg1t"]
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="15_n5vrl"]
 [ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="16_1y8ly"]
+[ext_resource type="Resource" uid="uid://bt1nc16aqs6ql" path="res://dialogues/demo_end.dialogue" id="17_4nira"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="17_pxowm"]
+[ext_resource type="Resource" uid="uid://b1f12c1duer1u" path="res://dialogues/lise.dialogue" id="18_huutv"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="18_kv1w0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx20x"]
@@ -791,6 +793,7 @@ position = Vector2(-120, -67)
 position = Vector2(-254, -213)
 target_scene_path = "res://Scenes/schoolinside.tscn"
 door_id = "school_out"
+required_fragments = 1
 door_dialogue = ExtResource("16_1y8ly")
 
 [node name="school_in" type="Marker2D" parent="."]
@@ -802,15 +805,16 @@ position = Vector2(65, -625)
 collision_layer = 16
 hedef_harita_yolu = "res://Scenes/town.tscn"
 door_id = "town_down"
-required_fragments = -23
+required_fragments = 8
 door_dialogue = ExtResource("16_1y8ly")
+demo = ExtResource("17_4nira")
 
 [node name="Area2D2" parent="." instance=ExtResource("15_n5vrl")]
 position = Vector2(-2114, -250)
 collision_layer = 16
 hedef_harita_yolu = "res://Scenes/park.tscn"
 door_id = "park_side"
-required_fragments = 34
+required_fragments = 8
 door_dialogue = ExtResource("16_1y8ly")
 
 [node name="school_side" type="Marker2D" parent="."]
@@ -824,6 +828,7 @@ gizmo_extents = 69.6
 [node name="StaticBody2D" parent="." instance=ExtResource("18_kv1w0")]
 position = Vector2(-323, -214)
 inspect_text = "start"
+inspect_dialogue = ExtResource("18_huutv")
 
 [node name="BodyLayer" type="Node2D" parent="."]
 
@@ -832,3 +837,21 @@ position = Vector2(-12, -91)
 fragment_id = "1"
 
 [node name="SoulLayer" type="Node2D" parent="."]
+
+[node name="CityLayer" type="Node2D" parent="."]
+
+[node name="SoulFragment" parent="CityLayer" instance=ExtResource("17_pxowm")]
+position = Vector2(250, -100)
+fragment_id = "11"
+
+[node name="SoulFragment2" parent="CityLayer" instance=ExtResource("17_pxowm")]
+position = Vector2(332, -486)
+fragment_id = "22"
+
+[node name="SoulFragment3" parent="CityLayer" instance=ExtResource("17_pxowm")]
+position = Vector2(13, -562)
+fragment_id = "33"
+
+[node name="SoulFragment4" parent="CityLayer" instance=ExtResource("17_pxowm")]
+position = Vector2(219, -444)
+fragment_id = "44"

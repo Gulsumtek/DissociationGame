@@ -5,8 +5,11 @@ extends Node2D
 @onready var body = $Characters/Body
 
 var dialogue_shown = false
+@onready var bus_sound = $AudioStreamPlayer
 
-func _ready(): 
+func _ready():
+	bus_sound.play()
+	animation_player.play("drive")
 	print("Body visible: ", body.visible)
 	print("Body pozisyon: ", body.position)
 	print("Body modulate: ", body.modulate)
@@ -21,18 +24,24 @@ func _on_animation_finished(anim_name):
 			DialogueManager.show_dialogue_balloon(
 				preload("res://dialogues/bus_cutscene.dialogue"), "stop1"
 			)
+			bus_sound.play()
 		"drive":
+			bus_sound.play()
 			animation_player.play("soul_exit")
 		"soul_exit":
+			bus_sound.play()
 			DialogueManager.show_dialogue_balloon(
 				preload("res://dialogues/bus_cutscene.dialogue"), "stop2"
 			)
+			bus_sound.play()
 		"drive_2":
 			# 2. durak diyaloğu
 			animation_player.play("body_exit")
 		"body_exit":
 			animation_player.play("bus_last")
+			bus_sound.play()
 		"bus_last":
+			bus_sound.play()
 			# Cutscene bitti
 			TransitionScreen.transition_to("res://scenes/School.tscn")
 

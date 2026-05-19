@@ -793,8 +793,9 @@ position = Vector2(231, -126)
 [node name="Door" parent="BodyLayer" instance=ExtResource("3_g4cls")]
 target_scene_path = "res://Scenes/School.tscn"
 door_id = "school_in"
-required_fragments = 3
+required_fragments = 4
 door_dialogue = ExtResource("4_bvs1d")
+switches_to_soul = true
 
 [node name="SoulLayer" type="Node2D" parent="."]
 position = Vector2(318, 312)
@@ -805,6 +806,7 @@ target_scene_path = "res://Scenes/School.tscn"
 door_id = "school_in"
 required_drops = 3
 door_dialogue = ExtResource("5_3f6v6")
+switches_to_body = false
 
 [node name="InteractionArea" parent="SoulLayer/Door" index="0"]
 collision_layer = 4

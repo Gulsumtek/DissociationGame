@@ -1,18 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqkho35cn3sfq"]
+[gd_scene load_steps=7 format=3 uid="uid://bqkho35cn3sfq"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jwck5"]
+[ext_resource type="FontFile" uid="uid://dh0nes3lk61pi" path="res://interact/m5x7.ttf" id="2_gjnx2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oc4jq"]
+bg_color = Color(0.391844, 0.669225, 0.524991, 1)
+
+[sub_resource type="Theme" id="Theme_3sxjm"]
+default_font_size = 25
+Button/colors/font_color = Color(0.815686, 0.839216, 0.807843, 1)
+Button/fonts/font = ExtResource("2_gjnx2")
+Button/styles/normal = SubResource("StyleBoxFlat_oc4jq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7b2g4"]
+bg_color = Color(0.27997, 0.471983, 0.373736, 1)
+
+[sub_resource type="Theme" id="Theme_l1icc"]
+default_font_size = 25
+Button/fonts/font = ExtResource("2_gjnx2")
+Button/styles/normal = SubResource("StyleBoxFlat_7b2g4")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_jwck5")
 
-[node name="start" type="Button" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 726.0
+offset_top = -1.0
+offset_right = 775.0
+offset_bottom = 15.0
+scale = Vector2(-14.7059, 23.9839)
+color = Color(0.793043, 0.862101, 0.840784, 1)
+
+[node name="start3" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 text = "BASLA
 "
 
-[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[node name="start" type="Button" parent="."]
+unique_name_in_owner = true
+z_index = 5
+offset_left = 235.0
+offset_top = 147.0
+offset_right = 483.0
+offset_bottom = 178.0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_3sxjm")
+text = "BAŞLA"
+
+[node name="end" type="Button" parent="."]
+unique_name_in_owner = true
+z_index = 5
+offset_left = 235.0
+offset_top = 182.0
+offset_right = 483.0
+offset_bottom = 213.0
+theme = SubResource("Theme_l1icc")
+text = "OYUNDAN ÇIK"
+
+[connection signal="pressed" from="start3" to="." method="_on_start_pressed"]

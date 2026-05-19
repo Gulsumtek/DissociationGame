@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://csvkhb5f7lgre"]
+[gd_scene load_steps=11 format=3 uid="uid://csvkhb5f7lgre"]
 
 [ext_resource type="Script" path="res://scripts/soul_fragment.gd" id="1_hixlh"]
 [ext_resource type="Texture2D" uid="uid://ds48hjrt6scc0" path="res://sprites/soulflame.png" id="1_ooqn5"]
 [ext_resource type="Texture2D" uid="uid://c03d8fmx3ojr7" path="res://sprites/soulflame2.png" id="3_12vu5"]
+[ext_resource type="AudioStream" uid="uid://83hk6bhgesgi" path="res://Environment/sfx/Fire Burning Loop 2.wav" id="4_di6pv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vicxp"]
 atlas = ExtResource("1_ooqn5")
@@ -45,6 +46,7 @@ color = Color(1, 1, 1, 0.619608)
 alpha_curve = SubResource("CurveTexture_4h6yx")
 
 [node name="SoulFragment" type="Area2D"]
+y_sort_enabled = true
 script = ExtResource("1_hixlh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -56,8 +58,15 @@ shape = SubResource("CircleShape2D_cdkm6")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 z_index = 5
-emitting = false
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_m38ad")
 texture = ExtResource("3_12vu5")
 lifetime = 0.8
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_di6pv")
+volume_db = -6.656
+autoplay = true
+max_distance = 150.0
+attenuation = 0.659754
+max_polyphony = 2

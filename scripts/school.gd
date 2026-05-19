@@ -1,20 +1,35 @@
 extends Node2D
-@onready var player = $Player # Haritadaki oyuncu düğümün
-# Called when the node enters the scene tree for the first time.
+
+@onready var player = $Player
+@onready var city_layer = $CityLayer  # Direkt onready ile al
+
+var dialogue_played = false
+
 func _ready():
-	var player = get_tree().get_first_node_in_group("Player")
-	if player:
-		await get_tree().process_frame
-		player.start_dialogue(
-			preload("res://dialogues/school_dialogue.dialogue"), "intro"
-			)
-	# Eğer daha önce bir kapıdan geçildiyse
+	city_layer.visible = false
+	
 	if Global.entrance_name != "":
-		# Haritadaki tüm çocuk düğümleri kontrol et
 		var spawn_point = find_child(Global.entrance_name)
-		
-		# Eğer o isimde bir Marker2D bulduysa, oyuncuyu oraya taşı
 		if spawn_point != null:
 			player.global_position = spawn_point.global_position
+	
+	await TransitionScreen.fade_in()
+	
+	if Global.came_from_soul:
+		Global.came_from_soul = false
+		city_layer.visible = true
+		await get_tree().create_timer(0.3).timeout
+		player.start_dialogue(
+			preload("res://dialogues/school_dialogue.dialogue"), "after_soul"
+		)
+		return  # intro diyaloğu çıkmasın
+	
+	if not dialogue_played:
+		dialogue_played = true
+		player.start_dialogue(
+			preload("res://dialogues/school_dialogue.dialogue"), "intro"
+		)
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:pass

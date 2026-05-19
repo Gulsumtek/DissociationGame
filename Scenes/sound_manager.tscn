@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd2dvs4h2nsm5"]
+
+[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="1_lsecw"]
+[ext_resource type="AudioStream" uid="uid://dckk7rub28cxr" path="res://Environment/sfx/Fantasy_UI (38).wav" id="2_tuqvs"]
+[ext_resource type="AudioStream" uid="uid://okk2ienfr682" path="res://Environment/sfx/Fantasy_UI (47).wav" id="3_ab7r6"]
+[ext_resource type="AudioStream" uid="uid://dii0msj20uqbe" path="res://Environment/sfx/Fantasy_UI (53).wav" id="4_k6ocj"]
+[ext_resource type="AudioStream" uid="uid://b2i0ipua7b6m" path="res://Environment/sfx/Fantasy_UI (36).wav" id="5_4ukhi"]
+[ext_resource type="AudioStream" uid="uid://c56xvlqfr27ka" path="res://Environment/sfx/Fantasy_UI (34).wav" id="6_uy4ku"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cl530"]
+streams_count = 3
+stream_0/stream = ExtResource("2_tuqvs")
+stream_0/weight = 30.0
+stream_1/stream = ExtResource("3_ab7r6")
+stream_2/stream = ExtResource("4_k6ocj")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1ya2m"]
+streams_count = 2
+stream_0/stream = ExtResource("5_4ukhi")
+stream_1/stream = ExtResource("6_uy4ku")
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_lsecw")
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_cl530")
+volume_db = -2.0
+max_polyphony = 2
+
+[node name="DropSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_1ya2m")
+volume_db = -2.0
+max_polyphony = 2

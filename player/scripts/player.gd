@@ -49,6 +49,7 @@ func toggle_soul_mode():
 func drop_soul_fragment():
 	var fragment_scene = load("res://Scenes/soul_fragment.tscn")
 	var fragment = fragment_scene.instantiate()
+	SoundManager.play_drop()
 	fragment.global_position = global_position
 	fragment.fragment_id = "dropped_" + str(Time.get_ticks_msec())
 	get_tree().current_scene.call_deferred("add_child", fragment)
@@ -64,7 +65,8 @@ func _input(event):
 
 	# RUH MODUNA GEÇİŞ
 	if event is InputEventKey and event.pressed and event.keycode == KEY_Q:
-		toggle_soul_mode() 
+		pass
+		#toggle_soul_mode() 
 
 	# 2. ETKİLEŞİM BAŞLATMA
 	if event.is_action_pressed("interact"):

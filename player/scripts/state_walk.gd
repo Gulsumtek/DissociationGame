@@ -1,11 +1,23 @@
 class_name StateWalk extends State
-
+var step_timer: float = 0.0
+@export var step_interval: float = 0.4  # Her adım arası saniye
 # Inspector'dan "Idle" düğümünü buraya sürükleyip bırakacağız
 @export var idle_state: State
+@onready var walk_sound = $"../../AudioStreamPlayer"
+
+func Enter() -> void:
+	step_timer = 0.0
 
 func Physics(_delta: float) -> State:
 	if player.is_frozen:
+		walk_sound.stop()
 		return idle_state
+	
+	step_timer -= _delta
+	if step_timer <= 0.0:
+		if player.is_soul_mode==false:
+			walk_sound.play()
+		step_timer = step_interval
 	var direction: Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -47,3 +59,7 @@ func Physics(_delta: float) -> State:
 			
 	# State değişmeyeceği için null döndürüyoruz
 	return null
+	
+func Exit() -> void:
+	walk_sound.stop()
+	step_timer = 0.0

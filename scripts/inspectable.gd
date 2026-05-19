@@ -37,4 +37,5 @@ func trigger_inspect():
 
 func _on_dialogue_finished():
 	Global.soul_fragments_collected += fragment_reward
+	SoundManager.play_collect()
 	print("Fragment verildi! Toplam: ", Global.soul_fragments_collected)

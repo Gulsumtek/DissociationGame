@@ -3,7 +3,9 @@ extends CanvasLayer
 
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
-
+@onready var dialogue_sound = $DialogueSound
+var sound_timer: float = 0.0
+var sound_interval: float = 0.01  # Her kaç saniyede bir ses çalsın
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
 
@@ -89,6 +91,7 @@ var dialogue_line: DialogueLine:
 
 
 func _ready() -> void:
+	dialogue_label.spoke.connect(_on_dialogue_spoke)
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -98,6 +101,14 @@ func _ready() -> void:
 		if responses_menu.get("next_action") != null and responses_menu.next_action.is_empty():
 			responses_menu.next_action = next_action
 
+func _on_dialogue_spoke(letter: String, index: int, speed: float) -> void:
+	# Boşlukta ses çıkmasın
+	if letter == " ":
+		return
+	sound_timer -= get_process_delta_time()
+	if sound_timer <= 0.0:
+		dialogue_sound.play()
+		sound_timer = sound_interval
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing

@@ -4,6 +4,7 @@ extends Area2D
 @export var door_id : String # Bu kapının benzersiz adı
 @export var required_fragments: int # Bu kapı için gereken parça sayısı
 @export var door_dialogue: DialogueResource
+@export var demo: DialogueResource
 #@onready var audio_player = $AudioStreamPlayer2D
 
 
@@ -12,11 +13,12 @@ func _on_body_entered(body):
 			print("Hata: Hedef sahne yolu girilmemiş!")
 	Global.entrance_name = door_id 
 	if Global.soul_fragments_collected >= required_fragments:
-		TransitionScreen.transition_to(hedef_harita_yolu) 
+		var player = get_tree().get_first_node_in_group("Player")
+		player.start_dialogue(demo, "start") 
 	else:# Oyuncuya henüz hazır olmadığını söyleyen bir diyalog çıkar
 		#DialogueBox.show_text("Henüz tüm parçalarımı bulamadım. Kendimi çok ağır hissediyorum...")
 		var player = get_tree().get_first_node_in_group("Player")
 		if player and door_dialogue:
-			player.start_dialogue(door_dialogue, "fragments")
+			player.start_dialogue(door_dialogue, "start")
 		else:
 			print("Diyalog dosyası veya oyuncu bulunamadı!")

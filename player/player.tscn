@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://bu0dsbrijb03d"]
+[gd_scene load_steps=114 format=3 uid="uid://bu0dsbrijb03d"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_3tk1n"]
 [ext_resource type="Texture2D" uid="uid://dsm5uvrwtrk56" path="res://player/sprites/topdownidle.png" id="2_8gmya"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://b4uimx1kv4dti" path="res://player/sprites/ghostrunningseffaf.png" id="11_7rf74"]
 [ext_resource type="Texture2D" uid="uid://pwfdxvwkah7k" path="res://player/sprites/ghostrunningsideseffaf.png" id="12_g8p8u"]
 [ext_resource type="Texture2D" uid="uid://b2um7827nqdji" path="res://player/sprites/ghostrunningbackseffaf.png" id="13_42qny"]
+[ext_resource type="AudioStream" uid="uid://c3tlx3j78pmvc" path="res://Environment/sfx/footstep_concrete_000.ogg" id="17_3n7xh"]
+[ext_resource type="AudioStream" uid="uid://cxg77yqtxfsnl" path="res://Environment/sfx/footstep_concrete_003.ogg" id="19_6i5i3"]
+[ext_resource type="AudioStream" uid="uid://dugvombxemm4k" path="res://Environment/sfx/footstep_concrete_004.ogg" id="20_s2m3r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x11vo"]
 
@@ -714,6 +717,12 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ting"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fn7jm"]
+streams_count = 3
+stream_0/stream = ExtResource("17_3n7xh")
+stream_1/stream = ExtResource("19_6i5i3")
+stream_2/stream = ExtResource("20_s2m3r")
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 y_sort_enabled = true
 position = Vector2(237, 122)
@@ -750,3 +759,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionDetector" groups=["Player"]]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_3ting")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_fn7jm")
+autoplay = true
+playback_type = 1

@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7v3pkf05jp5r"]
+[gd_scene load_steps=5 format=3 uid="uid://c7v3pkf05jp5r"]
 
 [ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_8ek13"]
+[ext_resource type="FontFile" uid="uid://dh0nes3lk61pi" path="res://interact/m5x7.ttf" id="2_vctlc"]
+
+[sub_resource type="Theme" id="Theme_6lbil"]
+default_font_size = 21
+Button/fonts/font = ExtResource("2_vctlc")
+
+[sub_resource type="Theme" id="Theme_5p1xs"]
+default_font_size = 21
+Button/fonts/font = ExtResource("2_vctlc")
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -16,13 +25,15 @@ color = Color(0, 0, 0, 0.572549)
 
 [node name="ResumeButton" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 448.0
-offset_top = 304.0
-offset_right = 530.0
-offset_bottom = 335.0
+offset_left = 384.0
+offset_top = 312.0
+offset_right = 466.0
+offset_bottom = 343.0
+theme = SubResource("Theme_6lbil")
 text = "Devam Et"
 
 [node name="MusicSlider" type="HSlider" parent="."]
+visible = false
 offset_left = 280.0
 offset_top = 208.0
 offset_right = 440.0
@@ -31,13 +42,15 @@ value = 100.0
 tick_count = 10
 
 [node name="MenuButton" type="Button" parent="."]
-offset_left = 168.0
-offset_top = 304.0
-offset_right = 255.0
-offset_bottom = 335.0
+offset_left = 248.0
+offset_top = 312.0
+offset_right = 335.0
+offset_bottom = 343.0
+theme = SubResource("Theme_5p1xs")
 text = "Ana Menü"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://olx3tyt1wg1l"
+path="res://.godot/imported/Polar Lights.ogg-af6445b75209729cf42ec092b874a24a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Environment/Polar Lights.ogg"
+dest_files=["res://.godot/imported/Polar Lights.ogg-af6445b75209729cf42ec092b874a24a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

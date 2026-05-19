@@ -4,7 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Eğer daha önce bir kapıdan geçildiyse
+	# Eğer daha önce bir kapıdan geçildiyses
 	if Global.entrance_name != "":
 		# Haritadaki tüm çocuk düğümleri kontrol et
 		var spawn_point = find_child(Global.entrance_name)
