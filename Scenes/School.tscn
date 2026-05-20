@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://b2blnta4shigh"]
+[gd_scene load_steps=34 format=4 uid="uid://b2blnta4shigh"]
 
 [ext_resource type="Script" path="res://scripts/school.gd" id="1_needf"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_yr3ky"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="18_kv1w0"]
 [ext_resource type="Resource" uid="uid://cahjajhsktse7" path="res://dialogues/Ev.dialogue" id="21_wtq5j"]
 [ext_resource type="Resource" uid="uid://dbtet440kxx4o" path="res://dialogues/car.dialogue" id="22_gl54l"]
+[ext_resource type="PackedScene" uid="uid://dadg158yvuufd" path="res://Scenes/mobile_controls.tscn" id="23_st224"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vx20x"]
 texture = ExtResource("4_3x6hx")
@@ -878,6 +879,8 @@ fragment_reward = 0
 
 [node name="InteractionArea" parent="StaticBody2D6" index="0"]
 collision_layer = 8
+
+[node name="MobileControls" parent="." instance=ExtResource("23_st224")]
 
 [editable path="StaticBody2D5"]
 [editable path="StaticBody2D6"]

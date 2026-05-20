@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7v3pkf05jp5r"]
+[gd_scene load_steps=6 format=3 uid="uid://c7v3pkf05jp5r"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_v0vg1"]
 [ext_resource type="FontFile" uid="uid://dh0nes3lk61pi" path="res://interact/m5x7.ttf" id="2_vctlc"]
@@ -10,6 +10,10 @@ Button/fonts/font = ExtResource("2_vctlc")
 [sub_resource type="Theme" id="Theme_5p1xs"]
 default_font_size = 21
 Button/fonts/font = ExtResource("2_vctlc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hutc6"]
+font = ExtResource("2_vctlc")
+font_size = 32
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -25,9 +29,9 @@ color = Color(0, 0, 0, 0.572549)
 
 [node name="ResumeButton" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 384.0
+offset_left = 392.0
 offset_top = 312.0
-offset_right = 466.0
+offset_right = 474.0
 offset_bottom = 343.0
 theme = SubResource("Theme_6lbil")
 text = "Devam Et"
@@ -42,9 +46,9 @@ value = 100.0
 tick_count = 10
 
 [node name="MenuButton" type="Button" parent="."]
-offset_left = 248.0
+offset_left = 208.0
 offset_top = 312.0
-offset_right = 335.0
+offset_right = 295.0
 offset_bottom = 343.0
 theme = SubResource("Theme_5p1xs")
 text = "Ana Menü"
@@ -64,5 +68,16 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Ses seviyesi
 "
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 160.0
+offset_top = 136.0
+offset_right = 512.0
+offset_bottom = 211.0
+text = "-Kontroller-
+Hareket: Yön tuşları, WASD
+Etkileşim: E"
+label_settings = SubResource("LabelSettings_hutc6")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="ResumeButton" to="." method="_on_devam_et_pressed"]
