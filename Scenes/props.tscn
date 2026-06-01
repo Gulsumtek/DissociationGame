@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://xo04vcvmk4gq" path="res://sprites/school.png" id="1_jtof0"]
 [ext_resource type="Texture2D" uid="uid://4o8lg3877akf" path="res://tile maps/Sprites/propsv3.png" id="3_vtd5a"]
 [ext_resource type="Texture2D" uid="uid://bpmsib2sd56da" path="res://tile maps/Sprites/roadandtunnel-export.png" id="4_8tj23"]
-[ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="5_1c3fh"]
+[ext_resource type="Texture2D" uid="uid://4185tdkfxqtp" path="res://tile maps/Sprites/rendered.png" id="6_j20bl"]
 [ext_resource type="Texture2D" uid="uid://bb2oitlp7ir3c" path="res://tile maps/Sprites/sahill.png" id="6_w6v2p"]
 [ext_resource type="Texture2D" uid="uid://djpa56vbux6uo" path="res://sprites/school2.png" id="8_2advm"]
 [ext_resource type="Texture2D" uid="uid://y008o5amq2k6" path="res://sprites/shed.png" id="9_uu623"]
@@ -435,6 +435,7 @@ texture_region_size = Vector2i(64, 64)
 8:9/0/y_sort_origin = -25
 8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 7, -32, 7, 5, -32, 6)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 0, -32, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rwcc1"]
 texture = ExtResource("3_vtd5a")
@@ -552,7 +553,7 @@ texture_region_size = Vector2i(64, 64)
 3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tia6q"]
-texture = ExtResource("5_1c3fh")
+texture = ExtResource("6_j20bl")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -746,9 +747,10 @@ texture_region_size = Vector2i(64, 64)
 6:0/0/y_sort_origin = 10
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, 32, 26, 32, 26, 4, -26, 4)
 7:0/0 = 0
-7:0/0/y_sort_origin = 20
+7:0/0/y_sort_origin = 28
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(18, 25, -18, 25, -18, 32, 18, 32)
 8:0/0 = 0
+8:0/0/y_sort_origin = 10
 8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 2, -32, 2, -32, 17, 32, 16)
 9:0/0 = 0
 9:0/0/y_sort_origin = 20

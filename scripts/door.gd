@@ -3,7 +3,9 @@ extends StaticBody2D
 @export var target_scene_path: String
 @export var door_id: String
 @export var required_fragments: int
+@export var max_fragments: int = 100
 @export var door_dialogue: DialogueResource
+@export var end_dialogue: DialogueResource
 @export var switches_to_soul: bool = false  # Bunu işaretlersen mod geçişi yapar, sahne geçişi yapmaz
 @onready var sound = $AudioStreamPlayer
 @onready var sound2 = $sound2
@@ -18,6 +20,9 @@ func _on_door_interacted():
 	if not player:
 		return
 	Global.entrance_name = door_id
+	if Global.soul_fragments_collected >= max_fragments:
+		player.start_dialogue(end_dialogue, "start")
+		return
 	if Global.soul_fragments_collected >= required_fragments:
 		if switches_to_soul:
 			_switch_to_soul_mode(player)

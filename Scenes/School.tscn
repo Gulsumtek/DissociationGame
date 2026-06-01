@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b2blnta4shigh"]
+[gd_scene load_steps=36 format=4 uid="uid://b2blnta4shigh"]
 
 [ext_resource type="Script" path="res://scripts/school.gd" id="1_needf"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_yr3ky"]
@@ -16,10 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="13_qeg1t"]
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="15_n5vrl"]
 [ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="16_1y8ly"]
+[ext_resource type="Resource" uid="uid://b61bac3imrlfo" path="res://dialogues/end_dialogue.dialogue" id="16_7l3or"]
 [ext_resource type="Resource" uid="uid://bt1nc16aqs6ql" path="res://dialogues/demo_end.dialogue" id="17_4nira"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="17_pxowm"]
 [ext_resource type="Resource" uid="uid://b1f12c1duer1u" path="res://dialogues/lise.dialogue" id="18_huutv"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="18_kv1w0"]
+[ext_resource type="Script" path="res://scripts/soul_appear.gd" id="21_a4fis"]
 [ext_resource type="Resource" uid="uid://cahjajhsktse7" path="res://dialogues/Ev.dialogue" id="21_wtq5j"]
 [ext_resource type="Resource" uid="uid://dbtet440kxx4o" path="res://dialogues/car.dialogue" id="22_gl54l"]
 [ext_resource type="PackedScene" uid="uid://dadg158yvuufd" path="res://Scenes/mobile_controls.tscn" id="23_st224"]
@@ -761,7 +763,7 @@ position = Vector2(396, 46)
 color = Color(0.62803, 0.641019, 0.92015, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_yr3ky")]
-position = Vector2(-1537, -70)
+position = Vector2(116, -85)
 
 [node name="Layer 0" type="TileMapLayer" parent="."]
 z_index = -1
@@ -797,7 +799,9 @@ position = Vector2(-254, -213)
 target_scene_path = "res://Scenes/schoolinside.tscn"
 door_id = "school_out"
 required_fragments = 1
+max_fragments = 2
 door_dialogue = ExtResource("16_1y8ly")
+end_dialogue = ExtResource("16_7l3or")
 
 [node name="school_in" type="Marker2D" parent="."]
 position = Vector2(-254, -198)
@@ -808,7 +812,6 @@ position = Vector2(65, -625)
 collision_layer = 16
 hedef_harita_yolu = "res://Scenes/town.tscn"
 door_id = "town_down"
-required_fragments = 9
 door_dialogue = ExtResource("16_1y8ly")
 demo = ExtResource("17_4nira")
 
@@ -846,19 +849,19 @@ fragment_id = "1"
 
 [node name="SoulFragment" parent="CityLayer" instance=ExtResource("17_pxowm")]
 position = Vector2(250, -100)
-fragment_id = "11"
+script = ExtResource("21_a4fis")
 
 [node name="SoulFragment2" parent="CityLayer" instance=ExtResource("17_pxowm")]
 position = Vector2(332, -486)
-fragment_id = "22"
+script = ExtResource("21_a4fis")
 
 [node name="SoulFragment3" parent="CityLayer" instance=ExtResource("17_pxowm")]
 position = Vector2(13, -562)
-fragment_id = "33"
+script = ExtResource("21_a4fis")
 
 [node name="SoulFragment4" parent="CityLayer" instance=ExtResource("17_pxowm")]
 position = Vector2(219, -444)
-fragment_id = "44"
+script = ExtResource("21_a4fis")
 
 [node name="StaticBody2D5" parent="." instance=ExtResource("18_kv1w0")]
 position = Vector2(-1124, -128)
@@ -881,6 +884,7 @@ fragment_reward = 0
 collision_layer = 8
 
 [node name="MobileControls" parent="." instance=ExtResource("23_st224")]
+visible = false
 
 [editable path="StaticBody2D5"]
 [editable path="StaticBody2D6"]
