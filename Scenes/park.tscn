@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=4 uid="uid://brifylr4espa"]
+[gd_scene load_steps=35 format=4 uid="uid://brifylr4espa"]
 
 [ext_resource type="Script" path="res://move.gd" id="1_njrt0"]
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="1_rwmcc"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=0 format=4 uid="uid://cb4yiokj0inci"]
+[gd_scene load_steps=25 format=4 uid="uid://cb4yiokj0inci"]
 
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="1_cxjgq"]
+[ext_resource type="Script" path="res://move.gd" id="1_xlyab"]
 [ext_resource type="Texture2D" uid="uid://bfrfic0gkkteb" path="res://tile maps/Sprites/mountainsandroads.jpeg" id="2_3qnba"]
 [ext_resource type="Texture2D" uid="uid://dw0p4gfxv54ju" path="res://tile maps/Sprites/mountainsandroads.png" id="3_lvekj"]
 [ext_resource type="Texture2D" uid="uid://d3cdk1nu6ievx" path="res://environment/sprites/houses.png" id="4_a64jw"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="10_ww7p5"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="11_v4fde"]
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="12_5tyw2"]
+[ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="13_rmc08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dbmx"]
 texture = ExtResource("1_cxjgq")
@@ -740,6 +742,7 @@ sources/8 = SubResource("TileSetAtlasSource_kawki")
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_xlyab")
 
 [node name="Layer 0" type="TileMapLayer" parent="."]
 z_index = -1
@@ -777,7 +780,16 @@ color = Color(0.641936, 0.65517, 0.923066, 1)
 position = Vector2(-1836, -373)
 gizmo_extents = 69.6
 
+[node name="shedout" type="Marker2D" parent="."]
+position = Vector2(-2381, -690)
+gizmo_extents = 69.6
+
 [node name="Area2D" parent="." instance=ExtResource("12_5tyw2")]
 position = Vector2(-1738, -324)
 hedef_harita_yolu = "res://Scenes/town.tscn"
 door_id = "town_side"
+
+[node name="Door" parent="." instance=ExtResource("13_rmc08")]
+position = Vector2(-2380, -713)
+target_scene_path = "res://Scenes/shed_inside.tscn"
+door_id = "shedin"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp0mbgyp3bwol"
-path="res://.godot/imported/school2.png-41d6ea66a079fe70b829fb63703be8f7.ctex"
+uid="uid://y008o5amq2k6"
+path="res://.godot/imported/shed.png-2fe9f03c8e3e211ae0302516baff5cdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/school2.png"
-dest_files=["res://.godot/imported/school2.png-41d6ea66a079fe70b829fb63703be8f7.ctex"]
+source_file="res://sprites/shed.png"
+dest_files=["res://.godot/imported/shed.png-2fe9f03c8e3e211ae0302516baff5cdf.ctex"]
 
 [params]
 

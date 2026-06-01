@@ -14,7 +14,8 @@ func _on_body_entered(body):
 	Global.entrance_name = door_id 
 	if Global.soul_fragments_collected >= required_fragments:
 		var player = get_tree().get_first_node_in_group("Player")
-		player.start_dialogue(demo, "start") 
+		TransitionScreen.transition_to(hedef_harita_yolu)
+		#player.start_dialogue(demo, "start") 
 	else:# Oyuncuya henüz hazır olmadığını söyleyen bir diyalog çıkar
 		#DialogueBox.show_text("Henüz tüm parçalarımı bulamadım. Kendimi çok ağır hissediyorum...")
 		var player = get_tree().get_first_node_in_group("Player")

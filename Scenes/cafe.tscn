@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=4 uid="uid://dsufuotqh8x2b"]
+
+[ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="1_bblaw"]
+[ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="2_ljh30"]
+[ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_xp072"]
+[ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="4_he66v"]
+
+[node name="Node2D" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(7, -114)
+
+[node name="Props" parent="." instance=ExtResource("1_bblaw")]
+tile_map_data = PackedByteArray("AAABAAEACAAHAAQAAAACAAIACAAHAAQAAAABAAIACAAHAAQAAAADAAIACAAHAAQAAAADAAEACAAHAAQAAAACAAEACAAHAAQAAAACAAAACAAHAAQAAAADAAAACAAHAAQAAAABAAAACAAHAAQAAAAEAAAACAAHAAQAAAAEAAEACAAHAAQAAAAEAAIACAAHAAQAAAAEAP//CAAHAAQAAAADAP//CAAHAAQAAAACAP//CAAHAAQAAAABAP//CAAHAAQAAAACAP7/CAAHAAQAAAADAP7/CAAHAAQAAAAEAP7/CAAHAAQAAAACAPz/CAACAAAAAAABAPz/CAACAAAAAAABAP3/CAACAAAAAAACAP3/CAACAAAAAAADAP3/CAACAAAAAAADAPz/CAACAAAAAAAEAPz/CAACAAAAAAAEAP3/CAACAAAAAAABAP7/CAAHAAQAAAAAAAIACAAHAAQAAAAAAAEACAAHAAQAAAAAAAAACAAHAAQAAAAAAP//CAAHAAQAAAAAAP7/CAAHAAQAAAAAAP3/CAACAAAAAAAAAPz/CAACAAAAAAAFAAEABwAIAAQAAAAFAAIABwAIAAMAAAAFAAAABwAJAAQAAAAFAP//BwAJAAQAAAAFAP7/BwAJAAQAAAAFAP3/BwAJAAQAAAAFAPz/BwAJAAQAAAD//wIABwAIAAMAABD//wEABwAIAAQAABD//wAABwAJAAQAABD/////BwAJAAQAABD///7/BwAJAAQAABD///3/BwAJAAQAABD///z/BwAJAAQAABAAAAMABwAIAAMAAFABAAMABwAJAAQAAEACAAMABwAJAAQAAEADAAMABwAJAAQAAEAEAAMABwAJAAQAAEAAAPv/BwAJAAQAAGABAPv/BwAJAAQAAGACAPv/BwAJAAQAAGADAPv/BwAJAAQAAGAEAPv/BwAJAAQAAGA=")
+
+[node name="Props3" parent="." instance=ExtResource("1_bblaw")]
+tile_map_data = PackedByteArray("AAAEAAAAAAAGAAQAAAADAP7/CAACAAMAAAADAAIACAADAAQAAAAEAAIACAAEAAQAAAAAAP//CAAAAAIAAAABAP//CAABAAIAAAACAP7/CAABAAMAAAADAP//CAACAAQAAAAEAP7/CAADAAMAAAAAAAIAAAAGAAQAABA=")
+
+[node name="Props2" parent="." instance=ExtResource("1_bblaw")]
+tile_map_data = PackedByteArray("AAAEAP3/CAAHAAEAAAABAP3/CAABAAAAAAABAP7/CAABAAEAAAABAP//CAAEAAQAAAAAAP3/CAAAAAAAAAAAAP7/CAAAAAEAAAAAAP//CAADAAQAAAADAAAACAACAAQAAAACAP//CAABAAMAAAADAP//CAACAAMAAAAEAP//CAADAAMAAAAAAAAACAABAAMAAAABAAAACAACAAMAAAABAAEACAACAAMAAAACAAAACAADAAMAAAAAAAEACAABAAMAAAAEAAAAAAAHAAIAABACAAEACAADAAMAAAABAAIAAAAHAAIAAAAAAAIAAAAFAAMAAAACAPz/CAADAAAAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_ljh30")]
+position = Vector2(275, 186)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.464648, 0.664337, 0.902874, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -1374.0
+offset_top = -399.0
+offset_right = 2314.0
+offset_bottom = 1488.0
+color = Color(0.0819708, 0.108631, 0.197821, 1)
+
+[node name="cafeout" type="Marker2D" parent="."]
+position = Vector2(278, 174)
+gizmo_extents = 69.6
+
+[node name="cafeoutt2" parent="." instance=ExtResource("3_xp072")]
+position = Vector2(275, 191)
+target_scene_path = "res://Scenes/town.tscn"
+door_id = "cafe"
+door_dialogue = ExtResource("4_he66v")
