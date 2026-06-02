@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="14_34agm"]
 [ext_resource type="Resource" uid="uid://dgmd64xdwg2ei" path="res://dialogues/trash.dialogue" id="14_qmuic"]
 [ext_resource type="Resource" uid="uid://d2jywexjq0mri" path="res://dialogues/tablo.dialogue" id="15_01g26"]
-[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="15_7kbtx"]
+[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://Scenes/object.tscn" id="15_7kbtx"]
 [ext_resource type="Resource" uid="uid://bbkkaj4tfdjv7" path="res://dialogues/notlar.dialogue" id="15_h5qma"]
 [ext_resource type="Resource" uid="uid://b6naqsknbb08l" path="res://dialogues/bitki_ruh.dialogue" id="16_mwafm"]
 [ext_resource type="Resource" uid="uid://ccnde7bw8luca" path="res://dialogues/bitki.dialogue" id="17_dux5l"]

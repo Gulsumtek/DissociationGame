@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ihcgw4m6b1jq"]
+[gd_scene load_steps=10 format=3 uid="uid://ihcgw4m6b1jq"]
 
 [ext_resource type="Script" path="res://scripts/street_lamp.gd" id="1_5xbst"]
 [ext_resource type="Texture2D" uid="uid://dw5kcp33fv21d" path="res://sprites/streetlamp1.png" id="1_dyatu"]
@@ -7,10 +7,6 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4j550"]
 atlas = ExtResource("1_dyatu")
-region = Rect2(0, 0, 32, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7jbke"]
-atlas = ExtResource("2_v7qiu")
 region = Rect2(0, 0, 32, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7xtgq"]
@@ -29,34 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_7xtgq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7xtgq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jbke")
 }],
 "loop": true,
 "name": &"flicker",
@@ -64,7 +33,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xtkrc"]
-radius = 13.0
+radius = 42.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vmv3k"]
 radius = 5.0
@@ -84,7 +53,7 @@ texture = ExtResource("2_um43l")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -48)
 sprite_frames = SubResource("SpriteFrames_ydft0")
-frame_progress = 0.965085
+animation = &"flicker"
 
 [node name="DetectionArea" type="Area2D" parent="."]
 

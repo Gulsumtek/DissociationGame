@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://d2ld51npwe75y"]
+[gd_scene load_steps=27 format=4 uid="uid://d2ld51npwe75y"]
 
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_32v61"]
 [ext_resource type="Script" path="res://move.gd" id="1_oablm"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="12_3sxku"]
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="13_rvvrp"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="15_j5efv"]
+[ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="16_uaqdi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fud0u"]
 texture = ExtResource("3_1yke7")
@@ -750,7 +751,7 @@ position = Vector2(396, 46)
 color = Color(0.627451, 0.639216, 0.921569, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_32v61")]
-position = Vector2(-558, -845)
+position = Vector2(320, 160)
 
 [node name="Layer 0" type="TileMapLayer" parent="."]
 z_index = -1
@@ -778,9 +779,11 @@ tile_map_data = PackedByteArray("AAD+//b/AQAAAAQAAAD+//f/AQAAAAUAAAD+//j/AQAAAAY
 
 [node name="StreetLamp" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(-598, -321)
+flicker = true
 
 [node name="StreetLamp2" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(-96, -316)
+flicker = true
 
 [node name="StreetLamp3" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(327, -439)
@@ -790,9 +793,11 @@ position = Vector2(329, -562)
 
 [node name="StreetLamp5" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(36, -316)
+flicker = true
 
 [node name="StreetLamp6" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(176, 79)
+flicker = true
 
 [node name="StreetLamp7" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(-512, 79)
@@ -802,12 +807,15 @@ position = Vector2(-1311, -61)
 
 [node name="StreetLamp9" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(-1311, -244)
+flicker = true
 
 [node name="StreetLamp10" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(-1311, -429)
+flicker = true
 
 [node name="StreetLamp11" parent="." instance=ExtResource("12_3sxku")]
 position = Vector2(-1314, -591)
+flicker = true
 
 [node name="Area2D" parent="." instance=ExtResource("13_rvvrp")]
 position = Vector2(321, 315)
@@ -842,3 +850,12 @@ gizmo_extents = 69.6
 position = Vector2(5, -382)
 target_scene_path = "res://Scenes/cafe.tscn"
 door_id = "cafeout"
+
+[node name="SoulFragment" parent="." instance=ExtResource("16_uaqdi")]
+position = Vector2(311, -66)
+
+[node name="SoulFragment2" parent="." instance=ExtResource("16_uaqdi")]
+position = Vector2(-335, -300)
+
+[node name="SoulFragment3" parent="." instance=ExtResource("16_uaqdi")]
+position = Vector2(-1365, -862)

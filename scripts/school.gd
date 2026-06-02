@@ -8,6 +8,10 @@ var dialogue_played = false
 func _ready():
 	city_layer.visible = false
 	
+	# came_from_soul'u HEMEN oku ve sıfırla
+	var from_soul = Global.came_from_soul
+	Global.came_from_soul = false  # Parçalar _ready()'de bunu false görsün
+	
 	if Global.entrance_name != "":
 		var spawn_point = find_child(Global.entrance_name)
 		if spawn_point != null:
@@ -15,14 +19,13 @@ func _ready():
 	
 	await TransitionScreen.fade_in()
 	
-	if Global.came_from_soul:
-		Global.came_from_soul = false
+	if from_soul:
 		city_layer.visible = true
 		await get_tree().create_timer(0.3).timeout
 		player.start_dialogue(
 			preload("res://dialogues/school_dialogue.dialogue"), "after_soul"
 		)
-		return  # intro diyaloğu çıkmasın
+		return
 	
 	if not dialogue_played:
 		dialogue_played = true

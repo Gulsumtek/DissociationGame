@@ -1,25 +1,47 @@
 extends Area2D
 
 @export_file("*.tscn") var hedef_harita_yolu: String
-@export var door_id : String # Bu kapının benzersiz adı
-@export var required_fragments: int # Bu kapı için gereken parça sayısı
+@export var door_id: String
+@export var required_fragments: int
 @export var door_dialogue: DialogueResource
-@export var demo: DialogueResource
-#@onready var audio_player = $AudioStreamPlayer2D
+@export var trigger_dialogue: DialogueResource
+@export var switches_to_soul: bool = false
 
+var already_triggered: bool = false
 
 func _on_body_entered(body):
-	if hedef_harita_yolu == "":
-			print("Hata: Hedef sahne yolu girilmemiş!")
-	Global.entrance_name = door_id 
+	if not body.is_in_group("Player"):
+		return
+	if already_triggered:
+		return
+	
+	Global.entrance_name = door_id
+	
 	if Global.soul_fragments_collected >= required_fragments:
-		var player = get_tree().get_first_node_in_group("Player")
-		TransitionScreen.transition_to(hedef_harita_yolu)
-		#player.start_dialogue(demo, "start") 
-	else:# Oyuncuya henüz hazır olmadığını söyleyen bir diyalog çıkar
-		#DialogueBox.show_text("Henüz tüm parçalarımı bulamadım. Kendimi çok ağır hissediyorum...")
-		var player = get_tree().get_first_node_in_group("Player")
-		if player and door_dialogue:
-			player.start_dialogue(door_dialogue, "start")
+		if switches_to_soul:
+			already_triggered = true
+			_switch_to_soul_mode(body)
+		elif hedef_harita_yolu != "":
+			TransitionScreen.transition_to(hedef_harita_yolu)
+		else:
+			print("Hata: Hedef sahne yolu girilmemiş!")
+	else:
+		if door_dialogue:
+			body.start_dialogue(door_dialogue, "start")
 		else:
 			print("Diyalog dosyası veya oyuncu bulunamadı!")
+
+func _switch_to_soul_mode(player):
+	# is_frozen'ı DIYALOGDAN SONRA set et
+	if trigger_dialogue:
+		player.start_dialogue(trigger_dialogue, "start")
+		await player.dialogue_finished
+	
+	player.is_frozen = true
+	await TransitionScreen.fade_out()
+	player.toggle_soul_mode()
+	var spawn_point = get_tree().current_scene.find_child("park_down")
+	if spawn_point:
+		player.global_position = spawn_point.global_position
+	await TransitionScreen.fade_in()
+	player.is_frozen = false

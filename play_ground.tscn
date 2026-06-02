@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://move.gd" id="1_bfrdj"]
 [ext_resource type="PackedScene" uid="uid://b5bqv2h6eu0m7" path="res://tile maps/grass.tscn" id="2_v6jle"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_yv3nb"]
-[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="5_atec8"]
+[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://Scenes/object.tscn" id="5_atec8"]
 [ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="5_qcyuf"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="6_d18g5"]
 [ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="7_3n87j"]

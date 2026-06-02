@@ -738,8 +738,9 @@ shape = SubResource("CircleShape2D_x11vo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Player"]]
 position = Vector2(-1, -37)
 sprite_frames = SubResource("SpriteFrames_d6d5g")
-animation = &"soul_run_right"
-frame_progress = 0.877655
+animation = &"idle_up"
+frame = 1
+frame_progress = 0.835812
 
 [node name="PlayerStateMachine" type="Node" parent="." groups=["Player"]]
 script = ExtResource("8_p4lqt")

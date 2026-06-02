@@ -7,15 +7,31 @@ extends Area2D
 @export var fragment_id: String # Her parça için benzersiz bir isim (örn: "okul_1", "okul_2")
 @onready var citylayer = $"../../CityLayer"
 func _ready():
-	if Global.came_from_soul:
-		halo_sound.play()  # loop açık olsun
-		particles.emitting = true
+	# Ses ve partiküller başta kapalı
+	halo_sound.stop()
+	particles.emitting = false
+	
 	if Global.collected_fragment_ids.has(fragment_id):
-		queue_free() # Eğer listede varsa, sahneye hiç girmeden kendini yok et
+		queue_free()
 		return
-	# Player'ın InteractionDetector'ı değil, gövdesi çarpsın istiyoruz
+	
 	body_entered.connect(_on_body_entered)
+	
+	# CityLayer'ın görünürlüğünü izle
+	citylayer.visibility_changed.connect(_on_city_layer_visible)
+	
+	# Eğer zaten görünürse hemen başlat
+	if citylayer.visible:
+		halo_sound.play()
+		particles.emitting = true
 
+func _on_city_layer_visible():
+	if citylayer.visible:
+		halo_sound.play()
+		particles.emitting = true
+	else:
+		halo_sound.stop()
+		particles.emitting = false
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):

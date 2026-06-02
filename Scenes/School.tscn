@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://b2blnta4shigh"]
+[gd_scene load_steps=35 format=4 uid="uid://b2blnta4shigh"]
 
 [ext_resource type="Script" path="res://scripts/school.gd" id="1_needf"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_yr3ky"]
@@ -17,10 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="15_n5vrl"]
 [ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="16_1y8ly"]
 [ext_resource type="Resource" uid="uid://b61bac3imrlfo" path="res://dialogues/end_dialogue.dialogue" id="16_7l3or"]
-[ext_resource type="Resource" uid="uid://bt1nc16aqs6ql" path="res://dialogues/demo_end.dialogue" id="17_4nira"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="17_pxowm"]
 [ext_resource type="Resource" uid="uid://b1f12c1duer1u" path="res://dialogues/lise.dialogue" id="18_huutv"]
-[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://object.tscn" id="18_kv1w0"]
+[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://Scenes/object.tscn" id="18_kv1w0"]
 [ext_resource type="Script" path="res://scripts/soul_appear.gd" id="21_a4fis"]
 [ext_resource type="Resource" uid="uid://cahjajhsktse7" path="res://dialogues/Ev.dialogue" id="21_wtq5j"]
 [ext_resource type="Resource" uid="uid://dbtet440kxx4o" path="res://dialogues/car.dialogue" id="22_gl54l"]
@@ -813,7 +812,6 @@ collision_layer = 16
 hedef_harita_yolu = "res://Scenes/town.tscn"
 door_id = "town_down"
 door_dialogue = ExtResource("16_1y8ly")
-demo = ExtResource("17_4nira")
 
 [node name="Area2D2" parent="." instance=ExtResource("15_n5vrl")]
 position = Vector2(-2114, -250)
@@ -822,7 +820,6 @@ hedef_harita_yolu = "res://Scenes/park.tscn"
 door_id = "park_side"
 required_fragments = 9
 door_dialogue = ExtResource("16_1y8ly")
-demo = ExtResource("17_4nira")
 
 [node name="school_side" type="Marker2D" parent="."]
 position = Vector2(-2111, -241)

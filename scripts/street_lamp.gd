@@ -1,51 +1,55 @@
 extends StaticBody2D
 
+@export var flicker: bool = false
+
 @onready var anim = $AnimatedSprite2D
 @onready var light = $PointLight2D
+
+var flicker_timer: float = 0.0
+var next_flicker: float = 0.0
+var permanently_flickering: bool = false
+
 func _ready():
-	# Sinyalleri doğrudan bu script üzerinden bağlayalım
+	add_to_group("StreetLamp")
 	light.enabled = true
+	anim.play("default")
+	
 	var area = $DetectionArea
 	area.area_entered.connect(_on_area_entered)
 	area.area_exited.connect(_on_area_exited)
+	
+	var player = get_tree().get_first_node_in_group("Player")
+	if flicker and (player == null or not player.is_soul_mode):
+		permanently_flickering = true
+		next_flicker = randf_range(0.1, 0.5)
 
-func _on_area_entered(area):
-	# Giren alan oyuncunun dedektörü mü?
-	if area.name == "InteractionDetector":
-		var player = area.get_parent()
+func reset_for_soul_mode():
+	permanently_flickering = false
+	light.enabled = true
+	anim.modulate.a = 1.0
+	
+func _process(delta: float) -> void:
+	if not permanently_flickering:
+		return
+	
+	flicker_timer += delta
+	
+	if flicker_timer >= next_flicker:
+		flicker_timer = 0.0
+		next_flicker = randf_range(0.1, 0.8)
 		
-		if player.is_soul_mode:
-			print("soul mode'da,, flicker yapılıyor.")
-			# Ruh modundaysa otomatik oynat
-			play_flicker()
-		else:
-			# Beden modundaysa (İstersen buraya bir print koyabilirsin)
-			print("Beden yaklaştı, E tuşu mekaniği buraya yazılabilir")
-
-func _on_area_exited(area):
-	if area.name == "InteractionDetector":
-		# Oyuncu uzaklaştığında bir şey yapmak istersen buraya yaz
-		pass
-
-func _process(_delta):
-	# Eğer flicker animasyonu oynuyorsa ışığı kareye göre ayarla
-	if anim.animation == "flicker" and anim.is_playing():
-		# ÖRNEK: 1. ve 3. karelerde lamba "yanıyor" farz edelim
-		if anim.frame == 1 or anim.frame == 3:
-			light.enabled = false
-		else:
-			light.enabled = true
-	elif anim.animation == "default":
-		light.enabled = true
-
-func play_flicker():
-	if anim.animation != "flicker":
-		print("flickering")
+		var on = not light.enabled
+		light.enabled = on
 		anim.play("flicker")
-		await anim.animation_finished
-		print("flickering stopped")
+		light.modulate.a = 1.0 if on else 0.2
 		anim.play("default")
 
-# Player.gd'den çağrılacak etkileşim fonksiyonu
-func trigger_echo():
-	play_flicker()
+func _on_area_entered(area):
+	if area.name == "InteractionDetector":
+		var player = area.get_parent()
+		if player.is_soul_mode and not permanently_flickering:
+			permanently_flickering = true
+			next_flicker = randf_range(0.05, 0.3)
+
+func _on_area_exited(area):
+	pass

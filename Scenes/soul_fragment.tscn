@@ -55,6 +55,7 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_nltvd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.49176, 1.49176)
 shape = SubResource("CircleShape2D_cdkm6")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
