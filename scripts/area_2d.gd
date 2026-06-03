@@ -10,6 +10,8 @@ extends Area2D
 var already_triggered: bool = false
 
 func _on_body_entered(body):
+	if Global.park_cutscene_finished:
+		return
 	if not body.is_in_group("Player"):
 		return
 	if already_triggered:
@@ -32,16 +34,21 @@ func _on_body_entered(body):
 			print("Diyalog dosyası veya oyuncu bulunamadı!")
 
 func _switch_to_soul_mode(player):
-	# is_frozen'ı DIYALOGDAN SONRA set et
 	if trigger_dialogue:
 		player.start_dialogue(trigger_dialogue, "start")
 		await player.dialogue_finished
 	
-	player.is_frozen = true
 	await TransitionScreen.fade_out()
 	player.toggle_soul_mode()
-	var spawn_point = get_tree().current_scene.find_child("park_down")
+	
+	# Salıncağı durdur
+	var swing = get_tree().current_scene.get_node_or_null("swing")
+	if swing:
+		swing.play("stop")
+	
+	var spawn_point = get_tree().current_scene.find_child(door_id)
 	if spawn_point:
 		player.global_position = spawn_point.global_position
+	
 	await TransitionScreen.fade_in()
 	player.is_frozen = false

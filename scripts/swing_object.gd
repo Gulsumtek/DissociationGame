@@ -8,7 +8,19 @@ var already_triggered: bool = false
 func _ready():
 	var interaction_area = $InteractionArea
 	interaction_area.interact.connect(trigger_inspect)
+	
+	if only_soul_mode:
+		interaction_area.visible = false
 
+func _process(_delta):
+	if not only_soul_mode:
+		return
+	
+	var player = get_tree().get_first_node_in_group("Player")
+	if player == null:
+		return
+	
+	$InteractionArea.visible = player.is_soul_mode
 
 func trigger_inspect():
 	if already_triggered:

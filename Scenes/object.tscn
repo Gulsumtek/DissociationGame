@@ -8,3 +8,4 @@ script = ExtResource("1_qb7hk")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_j8cvw")]
 scale = Vector2(1.93966, 1.93966)
+collision_layer = 8
