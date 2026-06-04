@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=4 uid="uid://dsufuotqh8x2b"]
+[gd_scene load_steps=12 format=4 uid="uid://dsufuotqh8x2b"]
 
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="1_bblaw"]
+[ext_resource type="Script" path="res://scripts/cafe.gd" id="1_waum7"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="2_ljh30"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_xp072"]
-[ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="4_he66v"]
+[ext_resource type="Script" path="res://cafe_door.gd" id="5_2jc7i"]
+[ext_resource type="PackedScene" uid="uid://dl5g4p14o8v3h" path="res://Scenes/barista.tscn" id="5_g32i8"]
+[ext_resource type="Resource" uid="uid://c7f77e8kwq5pa" path="res://dialogues/soul_door.dialogue" id="6_2weot"]
+[ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://Scenes/object.tscn" id="6_26yh2"]
+[ext_resource type="Resource" uid="uid://bnvclum1j7exe" path="res://dialogues/barista_talk.dialogue" id="7_50mri"]
+[ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="9_hqi88"]
+[ext_resource type="PackedScene" uid="uid://dex6n8aq1x2rg" path="res://Scenes/trigger_fragment.tscn" id="11_nyph1"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(7, -114)
+position = Vector2(10, -118)
+script = ExtResource("1_waum7")
 
 [node name="Props" parent="." instance=ExtResource("1_bblaw")]
 tile_map_data = PackedByteArray("AAABAAEACAAHAAQAAAACAAIACAAHAAQAAAABAAIACAAHAAQAAAADAAIACAAHAAQAAAADAAEACAAHAAQAAAACAAEACAAHAAQAAAACAAAACAAHAAQAAAADAAAACAAHAAQAAAABAAAACAAHAAQAAAAEAAAACAAHAAQAAAAEAAEACAAHAAQAAAAEAAIACAAHAAQAAAAEAP//CAAHAAQAAAADAP//CAAHAAQAAAACAP//CAAHAAQAAAABAP//CAAHAAQAAAACAP7/CAAHAAQAAAADAP7/CAAHAAQAAAAEAP7/CAAHAAQAAAACAPz/CAACAAAAAAABAPz/CAACAAAAAAABAP3/CAACAAAAAAACAP3/CAACAAAAAAADAP3/CAACAAAAAAADAPz/CAACAAAAAAAEAPz/CAACAAAAAAAEAP3/CAACAAAAAAABAP7/CAAHAAQAAAAAAAIACAAHAAQAAAAAAAEACAAHAAQAAAAAAAAACAAHAAQAAAAAAP//CAAHAAQAAAAAAP7/CAAHAAQAAAAAAP3/CAACAAAAAAAAAPz/CAACAAAAAAAFAAEABwAIAAQAAAAFAAIABwAIAAMAAAAFAAAABwAJAAQAAAAFAP//BwAJAAQAAAAFAP7/BwAJAAQAAAAFAP3/BwAJAAQAAAAFAPz/BwAJAAQAAAD//wIABwAIAAMAABD//wEABwAIAAQAABD//wAABwAJAAQAABD/////BwAJAAQAABD///7/BwAJAAQAABD///3/BwAJAAQAABD///z/BwAJAAQAABAAAAMABwAIAAMAAFABAAMABwAJAAQAAEACAAMABwAJAAQAAEADAAMABwAJAAQAAEAEAAMABwAJAAQAAEAAAPv/BwAJAAQAAGABAPv/BwAJAAQAAGACAPv/BwAJAAQAAGADAPv/BwAJAAQAAGAEAPv/BwAJAAQAAGA=")
@@ -19,7 +27,7 @@ tile_map_data = PackedByteArray("AAAEAAAAAAAGAAQAAAADAP7/CAACAAMAAAADAAIACAADAAQ
 tile_map_data = PackedByteArray("AAAEAP3/CAAHAAEAAAABAP3/CAABAAAAAAABAP7/CAABAAEAAAABAP//CAAEAAQAAAAAAP3/CAAAAAAAAAAAAP7/CAAAAAEAAAAAAP//CAADAAQAAAADAAAACAACAAQAAAACAP//CAABAAMAAAADAP//CAACAAMAAAAEAP//CAADAAMAAAAAAAAACAABAAMAAAABAAAACAACAAMAAAABAAEACAACAAMAAAACAAAACAADAAMAAAAAAAEACAABAAMAAAAEAAAAAAAHAAIAABACAAEACAADAAMAAAABAAIAAAAHAAIAAAAAAAIAAAAFAAMAAAACAPz/CAADAAAAAAA=")
 
 [node name="Player" parent="." instance=ExtResource("2_ljh30")]
-position = Vector2(275, 186)
+position = Vector2(273, 170)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.464648, 0.664337, 0.902874, 1)
@@ -33,11 +41,35 @@ offset_bottom = 1488.0
 color = Color(0.0819708, 0.108631, 0.197821, 1)
 
 [node name="cafeout" type="Marker2D" parent="."]
-position = Vector2(278, 174)
+position = Vector2(274, 156)
 gizmo_extents = 69.6
 
 [node name="cafeoutt2" parent="." instance=ExtResource("3_xp072")]
 position = Vector2(275, 191)
-target_scene_path = "res://Scenes/town.tscn"
-door_id = "cafe"
-door_dialogue = ExtResource("4_he66v")
+script = ExtResource("5_2jc7i")
+required_drops = 2
+door_dialogue = ExtResource("6_2weot")
+
+[node name="Barista" parent="." instance=ExtResource("5_g32i8")]
+position = Vector2(143, -116)
+collision_layer = 16
+
+[node name="StaticBody2D" parent="." instance=ExtResource("6_26yh2")]
+position = Vector2(142, -87)
+inspect_dialogue = ExtResource("7_50mri")
+
+[node name="SoulFragmentsLayer" type="Node2D" parent="."]
+
+[node name="SoulFragment" parent="SoulFragmentsLayer" instance=ExtResource("9_hqi88")]
+position = Vector2(82, -38)
+
+[node name="SoulFragment2" parent="SoulFragmentsLayer" instance=ExtResource("9_hqi88")]
+position = Vector2(16, 139)
+
+[node name="TriggerFragment" parent="." instance=ExtResource("11_nyph1")]
+position = Vector2(16, 138)
+
+[node name="TriggerFragment2" parent="." instance=ExtResource("11_nyph1")]
+position = Vector2(82, -38)
+
+[editable path="cafeoutt2"]

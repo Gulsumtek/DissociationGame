@@ -1,0 +1,13 @@
+~ start
+Barista: [[Selam|Merhaba]], hoşgeldin!
+Barista: Nasılsın?
+- İyiyim, teşekkürler.
+	Beden: İyiyim, teşekkürler.Sen nasılsın?
+	Barista: Ben de iyiyim, teşekkürler. Akşam kahve içmeye beklerim!
+	Beden: Mutlaka geleceğim.
+- Eh işte.
+	Beden: Eh işte. Sen nasılsın?
+	Barista: Aa sorun nedir? Akşam bi kahve eşliğinde konuşalım mı ne dersin? Ben de iyiyim teşekkür ederim.
+	Beden: İyi olur aslında... İki sohbet ederiz, görüşürüz öyleyse.
+	Barista: Görüşmek üzere!
+=> END

@@ -1,0 +1,33 @@
+~ after_alarm
+Beden: Ben değildim! Gerçekten...
+=> END
+
+~ before_soul
+Ruh: Bedenden kaçacak bir yer bulmalıyım...
+Ruh: !! Kafeye gireyim.
+=> END
+
+~ after_soul
+Ruh: Burası... anılarımı canlandırıyor.
+Ruh: Lisedeyken sık sık gelirdim. Kahvesi de çok güzeldi.
+Ruh: Bi kahve için neler vermezdim şimdi. Ama bedenim artık yok...
+Ruh: Neyse, yine de burada biraz takılayım. Huzurlu hissettiriyor, biraz boş olsa da...
+=> END
+
+~ barista_talk
+Barista: Ahhahah sakin ol, senden şüphelenmiyorum.
+Barista: Etrafı inceledim, kapıyla bile oynanmamış, ama garip bir şekilde ışıklar yanıp sönüyor.
+Barista: Çalınan bir şey de yok sanırım. 
+Beden iç ses: -Ruh burdan geçmiş sanırım...-
+Beden: Elektrikle alakalı bir sıkıntıdır belki.
+Barista: Ya da hayalettir!!!
+Beden: !
+Barista: Ahahhah dalga geçiyorum. Neyse bu saatte uyandığıma göre ben bi kahve içeceğim, sen de ister misin?
+Beden: ...
+Barista: Çekinme ya yabancı mıyız, bi americano yapayım sana, sevdiğinden.
+Beden: Nasıl ya? Beni hatırlıyor musun?
+Barista: E tabii! Pek konuşmazdın ama gelip bir köşede ders çalışırdın. 
+Barista: Ne yalan söyleyeyim, kafemi böyle seven düzenli bir müşterim olması hoşuma gidiyordu.
+Beden: ... Hiç fark edeceğini düşünmemiştim.
+Beden: Tamam, bi kahve içelim öyleyse.
+=> END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd2dvs4h2nsm5"]
+[gd_scene load_steps=10 format=3 uid="uid://cd2dvs4h2nsm5"]
 
 [ext_resource type="Script" path="res://scripts/sound_manager.gd" id="1_lsecw"]
 [ext_resource type="AudioStream" uid="uid://dckk7rub28cxr" path="res://environment/sfx/Fantasy_UI (38).wav" id="2_tuqvs"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dii0msj20uqbe" path="res://environment/sfx/Fantasy_UI (53).wav" id="4_k6ocj"]
 [ext_resource type="AudioStream" uid="uid://b2i0ipua7b6m" path="res://environment/sfx/Fantasy_UI (36).wav" id="5_4ukhi"]
 [ext_resource type="AudioStream" uid="uid://c56xvlqfr27ka" path="res://environment/sfx/Fantasy_UI (34).wav" id="6_uy4ku"]
+[ext_resource type="AudioStream" uid="uid://ddq2edyx5fuxy" path="res://environment/442563__nikkolaus__dsi-door-alarm-uses-key-h2170.wav" id="7_llem4"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cl530"]
 streams_count = 3
@@ -31,3 +32,7 @@ max_polyphony = 2
 stream = SubResource("AudioStreamRandomizer_1ya2m")
 volume_db = -2.0
 max_polyphony = 2
+
+[node name="AlarmPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_llem4")
+volume_db = -34.125

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bnvclum1j7exe"
+path="res://.godot/imported/barista_talk.dialogue-da3afcf2a4bca47bc61a758665099992.tres"
+
+[deps]
+
+source_file="res://dialogues/barista_talk.dialogue"
+dest_files=["res://.godot/imported/barista_talk.dialogue-da3afcf2a4bca47bc61a758665099992.tres"]
+
+[params]
+
+defaults=true

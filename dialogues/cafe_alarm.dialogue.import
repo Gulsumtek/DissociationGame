@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bqxisik0pukdh"
+path="res://.godot/imported/cafe_alarm.dialogue-d927a43ccda208e88cd5bb6988362256.tres"
+
+[deps]
+
+source_file="res://dialogues/cafe_alarm.dialogue"
+dest_files=["res://.godot/imported/cafe_alarm.dialogue-d927a43ccda208e88cd5bb6988362256.tres"]
+
+[params]
+
+defaults=true

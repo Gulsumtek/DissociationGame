@@ -10,3 +10,10 @@ var dropped_fragment_ids: Array = []
 var came_from_soul: bool = false
 var blackboard_drawn: bool = false
 var park_cutscene_finished: bool = false 
+
+var alarm_triggered: bool = false
+var cafe_lights_on: bool = false
+var cafe_soul_done: bool = false
+var cafe_cutscene1_done: bool = false
+var enter_cafe_as_soul: bool = false
+var cafe_cutscene2_done: bool = false

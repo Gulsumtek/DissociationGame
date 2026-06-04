@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://mqxil0mdnfxf"
+path="res://.godot/imported/cafe_cutscene_2.dialogue-4ac4c05d8d27749bcfa95d348185fb60.tres"
+
+[deps]
+
+source_file="res://dialogues/cafe_cutscene_2.dialogue"
+dest_files=["res://.godot/imported/cafe_cutscene_2.dialogue-4ac4c05d8d27749bcfa95d348185fb60.tres"]
+
+[params]
+
+defaults=true
