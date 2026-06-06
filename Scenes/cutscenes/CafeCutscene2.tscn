@@ -3,21 +3,6 @@
 [ext_resource type="SpriteFrames" uid="uid://b4i668x8qya4j" path="res://player/sprites/player.tres" id="1_1lgiv"]
 [ext_resource type="Script" path="res://scripts/cafe_cutscene_2.gd" id="1_5qluu"]
 
-[sub_resource type="Animation" id="Animation_hbdwv"]
-resource_name = "cafe_talk"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.133333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle_up"]
-}
-
 [sub_resource type="Animation" id="Animation_07pge"]
 length = 0.001
 tracks/0/type = "value"
@@ -31,6 +16,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"idle_down"]
+}
+
+[sub_resource type="Animation" id="Animation_hbdwv"]
+resource_name = "cafe_talk"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_up"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1mpiy"]

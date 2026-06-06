@@ -9,8 +9,9 @@ radius = 195.01
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_eoeng")
-animation = &"runside"
-frame_progress = 0.642982
+animation = &"idlefront"
+autoplay = "idlefront"
+frame_progress = 0.669333
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xus65")

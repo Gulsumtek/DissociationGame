@@ -16,7 +16,10 @@ signal dialogue_finished
 func _ready() -> void:
 	soul_light.visible = false
 	state_machine.Initialize(self)
-	$InteractionDetector.collision_mask = 10
+	if Global.is_soul_mode:
+		toggle_soul_mode()
+	else:
+		$InteractionDetector.collision_mask = 10
 	var soul_layer = get_tree().current_scene.get_node_or_null("SoulLayer")
 	var blackboard_layer = get_tree().current_scene.get_node_or_null("BlackboardLayer")
 	if blackboard_layer:
@@ -32,11 +35,17 @@ func _physics_process(delta):
 
 func toggle_soul_mode():
 	is_soul_mode = !is_soul_mode
-	
+	Global.is_soul_mode = is_soul_mode 
+
 	if is_soul_mode:
+		move_speed = Global.current_soul_speed
 		var lamps = get_tree().get_nodes_in_group("StreetLamp")
 		for lamp in lamps:
 			lamp.reset_for_soul_mode()
+	if is_soul_mode:
+		anim_sprite.play("soul_idle_down")
+	else:
+		anim_sprite.play("idle_down")
 	
 	var body_layer = get_tree().current_scene.get_node_or_null("BodyLayer")
 	var soul_layer = get_tree().current_scene.get_node_or_null("SoulLayer")
@@ -70,7 +79,11 @@ func drop_soul_fragment():
 	fragment.global_position = global_position
 	fragment.fragment_id = "dropped_" + str(Time.get_ticks_msec())
 	get_tree().current_scene.call_deferred("add_child", fragment)
-
+	
+	# Her düşürülen parçada yavaşla
+	Global.current_soul_speed = max(60.0, Global.current_soul_speed - 10.0)
+	soul_speed = Global.current_soul_speed
+	move_speed = soul_speed
 func _input(event):
 	if is_frozen:
 		if event.is_action_pressed("interact"):

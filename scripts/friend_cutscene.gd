@@ -19,7 +19,6 @@ func _on_animation_finished(anim):
 			animation_player.play("talking")
 		"talking":
 				Global.entrance_name ="town_up"
-				Global.park_cutscene_finished=false
 				TransitionScreen.transition_to("res://Scenes/Town.tscn")
 
 

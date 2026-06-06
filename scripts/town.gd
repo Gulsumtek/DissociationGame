@@ -9,7 +9,8 @@ func _ready():
 		if spawn_point != null:
 			player.global_position = spawn_point.global_position
 	
-	if Global.alarm_triggered and not Global.cafe_cutscene1_done:
+	if Global.park_cutscene_finished and not Global.cafe_cutscene1_done and not Global.cafe_completed:
+		Global.alarm_triggered = true
 		alarm_sound.play()
 
 func stop_alarm():

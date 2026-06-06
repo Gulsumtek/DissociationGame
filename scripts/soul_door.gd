@@ -19,6 +19,8 @@ func _on_door_interacted():
 		return
 	if Global.soul_fragments_dropped >= required_drops:
 		Global.came_from_soul = true
+		Global.soul_phase_complete = true  # bunu ekle
+		print("soul complete")
 		await TransitionScreen.fade_out()
 		player.toggle_soul_mode()
 		Global.entrance_name = door_id
@@ -28,7 +30,7 @@ func _on_door_interacted():
 	else:
 		if player and door_dialogue:
 			player.start_dialogue(door_dialogue, "start")
-
+			
 func _switch_to_body_mode(player):
 	await TransitionScreen.fade_out()
 	player.toggle_soul_mode()

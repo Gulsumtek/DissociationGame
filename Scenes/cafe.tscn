@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dsufuotqh8x2b"]
+[gd_scene load_steps=13 format=4 uid="uid://dsufuotqh8x2b"]
 
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="1_bblaw"]
 [ext_resource type="Script" path="res://scripts/cafe.gd" id="1_waum7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="3_xp072"]
 [ext_resource type="Script" path="res://cafe_door.gd" id="5_2jc7i"]
 [ext_resource type="PackedScene" uid="uid://dl5g4p14o8v3h" path="res://Scenes/barista.tscn" id="5_g32i8"]
+[ext_resource type="Resource" uid="uid://dxrqnccfgpoho" path="res://dialogues/not_enough_fragments.dialogue" id="5_oja6p"]
 [ext_resource type="Resource" uid="uid://c7f77e8kwq5pa" path="res://dialogues/soul_door.dialogue" id="6_2weot"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://Scenes/object.tscn" id="6_26yh2"]
 [ext_resource type="Resource" uid="uid://bnvclum1j7exe" path="res://dialogues/barista_talk.dialogue" id="7_50mri"]
@@ -44,11 +45,33 @@ color = Color(0.0819708, 0.108631, 0.197821, 1)
 position = Vector2(274, 156)
 gizmo_extents = 69.6
 
+[node name="Door" parent="cafeout" instance=ExtResource("3_xp072")]
+position = Vector2(-168, 11)
+target_scene_path = "res://Scenes/town.tscn"
+door_id = "cafe"
+required_fragments = 1
+door_dialogue = ExtResource("5_oja6p")
+
+[node name="Door2" parent="cafeout" instance=ExtResource("3_xp072")]
+position = Vector2(-85, 10)
+script = ExtResource("5_2jc7i")
+target_scene_path = "res://Scenes/cutscenes/CafeCutscene1.tscn"
+required_drops = 0
+door_dialogue = ExtResource("6_2weot")
+switches_to_body = false
+
+[node name="InteractionArea" parent="cafeout/Door2" index="0"]
+collision_layer = 4
+
 [node name="cafeoutt2" parent="." instance=ExtResource("3_xp072")]
+visible = false
 position = Vector2(275, 191)
 script = ExtResource("5_2jc7i")
-required_drops = 2
-door_dialogue = ExtResource("6_2weot")
+required_drops = 0
+switches_to_body = false
+
+[node name="InteractionArea" parent="cafeoutt2" index="0"]
+collision_layer = 6
 
 [node name="Barista" parent="." instance=ExtResource("5_g32i8")]
 position = Vector2(143, -116)
@@ -62,14 +85,18 @@ inspect_dialogue = ExtResource("7_50mri")
 
 [node name="SoulFragment" parent="SoulFragmentsLayer" instance=ExtResource("9_hqi88")]
 position = Vector2(82, -38)
+fragment_id = "cafe1"
 
 [node name="SoulFragment2" parent="SoulFragmentsLayer" instance=ExtResource("9_hqi88")]
 position = Vector2(16, 139)
-
-[node name="TriggerFragment" parent="." instance=ExtResource("11_nyph1")]
-position = Vector2(16, 138)
+fragment_id = "cafe2"
 
 [node name="TriggerFragment2" parent="." instance=ExtResource("11_nyph1")]
 position = Vector2(82, -38)
 
+[node name="TriggerFragment3" parent="." instance=ExtResource("11_nyph1")]
+position = Vector2(16, 140)
+
+[editable path="cafeout/Door"]
+[editable path="cafeout/Door2"]
 [editable path="cafeoutt2"]

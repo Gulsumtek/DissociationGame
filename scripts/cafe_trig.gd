@@ -1,24 +1,28 @@
 extends Area2D
 
 var already_triggered: bool = false
+var connected: bool = false
 
 func _ready():
 	if Global.cafe_cutscene1_done:
 		queue_free()
 		return
-	
-	body_entered.connect(_on_body_entered)
+
+func _process(_delta):
+	if connected or Global.cafe_cutscene1_done:
+		return
+	if Global.alarm_triggered:
+		body_entered.connect(_on_body_entered)
+		connected = true
 
 func _on_body_entered(body):
-	print("Body entered: ", body.name)
 	if not body.is_in_group("Player"):
 		return
 	if already_triggered:
 		return
 	
 	already_triggered = true
-	var player = body
-	_trigger_cutscene(player)
+	_trigger_cutscene(body)
 
 func _trigger_cutscene(player):
 	get_tree().current_scene.stop_alarm()

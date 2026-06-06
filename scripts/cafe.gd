@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var player = $Player
 @onready var barista = $Barista
-@onready var object =$StaticBody2D
-@onready var soul_fragments_layer = $SoulFragmentsLayer  # ruh parçalarını bu layer altına koy
+@onready var object = $StaticBody2D
+@onready var soul_fragments_layer = $SoulFragmentsLayer
 
 func _ready():
 	if Global.entrance_name != "":
@@ -11,14 +11,14 @@ func _ready():
 		if spawn_point != null:
 			player.global_position = spawn_point.global_position
 	
-	if Global.enter_cafe_as_soul:
+	if Global.enter_cafe_as_soul and not player.is_soul_mode:
 		player.toggle_soul_mode()
+		Global.enter_cafe_as_soul = false
 		barista.visible = false
 		object.visible = false
-		object.get_node("InteractionArea").monitoring = false
 		soul_fragments_layer.visible = false
 	
-	elif Global.cafe_soul_done:
+	elif Global.cafe_soul_done and not Global.cafe_cutscene2_done:
 		# Beden olarak girdi, ruh parçaları görünsün
 		barista.visible = true
 		object.visible = true

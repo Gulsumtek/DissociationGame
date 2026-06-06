@@ -1,15 +1,16 @@
-# soul_fragment.gd
 extends Area2D
-@onready var halo_sound = $AudioStreamPlayer2D  # 2D çünkü mesafeye göre değişsin
 
+@onready var halo_sound = $AudioStreamPlayer2D
 @onready var particles = $GPUParticles2D
 @onready var sprite = $AnimatedSprite2D
-@export var fragment_id: String # Her parça için benzersiz bir isim (örn: "okul_1", "okul_2")
-@onready var citylayer = $"../../CityLayer"
+@export var fragment_id: String
+
+var citylayer = null
+
 func _ready():
-	# Ses ve partiküller başta kapalı
 	halo_sound.stop()
 	particles.emitting = false
+	sprite.visible = false  # başta gizle
 	
 	if Global.collected_fragment_ids.has(fragment_id):
 		queue_free()
@@ -17,39 +18,47 @@ func _ready():
 	
 	body_entered.connect(_on_body_entered)
 	
-	# CityLayer'ın görünürlüğünü izle
-	citylayer.visibility_changed.connect(_on_city_layer_visible)
+	citylayer = get_tree().current_scene.get_node_or_null("CityLayer")
 	
-	# Eğer zaten görünürse hemen başlat
-	if citylayer.visible:
-		halo_sound.play()
-		particles.emitting = true
+	if citylayer:
+		print("citylayer bulundu")
+		citylayer.visibility_changed.connect(_on_city_layer_visible)
+		if citylayer.visible:
+			_activate()
+	else:
+		print("CityLayer bulunamadı: ", get_path())
+
+func _activate():
+	print("Fragment aktif oldu: ", fragment_id)
+	sprite.visible = true
+	halo_sound.play()
+	particles.emitting = true
 
 func _on_city_layer_visible():
-	if citylayer.visible:
-		halo_sound.play()
-		particles.emitting = true
+	print("citylayer visibility changed")
+	if citylayer and citylayer.visible:
+		_activate()
 	else:
+		print("city layer isnt visible")
+		sprite.visible = false
 		halo_sound.stop()
 		particles.emitting = false
 
 func _on_body_entered(body):
-	if body.is_in_group("Player"):
-		# KRİTİK KONTROL: Eğer oyuncu Ruh modundaysa toplama işlemini yapma
-		if body.is_soul_mode:
-			return
-		collect()
-		
+	if not body.is_in_group("Player"):
+		return
+	if body.is_soul_mode:
+		return
+	if not Global.soul_phase_complete:
+		print("soul phase isnt complete")
+		return
+	collect()
 func collect():
-	if  Global.came_from_soul:
-		SoundManager.play_collect()
-		Global.collected_fragment_ids.append(fragment_id)
-		Global.soul_fragments_collected += 1
-		# Çarpışmayı ve görseli kapat
-		set_deferred("monitoring", false)
-		sprite.hide()
-		# Varsa partikül efektini çalıştır
-		particles.emitting = true
-		
-		await get_tree().create_timer(0.3).timeout
-		queue_free()
+	SoundManager.play_collect()
+	Global.collected_fragment_ids.append(fragment_id)
+	Global.soul_fragments_collected += 1
+	set_deferred("monitoring", false)
+	sprite.hide()
+	particles.emitting = true
+	await get_tree().create_timer(0.3).timeout
+	queue_free()

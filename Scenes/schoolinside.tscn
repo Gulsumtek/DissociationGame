@@ -67,7 +67,6 @@ is_blackboard = true
 
 [node name="InteractionArea" parent="StaticBody2D2" index="0"]
 position = Vector2(1, -67)
-collision_layer = 8
 
 [node name="BodyLayer" type="Node2D" parent="."]
 position = Vector2(318, 312)
@@ -85,7 +84,7 @@ position = Vector2(536, -64)
 position = Vector2(259, 324)
 target_scene_path = "res://Scenes/School.tscn"
 door_id = "school_in"
-required_fragments = 6
+required_fragments = 1
 door_dialogue = ExtResource("4_bvs1d")
 switches_to_soul = true
 
@@ -97,9 +96,9 @@ position = Vector2(258, 323)
 script = ExtResource("4_7wubf")
 target_scene_path = "res://Scenes/School.tscn"
 door_id = "school_in"
-required_drops = 5
+required_drops = 0
 door_dialogue = ExtResource("5_3f6v6")
-switches_to_body = false
+switches_to_body = true
 
 [node name="InteractionArea" parent="SoulLayer/Door" index="0"]
 collision_layer = 4
@@ -123,18 +122,12 @@ soul_dialogue = ExtResource("13_f5o72")
 inspect_dialogue = ExtResource("14_qmuic")
 fragment_reward = 0
 
-[node name="InteractionArea" parent="StaticBody2D6" index="0"]
-collision_layer = 8
-
 [node name="StaticBody2D5" parent="." instance=ExtResource("15_7kbtx")]
 position = Vector2(543, 37)
 collision_layer = 9
 soul_dialogue = ExtResource("15_h5qma")
 inspect_dialogue = ExtResource("15_h5qma")
 fragment_reward = 0
-
-[node name="InteractionArea" parent="StaticBody2D5" index="0"]
-collision_layer = 8
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("15_7kbtx")]
 position = Vector2(408, 359)
@@ -144,18 +137,12 @@ inspect_dialogue = ExtResource("17_dux5l")
 gives_fragment = true
 drops_fragment = true
 
-[node name="InteractionArea" parent="StaticBody2D3" index="0"]
-collision_layer = 8
-
 [node name="StaticBody2D4" parent="." instance=ExtResource("15_7kbtx")]
 position = Vector2(1020, 67)
 collision_layer = 9
 soul_dialogue = ExtResource("18_h8lpx")
 inspect_dialogue = ExtResource("18_h8lpx")
 fragment_reward = 0
-
-[node name="InteractionArea" parent="StaticBody2D4" index="0"]
-collision_layer = 8
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1395.0

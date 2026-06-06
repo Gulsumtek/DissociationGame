@@ -1,49 +1,46 @@
+
+
 extends StaticBody2D
 
-@export var required_drops: int = 2
+@export var target_scene_path: String
+@export var door_id: String
+@export var required_drops: int
 @export var door_dialogue: DialogueResource
-@onready var area=$InteractionArea
+@export var switches_to_body: bool = false
+@onready var sound = $AudioStreamPlayer
+@onready var sound2 = $sound2
+@onready var interaction_area = $InteractionArea
+
+
 var already_triggered: bool = false
 
 func _ready():
-	area.body_entered.connect(_on_body_entered)
+	interaction_area.interact.connect(_on_door_interacted)
 
-func _on_body_entered(body):
-	if not body.is_in_group("Player"):
+func _on_door_interacted():
+	var player = get_tree().get_first_node_in_group("Player")
+	if not player:
 		return
-	if already_triggered:
-		return
-	
-	var player = body
-	
-	if player.is_soul_mode:
-		_handle_soul_exit(player)
-	else:
-		_handle_body_exit(player)
+	_handle_soul_exit(player)
+
 
 func _handle_soul_exit(player):
-	if Global.soul_fragments_dropped < required_drops:
-		if door_dialogue:
-			player.start_dialogue(door_dialogue, "start")
-		return
-	
-	already_triggered = true
-	_trigger_alarm(player)
+	if Global.soul_fragments_dropped >= required_drops:
+			sound.play()
+			sound2.play()
+			_switch_to_body_mode(player)
+	if door_dialogue:
+		player.start_dialogue(door_dialogue, "start")
+	return
 
-func _handle_body_exit(player):
-	if not Global.cafe_cutscene2_done:
-		return
-	
-	already_triggered = true
-	player.is_frozen = true
-	await TransitionScreen.fade_out()
-	Global.entrance_name = "cafe"
-	TransitionScreen.transition_to("res://Scenes/town.tscn")
 
-func _trigger_alarm(player):
-	SoundManager.play_alarm()
+
+func _switch_to_body_mode(player):
 	player.is_frozen = true
 	await TransitionScreen.fade_out()
 	Global.cafe_soul_done = true
 	Global.enter_cafe_as_soul = false
-	TransitionScreen.transition_to("res://Scenes/cutscenes/CafeCutscene1.tscn")
+	player.toggle_soul_mode()
+	get_tree().change_scene_to_file(target_scene_path)
+	await TransitionScreen.fade_in()
+	

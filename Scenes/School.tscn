@@ -762,7 +762,7 @@ position = Vector2(396, 46)
 color = Color(0.62803, 0.641019, 0.92015, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_yr3ky")]
-position = Vector2(116, -85)
+position = Vector2(-1543, -76)
 
 [node name="Layer 0" type="TileMapLayer" parent="."]
 z_index = -1
@@ -844,20 +844,20 @@ fragment_id = "1"
 
 [node name="CityLayer" type="Node2D" parent="."]
 
-[node name="SoulFragment" parent="CityLayer" instance=ExtResource("17_pxowm")]
-position = Vector2(250, -100)
+[node name="SoulFragment4" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
+position = Vector2(219, -444)
 script = ExtResource("21_a4fis")
 
-[node name="SoulFragment2" parent="CityLayer" instance=ExtResource("17_pxowm")]
-position = Vector2(332, -486)
-script = ExtResource("21_a4fis")
-
-[node name="SoulFragment3" parent="CityLayer" instance=ExtResource("17_pxowm")]
+[node name="SoulFragment3" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
 position = Vector2(13, -562)
 script = ExtResource("21_a4fis")
 
-[node name="SoulFragment4" parent="CityLayer" instance=ExtResource("17_pxowm")]
-position = Vector2(219, -444)
+[node name="SoulFragment" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
+position = Vector2(250, -100)
+script = ExtResource("21_a4fis")
+
+[node name="SoulFragment2" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
+position = Vector2(332, -486)
 script = ExtResource("21_a4fis")
 
 [node name="StaticBody2D5" parent="." instance=ExtResource("18_kv1w0")]
@@ -867,18 +867,12 @@ soul_dialogue = ExtResource("21_wtq5j")
 inspect_dialogue = ExtResource("21_wtq5j")
 fragment_reward = 0
 
-[node name="InteractionArea" parent="StaticBody2D5" index="0"]
-collision_layer = 8
-
 [node name="StaticBody2D6" parent="." instance=ExtResource("18_kv1w0")]
 position = Vector2(-1441, -134)
 collision_layer = 9
 soul_dialogue = ExtResource("22_gl54l")
 inspect_dialogue = ExtResource("22_gl54l")
 fragment_reward = 0
-
-[node name="InteractionArea" parent="StaticBody2D6" index="0"]
-collision_layer = 8
 
 [node name="MobileControls" parent="." instance=ExtResource("23_st224")]
 visible = false

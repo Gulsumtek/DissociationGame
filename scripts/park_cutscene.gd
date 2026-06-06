@@ -18,6 +18,8 @@ func _on_animation_finished(anim):
 			#)
 			animation_player.play("soul_run")
 		"soul_run":
+			# park_cutscene.gd'de soul_run bitince:
+				Global.is_soul_mode = false
 				Global.entrance_name ="park_bridge"
 				Global.park_cutscene_finished = true
 				TransitionScreen.transition_to("res://Scenes/Park.tscn")
