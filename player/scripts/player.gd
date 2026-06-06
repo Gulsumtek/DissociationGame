@@ -73,6 +73,8 @@ func toggle_soul_mode():
 			soul_layer.visible = false
 
 func drop_soul_fragment():
+	print("Drop pozisyon: ", global_position)
+	print("Sahne: ", get_tree().current_scene.name)
 	var fragment_scene = load("res://Scenes/soul_fragment.tscn")
 	var fragment = fragment_scene.instantiate()
 	SoundManager.play_drop()

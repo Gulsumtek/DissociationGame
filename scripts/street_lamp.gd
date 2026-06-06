@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @export var flicker: bool = false
 
+@export var lightsoff: bool = false
 @onready var anim = $AnimatedSprite2D
 @onready var light = $PointLight2D
 
@@ -11,7 +12,10 @@ var permanently_flickering: bool = false
 
 func _ready():
 	add_to_group("StreetLamp")
-	light.enabled = true
+	if not lightsoff:
+		light.enabled = true
+	else:
+		light.enabled=false
 	anim.play("default")
 	
 	var area = $DetectionArea

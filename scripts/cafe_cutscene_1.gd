@@ -23,11 +23,12 @@ func _after_alarm():
 	label.visible = true
 	await get_tree().create_timer(2.0).timeout
 	label.visible = false
-	
+	anim.play("RESET")
 	await _show_dialogue(
 		preload("res://dialogues/cafe_alarm.dialogue"), "before_soul"
 	)
 	await TransitionScreen.fade_in()
+	
 	anim.play("soul_to_cafe")
 
 func _after_soul_to_cafe():

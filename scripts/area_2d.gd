@@ -6,6 +6,7 @@ extends Area2D
 @export var door_dialogue: DialogueResource
 @export var trigger_dialogue: DialogueResource
 @export var switches_to_soul: bool = false
+@export var soul_can_pass: bool = true  # Varsayılan: ruh geçebilir
 
 var already_triggered: bool = false
 
@@ -15,6 +16,12 @@ func _on_body_entered(body):
 	if not body.is_in_group("Player"):
 		return
 	if already_triggered:
+		return
+	
+	# Ruh modu kontrolü
+	if body.is_soul_mode and not soul_can_pass:
+		if door_dialogue:
+			body.start_dialogue(door_dialogue, "soul")
 		return
 	
 	Global.entrance_name = door_id
@@ -41,7 +48,6 @@ func _switch_to_soul_mode(player):
 	await TransitionScreen.fade_out()
 	player.toggle_soul_mode()
 	
-	# Salıncağı durdur
 	var swing = get_tree().current_scene.get_node_or_null("swing")
 	if swing:
 		swing.play("stop")

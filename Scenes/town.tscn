@@ -829,6 +829,7 @@ flicker = true
 
 [node name="Area2D" parent="." instance=ExtResource("13_rvvrp")]
 position = Vector2(321, 315)
+scale = Vector2(1.00029, 1.00076)
 hedef_harita_yolu = "res://Scenes/School.tscn"
 door_id = "school_up"
 

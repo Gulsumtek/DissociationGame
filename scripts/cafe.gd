@@ -6,6 +6,7 @@ extends Node2D
 @onready var soul_fragments_layer = $SoulFragmentsLayer
 
 func _ready():
+	player.toggle_soul_mode()
 	if Global.entrance_name != "":
 		var spawn_point = find_child(Global.entrance_name)
 		if spawn_point != null:

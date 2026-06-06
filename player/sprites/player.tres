@@ -614,7 +614,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ep2m3")
 }],
-"loop": true,
+"loop": false,
 "name": &"soul_idle_up",
 "speed": 5.0
 }, {

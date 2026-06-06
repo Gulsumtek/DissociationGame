@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dsufuotqh8x2b"]
+[gd_scene load_steps=14 format=4 uid="uid://dsufuotqh8x2b"]
 
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="1_bblaw"]
 [ext_resource type="Script" path="res://scripts/cafe.gd" id="1_waum7"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://bnvclum1j7exe" path="res://dialogues/barista_talk.dialogue" id="7_50mri"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="9_hqi88"]
 [ext_resource type="PackedScene" uid="uid://dex6n8aq1x2rg" path="res://Scenes/trigger_fragment.tscn" id="11_nyph1"]
+[ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="13_hp60e"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -19,16 +20,18 @@ position = Vector2(10, -118)
 script = ExtResource("1_waum7")
 
 [node name="Props" parent="." instance=ExtResource("1_bblaw")]
+position = Vector2(-53, -38)
 tile_map_data = PackedByteArray("AAABAAEACAAHAAQAAAACAAIACAAHAAQAAAABAAIACAAHAAQAAAADAAIACAAHAAQAAAADAAEACAAHAAQAAAACAAEACAAHAAQAAAACAAAACAAHAAQAAAADAAAACAAHAAQAAAABAAAACAAHAAQAAAAEAAAACAAHAAQAAAAEAAEACAAHAAQAAAAEAAIACAAHAAQAAAAEAP//CAAHAAQAAAADAP//CAAHAAQAAAACAP//CAAHAAQAAAABAP//CAAHAAQAAAACAP7/CAAHAAQAAAADAP7/CAAHAAQAAAAEAP7/CAAHAAQAAAACAPz/CAACAAAAAAABAPz/CAACAAAAAAABAP3/CAACAAAAAAACAP3/CAACAAAAAAADAP3/CAACAAAAAAADAPz/CAACAAAAAAAEAPz/CAACAAAAAAAEAP3/CAACAAAAAAABAP7/CAAHAAQAAAAAAAIACAAHAAQAAAAAAAEACAAHAAQAAAAAAAAACAAHAAQAAAAAAP//CAAHAAQAAAAAAP7/CAAHAAQAAAAAAP3/CAACAAAAAAAAAPz/CAACAAAAAAAFAAEABwAIAAQAAAAFAAIABwAIAAMAAAAFAAAABwAJAAQAAAAFAP//BwAJAAQAAAAFAP7/BwAJAAQAAAAFAP3/BwAJAAQAAAAFAPz/BwAJAAQAAAD//wIABwAIAAMAABD//wEABwAIAAQAABD//wAABwAJAAQAABD/////BwAJAAQAABD///7/BwAJAAQAABD///3/BwAJAAQAABD///z/BwAJAAQAABAAAAMABwAIAAMAAFABAAMABwAJAAQAAEACAAMABwAJAAQAAEADAAMABwAJAAQAAEAEAAMABwAJAAQAAEAAAPv/BwAJAAQAAGABAPv/BwAJAAQAAGACAPv/BwAJAAQAAGADAPv/BwAJAAQAAGAEAPv/BwAJAAQAAGA=")
 
 [node name="Props3" parent="." instance=ExtResource("1_bblaw")]
+position = Vector2(-53, -38)
 tile_map_data = PackedByteArray("AAAEAAAAAAAGAAQAAAADAP7/CAACAAMAAAADAAIACAADAAQAAAAEAAIACAAEAAQAAAAAAP//CAAAAAIAAAABAP//CAABAAIAAAACAP7/CAABAAMAAAADAP//CAACAAQAAAAEAP7/CAADAAMAAAAAAAIAAAAGAAQAABA=")
 
 [node name="Props2" parent="." instance=ExtResource("1_bblaw")]
+position = Vector2(-53, -38)
 tile_map_data = PackedByteArray("AAAEAP3/CAAHAAEAAAABAP3/CAABAAAAAAABAP7/CAABAAEAAAABAP//CAAEAAQAAAAAAP3/CAAAAAAAAAAAAP7/CAAAAAEAAAAAAP//CAADAAQAAAADAAAACAACAAQAAAACAP//CAABAAMAAAADAP//CAACAAMAAAAEAP//CAADAAMAAAAAAAAACAABAAMAAAABAAAACAACAAMAAAABAAEACAACAAMAAAACAAAACAADAAMAAAAAAAEACAABAAMAAAAEAAAAAAAHAAIAABACAAEACAADAAMAAAABAAIAAAAHAAIAAAAAAAIAAAAFAAMAAAACAPz/CAADAAAAAAA=")
 
 [node name="Player" parent="." instance=ExtResource("2_ljh30")]
-position = Vector2(273, 170)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.464648, 0.664337, 0.902874, 1)
@@ -42,49 +45,40 @@ offset_bottom = 1488.0
 color = Color(0.0819708, 0.108631, 0.197821, 1)
 
 [node name="cafeout" type="Marker2D" parent="."]
-position = Vector2(274, 156)
+position = Vector2(198, 127)
 gizmo_extents = 69.6
 
 [node name="Door" parent="cafeout" instance=ExtResource("3_xp072")]
-position = Vector2(-168, 11)
+position = Vector2(37, 25)
 target_scene_path = "res://Scenes/town.tscn"
 door_id = "cafe"
-required_fragments = 1
+required_fragments = 11
 door_dialogue = ExtResource("5_oja6p")
 
 [node name="Door2" parent="cafeout" instance=ExtResource("3_xp072")]
-position = Vector2(-85, 10)
+position = Vector2(37, 25)
 script = ExtResource("5_2jc7i")
 target_scene_path = "res://Scenes/cutscenes/CafeCutscene1.tscn"
-required_drops = 0
+required_drops = 7
 door_dialogue = ExtResource("6_2weot")
 switches_to_body = false
 
 [node name="InteractionArea" parent="cafeout/Door2" index="0"]
 collision_layer = 4
 
-[node name="cafeoutt2" parent="." instance=ExtResource("3_xp072")]
-visible = false
-position = Vector2(275, 191)
-script = ExtResource("5_2jc7i")
-required_drops = 0
-switches_to_body = false
-
-[node name="InteractionArea" parent="cafeoutt2" index="0"]
-collision_layer = 6
-
 [node name="Barista" parent="." instance=ExtResource("5_g32i8")]
-position = Vector2(143, -116)
+position = Vector2(93, -139)
 collision_layer = 16
 
 [node name="StaticBody2D" parent="." instance=ExtResource("6_26yh2")]
-position = Vector2(142, -87)
+position = Vector2(94, -110)
 inspect_dialogue = ExtResource("7_50mri")
 
 [node name="SoulFragmentsLayer" type="Node2D" parent="."]
+position = Vector2(-18, -33)
 
 [node name="SoulFragment" parent="SoulFragmentsLayer" instance=ExtResource("9_hqi88")]
-position = Vector2(82, -38)
+position = Vector2(67, -34)
 fragment_id = "cafe1"
 
 [node name="SoulFragment2" parent="SoulFragmentsLayer" instance=ExtResource("9_hqi88")]
@@ -92,11 +86,66 @@ position = Vector2(16, 139)
 fragment_id = "cafe2"
 
 [node name="TriggerFragment2" parent="." instance=ExtResource("11_nyph1")]
-position = Vector2(82, -38)
+position = Vector2(50, -66)
 
 [node name="TriggerFragment3" parent="." instance=ExtResource("11_nyph1")]
-position = Vector2(16, 140)
+position = Vector2(-2, 106)
+
+[node name="StreetLamp" parent="." instance=ExtResource("13_hp60e")]
+position = Vector2(51, 131)
+lightsoff = true
+
+[node name="AnimatedSprite2D" parent="StreetLamp" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="StreetLamp/DetectionArea" index="0"]
+position = Vector2(-5, -65)
+
+[node name="CollisionShape2D" parent="StreetLamp" index="3"]
+position = Vector2(-7, -68)
+
+[node name="StreetLamp2" parent="." instance=ExtResource("13_hp60e")]
+position = Vector2(56, 53)
+lightsoff = true
+
+[node name="AnimatedSprite2D" parent="StreetLamp2" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="StreetLamp2/DetectionArea" index="0"]
+position = Vector2(-5, -65)
+
+[node name="CollisionShape2D" parent="StreetLamp2" index="3"]
+position = Vector2(-7, -68)
+
+[node name="StreetLamp3" parent="." instance=ExtResource("13_hp60e")]
+position = Vector2(184, -10)
+lightsoff = true
+
+[node name="AnimatedSprite2D" parent="StreetLamp3" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="StreetLamp3/DetectionArea" index="0"]
+position = Vector2(-5, -65)
+
+[node name="CollisionShape2D" parent="StreetLamp3" index="3"]
+position = Vector2(-7, -68)
+
+[node name="StreetLamp4" parent="." instance=ExtResource("13_hp60e")]
+position = Vector2(181, -80)
+lightsoff = true
+
+[node name="AnimatedSprite2D" parent="StreetLamp4" index="1"]
+visible = false
+
+[node name="CollisionShape2D" parent="StreetLamp4/DetectionArea" index="0"]
+position = Vector2(-5, -65)
+
+[node name="CollisionShape2D" parent="StreetLamp4" index="3"]
+position = Vector2(-7, -68)
 
 [editable path="cafeout/Door"]
 [editable path="cafeout/Door2"]
-[editable path="cafeoutt2"]
+[editable path="StreetLamp"]
+[editable path="StreetLamp2"]
+[editable path="StreetLamp3"]
+[editable path="StreetLamp4"]

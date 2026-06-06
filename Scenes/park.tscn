@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=4 uid="uid://brifylr4espa"]
+[gd_scene load_steps=65 format=4 uid="uid://brifylr4espa"]
 
 [ext_resource type="Script" path="res://move.gd" id="1_njrt0"]
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="1_rwmcc"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="11_w3loa"]
 [ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="12_f5v8p"]
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="13_4d86n"]
+[ext_resource type="Resource" uid="uid://bd8av26fiedsj" path="res://dialogues/yaya.dialogue" id="15_1vuny"]
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="15_7wf01"]
 [ext_resource type="PackedScene" uid="uid://cd2dvs4h2nsm5" path="res://Scenes/sound_manager.tscn" id="16_c1ar7"]
 [ext_resource type="Resource" uid="uid://d3eg0c863d3ki" path="res://dialogues/park.dialogue" id="17_pjiks"]
@@ -1706,6 +1707,9 @@ position = Vector2(1913, -755)
 position = Vector2(-701, 87)
 hedef_harita_yolu = "res://Scenes/School.tscn"
 door_id = "town_up"
+required_fragments = 21
+door_dialogue = ExtResource("15_1vuny")
+soul_can_pass = false
 
 [node name="park_bridge" type="Marker2D" parent="."]
 position = Vector2(1905, -249)
@@ -1723,6 +1727,7 @@ gizmo_extents = 69.6
 position = Vector2(318, 279)
 hedef_harita_yolu = "res://Scenes/town.tscn"
 door_id = "town_up"
+soul_can_pass = false
 
 [node name="StreetLamp17" parent="." instance=ExtResource("12_f5v8p")]
 position = Vector2(248, 53)

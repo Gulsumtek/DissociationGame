@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://b2blnta4shigh"]
+[gd_scene load_steps=36 format=4 uid="uid://b2blnta4shigh"]
 
 [ext_resource type="Script" path="res://scripts/school.gd" id="1_needf"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="1_yr3ky"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="17_pxowm"]
 [ext_resource type="Resource" uid="uid://b1f12c1duer1u" path="res://dialogues/lise.dialogue" id="18_huutv"]
 [ext_resource type="PackedScene" uid="uid://cl24ibprmsjdc" path="res://Scenes/object.tscn" id="18_kv1w0"]
+[ext_resource type="Resource" uid="uid://bd8av26fiedsj" path="res://dialogues/yaya.dialogue" id="18_v5khr"]
 [ext_resource type="Script" path="res://scripts/soul_appear.gd" id="21_a4fis"]
 [ext_resource type="Resource" uid="uid://cahjajhsktse7" path="res://dialogues/Ev.dialogue" id="21_wtq5j"]
 [ext_resource type="Resource" uid="uid://dbtet440kxx4o" path="res://dialogues/car.dialogue" id="22_gl54l"]
@@ -811,15 +812,16 @@ position = Vector2(65, -625)
 collision_layer = 16
 hedef_harita_yolu = "res://Scenes/town.tscn"
 door_id = "town_down"
+required_fragments = 9
 door_dialogue = ExtResource("16_1y8ly")
 
 [node name="Area2D2" parent="." instance=ExtResource("15_n5vrl")]
-position = Vector2(-2114, -250)
+position = Vector2(-2132, -255)
 collision_layer = 16
 hedef_harita_yolu = "res://Scenes/park.tscn"
 door_id = "park_side"
 required_fragments = 9
-door_dialogue = ExtResource("16_1y8ly")
+door_dialogue = ExtResource("18_v5khr")
 
 [node name="school_side" type="Marker2D" parent="."]
 position = Vector2(-2111, -241)
@@ -843,10 +845,6 @@ fragment_id = "1"
 [node name="SoulLayer" type="Node2D" parent="."]
 
 [node name="CityLayer" type="Node2D" parent="."]
-
-[node name="SoulFragment4" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
-position = Vector2(219, -444)
-script = ExtResource("21_a4fis")
 
 [node name="SoulFragment3" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
 position = Vector2(13, -562)

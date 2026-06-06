@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://bd8av26fiedsj"
+path="res://.godot/imported/yaya.dialogue-9a614d5a378ba153887310f3494ebf70.tres"
+
+[deps]
+
+source_file="res://dialogues/yaya.dialogue"
+dest_files=["res://.godot/imported/yaya.dialogue-9a614d5a378ba153887310f3494ebf70.tres"]
+
+[params]
+
+defaults=true
