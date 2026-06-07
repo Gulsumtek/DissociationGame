@@ -50,7 +50,7 @@ gizmo_extents = 69.6
 
 [node name="Door" parent="cafeout" instance=ExtResource("3_xp072")]
 position = Vector2(37, 25)
-target_scene_path = "res://Scenes/town.tscn"
+target_scene_path = "res://Scenes/end.tscn"
 door_id = "cafe"
 required_fragments = 11
 door_dialogue = ExtResource("5_oja6p")
@@ -59,7 +59,7 @@ door_dialogue = ExtResource("5_oja6p")
 position = Vector2(37, 25)
 script = ExtResource("5_2jc7i")
 target_scene_path = "res://Scenes/cutscenes/CafeCutscene1.tscn"
-required_drops = 7
+required_drops = 9
 door_dialogue = ExtResource("6_2weot")
 switches_to_body = false
 
