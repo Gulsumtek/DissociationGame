@@ -21,6 +21,7 @@ func _on_door_interacted():
 		Global.came_from_soul = true
 		Global.soul_phase_complete = true  # bunu ekle
 		print("soul complete")
+		player.start_dialogue(door_dialogue, "end")
 		await TransitionScreen.fade_out()
 		player.toggle_soul_mode()
 		Global.entrance_name = door_id

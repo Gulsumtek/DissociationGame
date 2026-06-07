@@ -10,7 +10,7 @@ extends StaticBody2D
 @onready var sound = $AudioStreamPlayer
 @onready var sound2 = $sound2
 @onready var interaction_area = $InteractionArea
-
+const MY_BALLOON = preload("res://dialogues/balloon.tscn")
 
 var already_triggered: bool = false
 
@@ -24,8 +24,18 @@ func _on_door_interacted():
 	_handle_soul_exit(player)
 
 
+func _show_dialogue(resource: DialogueResource, title: String) -> void:
+	var balloon = MY_BALLOON.instantiate()
+	add_child(balloon)
+	balloon.start(resource, title)
+	await balloon.tree_exited
+
+	
+	
 func _handle_soul_exit(player):
 	if Global.soul_fragments_dropped >= required_drops:
+			await _show_dialogue(
+			preload("res://dialogues/cafe_alarm.dialogue"), "soul_alarm")
 			sound.play()
 			sound2.play()
 			_switch_to_body_mode(player)

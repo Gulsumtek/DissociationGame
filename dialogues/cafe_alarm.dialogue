@@ -1,8 +1,9 @@
 ~ after_alarm
-Beden: Ben değildim! Gerçekten...
+Beden: Ben bir şey yapmadım! Gerçekten...
 => END
 
 ~ before_soul
+Alarm çalmadan önce...
 Ruh: Bedenden kaçacak bir yer bulmalıyım...
 Ruh: !! Kafeye gireyim.
 => END
@@ -14,7 +15,12 @@ Ruh: Bi kahve için neler vermezdim şimdi. Ama bedenim artık yok...
 Ruh: Neyse, yine de burada biraz takılayım. Huzurlu hissettiriyor, biraz boş olsa da...
 => END
 
+~ soul_alarm
+Ruh: Olamaz, galiba alarmı tetikledim!!
+=> END
+
 ~ barista_talk
+Ruh kaçtıktan sonra...
 Barista: Ahhahah sakin ol, senden şüphelenmiyorum.
 Barista: Etrafı inceledim, kapıyla bile oynanmamış, ama garip bir şekilde ışıklar yanıp sönüyor.
 Barista: Çalınan bir şey de yok sanırım. 
