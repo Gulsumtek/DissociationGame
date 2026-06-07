@@ -37,15 +37,24 @@ func _ready():
 		)
 
 func _activate_soul_fragments():
-	var fragments = []
-	for node in get_children():
-		if node.has_method("_activate"):
-			fragments.append(node)
-	for node in get_tree().get_nodes_in_group("SoulFragment"):
-		fragments.append(node)
+	# city_layer referansını tazele
+	var fresh_city_layer = get_node_or_null("CityLayer")
+	print("fresh_city_layer: ", fresh_city_layer)
+	print("city_layer (onready): ", city_layer)
+	print("Aynı mı: ", fresh_city_layer == city_layer)
 	
-	print("Bulunan fragment sayısı: ", fragments.size())
-	for fragment in fragments:
-		fragment._activate()
+	if fresh_city_layer:
+		print("Fresh child sayısı: ", fresh_city_layer.get_child_count())
+		for fragment in fresh_city_layer.get_children():
+			print("Fragment: ", fragment.name)
+			if fragment.has_method("_activate"):
+				fragment._activate()
+
+func _activate_recursive(node: Node):
+	for child in node.get_children():
+		if child.has_method("_activate"):
+			child._activate()
+		if child.get_child_count() > 0:
+			_activate_recursive(child)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:pass

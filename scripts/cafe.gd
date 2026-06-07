@@ -14,6 +14,7 @@ func _ready():
 	
 	if Global.enter_cafe_as_soul and not player.is_soul_mode:
 		player.toggle_soul_mode()
+	if player.is_soul_mode:
 		Global.enter_cafe_as_soul = false
 		barista.visible = false
 		object.visible = false

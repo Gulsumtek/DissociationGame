@@ -1614,7 +1614,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7m4u"]
 size = Vector2(73, 32)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_njrt0")
 

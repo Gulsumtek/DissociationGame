@@ -1173,7 +1173,7 @@ script = ExtResource("1_w47q0")
 visible = false
 position = Vector2(-70, -300)
 sprite_frames = ExtResource("1_a5hvy")
-animation = &"run_right"
+animation = &"idle_up"
 autoplay = "idle_down"
 
 [node name="Camera2D" type="Camera2D" parent="Body"]

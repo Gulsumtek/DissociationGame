@@ -868,7 +868,7 @@ locked_dialogue = ExtResource("17_784a2")
 position = Vector2(311, -66)
 fragment_id = "town1"
 
-[node name="SoulFragment2" parent="." instance=ExtResource("16_uaqdi")]
+[node name="SoulFragment2" parent="." groups=["SoulFragment"] instance=ExtResource("16_uaqdi")]
 position = Vector2(-335, -300)
 fragment_id = "town2"
 

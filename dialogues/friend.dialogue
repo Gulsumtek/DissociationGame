@@ -1,0 +1,34 @@
+~ first
+Beden iç ses: -Hayır yaa, bu Asude değil mi? Kimseyle karşılaşmak istemiyorum...
+Asude: Esen?
+=> END
+~ second
+Asude: Cidden sensin! Nasılsın, bayadır görüşmüyoruz. Napıyorsun bu saatte?
+Beden: Aa, selam... İyiyim sen nasılsın?
+Asude: Ben de iyiyim...
+Beden: ...
+Asude: Neyse annemler bekliyor gitmem gerek, kendine iyi bak.
+Beden: Sen de...
+=> END
+~ third
+Beden: Asude!
+=> END 
+~ fourth
+Asude: ?
+Beden: Sizi özledim...
+Asude: !!
+Asude: Biz de seni özledik şapşal! Bir anda yok oldun, ulaşamadık sana.
+Beden: Biliyorum, pek iyi hissetmiyordum... Modunuzu düşürüyordum.
+Asude: Mod mu düşürüyordun?? Arkadaşımın kötü gününde yanında olmayacaksam neden arkadaşız??
+Beden: Bilmiyorum... Ne yapacağımı bilemedim, kaçtım sanırım...
+Asude: Olsun. Şimdi yakaladım seni bak! Ama sakın ghostlama bir daha beni ahahah
+Asude: Şimdi eve geçiyorum gel az beraber yürüyelim.
+=> END 
+~ ara
+Bir süre sohbet ederler...
+=> END
+~ fifth
+Asude: Numaran aynı değil mi? Haberleşelim sonra, dikkat et kendine.
+Beden: Evet, tamam haberleşiriz!
+Beden iç ses: -Ruhumu bulabilirsem tabi...-
+=> END
