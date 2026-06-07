@@ -93,7 +93,6 @@ position = Vector2(-2, 106)
 
 [node name="StreetLamp" parent="." instance=ExtResource("13_hp60e")]
 position = Vector2(51, 131)
-lightsoff = true
 
 [node name="AnimatedSprite2D" parent="StreetLamp" index="1"]
 visible = false
@@ -106,7 +105,6 @@ position = Vector2(-7, -68)
 
 [node name="StreetLamp2" parent="." instance=ExtResource("13_hp60e")]
 position = Vector2(56, 53)
-lightsoff = true
 
 [node name="AnimatedSprite2D" parent="StreetLamp2" index="1"]
 visible = false
@@ -119,7 +117,6 @@ position = Vector2(-7, -68)
 
 [node name="StreetLamp3" parent="." instance=ExtResource("13_hp60e")]
 position = Vector2(184, -10)
-lightsoff = true
 
 [node name="AnimatedSprite2D" parent="StreetLamp3" index="1"]
 visible = false
@@ -132,7 +129,6 @@ position = Vector2(-7, -68)
 
 [node name="StreetLamp4" parent="." instance=ExtResource("13_hp60e")]
 position = Vector2(181, -80)
-lightsoff = true
 
 [node name="AnimatedSprite2D" parent="StreetLamp4" index="1"]
 visible = false

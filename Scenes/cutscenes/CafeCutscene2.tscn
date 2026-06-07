@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0n4cv5ve2q5y"]
+[gd_scene load_steps=9 format=4 uid="uid://c0n4cv5ve2q5y"]
 
 [ext_resource type="SpriteFrames" uid="uid://b4i668x8qya4j" path="res://player/sprites/player.tres" id="1_1lgiv"]
 [ext_resource type="Script" path="res://scripts/cafe_cutscene_2.gd" id="1_5qluu"]
+[ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="3_qvn6g"]
+[ext_resource type="SpriteFrames" uid="uid://c4vrhm4ok7evy" path="res://player/sprites/barista.tres" id="4_wauwa"]
+[ext_resource type="Texture2D" uid="uid://dgxh43rp8s4g" path="res://sprites/light.png" id="5_aoc7b"]
 
 [sub_resource type="Animation" id="Animation_07pge"]
 length = 0.001
@@ -17,9 +20,46 @@ tracks/0/keys = {
 "update": 1,
 "values": [&"idle_down"]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(100, -47)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D2:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idlefront"]
+}
 
 [sub_resource type="Animation" id="Animation_hbdwv"]
 resource_name = "cafe_talk"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -27,10 +67,46 @@ tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.133333),
+"times": PackedFloat32Array(0.0666667, 1.36667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"run_up", &"idle_right"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D2:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 2.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idlefront", &"idleside"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0666667, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(100, -47), Vector2(30, -90)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:flip_h")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"idle_up"]
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1mpiy"]
@@ -40,14 +116,82 @@ _data = {
 }
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_5qluu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(275, 110)
+position = Vector2(100, -47)
 sprite_frames = ExtResource("1_1lgiv")
 animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_1mpiy")
 }
+
+[node name="Props" parent="." instance=ExtResource("3_qvn6g")]
+position = Vector2(-53, -38)
+tile_map_data = PackedByteArray("AAABAAEACAAHAAQAAAACAAIACAAHAAQAAAABAAIACAAHAAQAAAADAAIACAAHAAQAAAADAAEACAAHAAQAAAACAAEACAAHAAQAAAACAAAACAAHAAQAAAADAAAACAAHAAQAAAABAAAACAAHAAQAAAAEAAAACAAHAAQAAAAEAAEACAAHAAQAAAAEAAIACAAHAAQAAAAEAP//CAAHAAQAAAADAP//CAAHAAQAAAACAP//CAAHAAQAAAABAP//CAAHAAQAAAACAP7/CAAHAAQAAAADAP7/CAAHAAQAAAAEAP7/CAAHAAQAAAACAPz/CAACAAAAAAABAPz/CAACAAAAAAABAP3/CAACAAAAAAACAP3/CAACAAAAAAADAP3/CAACAAAAAAADAPz/CAACAAAAAAAEAPz/CAACAAAAAAAEAP3/CAACAAAAAAABAP7/CAAHAAQAAAAAAAIACAAHAAQAAAAAAAEACAAHAAQAAAAAAAAACAAHAAQAAAAAAP//CAAHAAQAAAAAAP7/CAAHAAQAAAAAAP3/CAACAAAAAAAAAPz/CAACAAAAAAAFAAEABwAIAAQAAAAFAAIABwAIAAMAAAAFAAAABwAJAAQAAAAFAP//BwAJAAQAAAAFAP7/BwAJAAQAAAAFAP3/BwAJAAQAAAAFAPz/BwAJAAQAAAD//wIABwAIAAMAABD//wEABwAIAAQAABD//wAABwAJAAQAABD/////BwAJAAQAABD///7/BwAJAAQAABD///3/BwAJAAQAABD///z/BwAJAAQAABAAAAMABwAIAAMAAFABAAMABwAJAAQAAEACAAMABwAJAAQAAEADAAMABwAJAAQAAEAEAAMABwAJAAQAAEAAAPv/BwAJAAQAAGABAPv/BwAJAAQAAGACAPv/BwAJAAQAAGADAPv/BwAJAAQAAGAEAPv/BwAJAAQAAGA=")
+
+[node name="Props3" parent="." instance=ExtResource("3_qvn6g")]
+position = Vector2(-53, -38)
+tile_map_data = PackedByteArray("AAAEAAAAAAAGAAQAAAADAP7/CAACAAMAAAADAAIACAADAAQAAAAEAAIACAAEAAQAAAAAAP//CAAAAAIAAAABAP//CAABAAIAAAACAP7/CAABAAMAAAADAP//CAACAAQAAAAEAP7/CAADAAMAAAAAAAIAAAAGAAQAABA=")
+
+[node name="Props2" parent="." instance=ExtResource("3_qvn6g")]
+position = Vector2(-53, -38)
+tile_map_data = PackedByteArray("AAAEAP3/CAAHAAEAAAABAP3/CAABAAAAAAABAP7/CAABAAEAAAABAP//CAAEAAQAAAAAAP3/CAAAAAAAAAAAAP7/CAAAAAEAAAAAAP//CAADAAQAAAADAAAACAACAAQAAAACAP//CAABAAMAAAADAP//CAACAAMAAAAEAP//CAADAAMAAAAAAAAACAABAAMAAAABAAAACAACAAMAAAABAAEACAACAAMAAAACAAAACAADAAMAAAAAAAEACAABAAMAAAAEAAAAAAAHAAIAABACAAEACAADAAMAAAABAAIAAAAHAAIAAAAAAAIAAAAFAAMAAAACAPz/CAADAAAAAAA=")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -93)
+sprite_frames = ExtResource("4_wauwa")
+animation = &"idlefront"
+autoplay = "idlefront"
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(178, -143)
+scale = Vector2(3.13483, 3.13483)
+color = Color(1, 0.756863, 0.443137, 0.709804)
+energy = 1.55
+texture = ExtResource("5_aoc7b")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(49, 51)
+scale = Vector2(4.58795, 4.58795)
+color = Color(1, 0.756863, 0.443137, 0.709804)
+energy = 1.55
+texture = ExtResource("5_aoc7b")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(177, -76)
+scale = Vector2(2.14195, 2.14195)
+color = Color(1, 0.756863, 0.443137, 0.709804)
+energy = 1.55
+texture = ExtResource("5_aoc7b")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(51, -14)
+scale = Vector2(1.46354, 1.46354)
+color = Color(1, 0.756863, 0.443137, 0.709804)
+energy = 1.55
+texture = ExtResource("5_aoc7b")
+
+[node name="PointLight2D" type="PointLight2D" parent="PointLight2D"]
+position = Vector2(-28.6975, -81.993)
+scale = Vector2(1.46354, 1.46354)
+color = Color(1, 0.756863, 0.443137, 0.709804)
+energy = 1.55
+texture = ExtResource("5_aoc7b")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.464648, 0.664337, 0.902874, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -1374.0
+offset_top = -399.0
+offset_right = 2314.0
+offset_bottom = 1488.0
+color = Color(0.0819708, 0.108631, 0.197821, 1)
