@@ -32,7 +32,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0njw"]
-bg_color = Color(0.333543, 0.689592, 0.754559, 1)
+bg_color = Color(0.253898, 0.408516, 0.459193, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
@@ -44,11 +44,12 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uy0d5"]
-bg_color = Color(0.475285, 0.425919, 0.628106, 1)
+bg_color = Color(0.17424, 0.143288, 0.0868262, 0.913725)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
+border_color = Color(0.365396, 0.352896, 0.299031, 0.960784)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -83,6 +84,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
@@ -120,10 +123,11 @@ layout_mode = 2
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_colors/default_color = Color(0.789972, 0.862907, 0.74384, 1)
 theme_override_fonts/normal_font = ExtResource("2_dtqf7")
+theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -133,16 +137,17 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.926839, 0.871492, 0.825714, 1)
 theme_override_fonts/normal_font = ExtResource("2_dtqf7")
 text = "Dialogue..."
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 93.0
-offset_top = 128.0
-offset_right = 490.0
-offset_bottom = 181.0
+offset_left = 311.0
+offset_top = 232.0
+offset_right = 708.0
+offset_bottom = 285.0
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true

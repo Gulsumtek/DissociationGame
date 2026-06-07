@@ -1,3 +1,12 @@
 ~ start
 Beden: Salıncak... Kendi kendine mi sallanıyor??
 => END
+
+~ second
+Beden: Ruh!!!
+=> END
+
+~ third
+Beden: Hayır!!! Benden kaçıyor...
+Beden: Başka bir yol bulmalıyım. Nereye gitmiş olabilir?
+=> END
