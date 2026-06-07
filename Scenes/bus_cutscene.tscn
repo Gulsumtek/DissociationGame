@@ -208,10 +208,10 @@ tracks/0/path = NodePath("Bus:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
+"times": PackedFloat32Array(0, 0.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1600, -10), Vector2(-2100, -10)]
+"values": [Vector2(-1600, -10), Vector2(-1910.34, -10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -263,7 +263,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0.0333333, 1.16667, 2.26667),
 "transitions": PackedFloat32Array(1, 0.594604, 1),
 "update": 0,
-"values": [Vector2(150, 270), Vector2(120, -10), Vector2(0, -10)]
+"values": [Vector2(150, 270), Vector2(150, -10), Vector2(0, -10)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1450,7 +1450,7 @@ position = Vector2(0, 10)
 y_sort_enabled = true
 position = Vector2(2, -132)
 sprite_frames = SubResource("SpriteFrames_w7qg6")
-frame_progress = 0.662748
+frame_progress = 0.728901
 
 [node name="Soul" type="AnimatedSprite2D" parent="Characters"]
 z_as_relative = false
@@ -1458,6 +1458,7 @@ y_sort_enabled = true
 position = Vector2(409, -477)
 sprite_frames = SubResource("SpriteFrames_pujka")
 animation = &"walk"
+frame_progress = 0.673967
 
 [node name="StreetLamp2" parent="." instance=ExtResource("16_fg5jx")]
 position = Vector2(-1523, -149)

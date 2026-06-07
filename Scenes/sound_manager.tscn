@@ -35,4 +35,4 @@ max_polyphony = 2
 
 [node name="AlarmPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_llem4")
-volume_db = -34.125
+volume_db = -8.387

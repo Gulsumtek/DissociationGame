@@ -11,6 +11,8 @@ Asude: Neyse annemler bekliyor gitmem gerek, kendine iyi bak.
 Beden: Sen de...
 => END
 ~ third
+Beden iç ses: Bir dakika, o benim hediye ettiğim taç değil mi?
+Beden: ...
 Beden: Asude!
 => END 
 ~ fourth
@@ -28,7 +30,7 @@ Asude: Şimdi eve geçiyorum gel az beraber yürüyelim.
 Bir süre sohbet ederler...
 => END
 ~ fifth
-Asude: Numaran aynı değil mi? Haberleşelim sonra, dikkat et kendine.
+Asude: Numaran aynı, değil mi? Haberleşelim sonra, dikkat et kendine.
 Beden: Evet, tamam haberleşiriz!
 Beden iç ses: -Ruhumu bulabilirsem tabi...-
 => END
