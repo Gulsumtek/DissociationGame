@@ -849,14 +849,17 @@ fragment_id = "1"
 [node name="SoulFragment3" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
 position = Vector2(13, -562)
 script = ExtResource("21_a4fis")
+fragment_id = "school1"
 
 [node name="SoulFragment" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
 position = Vector2(250, -100)
 script = ExtResource("21_a4fis")
+fragment_id = "school2"
 
 [node name="SoulFragment2" parent="CityLayer" groups=["SoulFragment"] instance=ExtResource("17_pxowm")]
 position = Vector2(332, -486)
 script = ExtResource("21_a4fis")
+fragment_id = "school3"
 
 [node name="StaticBody2D5" parent="." instance=ExtResource("18_kv1w0")]
 position = Vector2(-1124, -128)

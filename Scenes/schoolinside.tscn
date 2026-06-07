@@ -84,7 +84,6 @@ position = Vector2(607, -20)
 position = Vector2(259, 324)
 target_scene_path = "res://Scenes/School.tscn"
 door_id = "school_in"
-required_fragments = 6
 door_dialogue = ExtResource("4_bvs1d")
 switches_to_soul = true
 
@@ -96,7 +95,7 @@ position = Vector2(258, 323)
 script = ExtResource("4_7wubf")
 target_scene_path = "res://Scenes/School.tscn"
 door_id = "school_in"
-required_drops = 5
+required_drops = 0
 door_dialogue = ExtResource("5_3f6v6")
 switches_to_body = true
 
