@@ -8,7 +8,7 @@ func _ready():
 		var spawn_point = find_child(Global.entrance_name)
 		if spawn_point != null:
 			player.global_position = spawn_point.global_position
-	
+		player.is_frozen = false
 	if Global.park_cutscene_finished and not Global.cafe_cutscene1_done and not Global.cafe_completed:
 		Global.alarm_triggered = true
 		alarm_sound.play()

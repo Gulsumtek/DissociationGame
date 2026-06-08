@@ -40,7 +40,7 @@ func _on_animation_finished(anim):
 			await _show_dialogue( 
 				preload("res://dialogues/friend.dialogue"), "fifth")
 			Global.entrance_name ="town_up"
-			TransitionScreen.transition_to("res://Scenes/Town.tscn")
+			TransitionScreen.transition_to("res://Scenes/town.tscn")
 
 func _show_dialogue(resource: DialogueResource, title: String) -> void:
 	var balloon = MY_BALLOON.instantiate()

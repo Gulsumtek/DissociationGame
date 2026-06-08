@@ -60,7 +60,7 @@ door_dialogue = ExtResource("5_oja6p")
 position = Vector2(37, 25)
 script = ExtResource("5_2jc7i")
 target_scene_path = "res://Scenes/cutscenes/CafeCutscene1.tscn"
-required_drops = 9
+required_drops = 7
 door_dialogue = ExtResource("6_2weot")
 switches_to_body = false
 

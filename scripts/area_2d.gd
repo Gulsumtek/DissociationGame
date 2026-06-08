@@ -18,27 +18,17 @@ func _on_body_entered(body):
 	if already_triggered:
 		return
 	
-	# Ruh modu kontrolü
-	if body.is_soul_mode and not soul_can_pass:
-		if door_dialogue:
-			body.start_dialogue(door_dialogue, "soul")
-		return
-	
+	already_triggered = true
 	Global.entrance_name = door_id
 	
 	if Global.soul_fragments_collected >= required_fragments:
 		if switches_to_soul:
-			already_triggered = true
-			_switch_to_soul_mode(body)
+			_switch_to_soul_mode.call_deferred(body)
 		elif hedef_harita_yolu != "":
-			TransitionScreen.transition_to(hedef_harita_yolu)
-		else:
-			print("Hata: Hedef sahne yolu girilmemiş!")
+			TransitionScreen.transition_to.call_deferred(hedef_harita_yolu)
 	else:
 		if door_dialogue:
 			body.start_dialogue(door_dialogue, "start")
-		else:
-			print("Diyalog dosyası veya oyuncu bulunamadı!")
 
 func _switch_to_soul_mode(player):
 	if trigger_dialogue:

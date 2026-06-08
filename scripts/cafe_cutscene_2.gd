@@ -25,4 +25,4 @@ func _start_dialogue():
 	Global.cafe_cutscene2_done = true
 	Global.cafe_completed = true
 	Global.is_soul_mode = false
-	TransitionScreen.transition_to("res://Scenes/Cafe.tscn")
+	TransitionScreen.transition_to("res://Scenes/cafe.tscn")

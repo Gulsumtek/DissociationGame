@@ -31,4 +31,4 @@ func _on_animation_finished(anim):
 				Global.is_soul_mode = false
 				Global.entrance_name ="park_bridge"
 				Global.park_cutscene_finished = true
-				TransitionScreen.transition_to("res://Scenes/Park.tscn")
+				TransitionScreen.transition_to("res://Scenes/park.tscn")
