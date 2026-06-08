@@ -140,7 +140,7 @@ position = Vector2(-5, -65)
 [node name="CollisionShape2D" parent="StreetLamp4" index="3"]
 position = Vector2(-7, -68)
 
-[node name="MobileControls" parent="StreetLamp4" instance=ExtResource("14_nbdat")]
+[node name="MobileControls" parent="." instance=ExtResource("14_nbdat")]
 
 [editable path="cafeout/Door"]
 [editable path="cafeout/Door2"]

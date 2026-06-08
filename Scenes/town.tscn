@@ -844,7 +844,7 @@ position = Vector2(-1634, -213)
 hedef_harita_yolu = "res://Scenes/shed.tscn"
 
 [node name="town_down" type="Marker2D" parent="."]
-position = Vector2(325, 274)
+position = Vector2(321, 248)
 gizmo_extents = 69.6
 
 [node name="town_side" type="Marker2D" parent="."]
@@ -904,4 +904,3 @@ stream = ExtResource("19_ivs5d")
 volume_db = -18.958
 
 [node name="MobileControls" parent="." instance=ExtResource("21_hfy3v")]
-layer = 11

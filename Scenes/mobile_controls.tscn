@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bnngn4ehnvhdq" path="res://sprites/etk.png" id="6_fft3l"]
 
 [node name="MobileControls" type="CanvasLayer"]
+layer = 128
 script = ExtResource("1_87lxa")
 
 [node name="up" type="TouchScreenButton" parent="."]
