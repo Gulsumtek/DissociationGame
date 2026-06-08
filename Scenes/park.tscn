@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://brifylr4espa"]
+[gd_scene load_steps=66 format=4 uid="uid://brifylr4espa"]
 
 [ext_resource type="Script" path="res://move.gd" id="1_njrt0"]
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="1_rwmcc"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://naejx3gfeliu" path="res://Scenes/friend.tscn" id="23_osm8j"]
 [ext_resource type="Script" path="res://friend.gd" id="24_anuol"]
 [ext_resource type="Resource" uid="uid://cydvv4h6spbl6" path="res://dialogues/no_jump.dialogue" id="25_qajgq"]
+[ext_resource type="PackedScene" uid="uid://dadg158yvuufd" path="res://Scenes/mobile_controls.tscn" id="27_0dpb3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qepj"]
 texture = ExtResource("1_rwmcc")
@@ -1810,6 +1811,8 @@ fragment_id = "park1"
 [node name="SoulFragment2" parent="BodyLayer" instance=ExtResource("15_7wf01")]
 position = Vector2(671, -699)
 fragment_id = "park2"
+
+[node name="MobileControls" parent="." instance=ExtResource("27_0dpb3")]
 
 [editable path="portal"]
 [editable path="StaticBody2D"]

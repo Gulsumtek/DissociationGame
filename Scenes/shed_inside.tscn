@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://b5mbhk5ju8dkf"]
+[gd_scene load_steps=5 format=4 uid="uid://b5mbhk5ju8dkf"]
 
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="1_142nk"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="2_07yr7"]
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="3_d6afb"]
+[ext_resource type="PackedScene" uid="uid://dadg158yvuufd" path="res://Scenes/mobile_controls.tscn" id="4_usra1"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -31,3 +32,5 @@ gizmo_extents = 69.6
 
 [node name="Player" parent="." instance=ExtResource("3_d6afb")]
 position = Vector2(177, 313)
+
+[node name="MobileControls" parent="." instance=ExtResource("4_usra1")]

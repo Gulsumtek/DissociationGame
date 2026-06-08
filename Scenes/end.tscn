@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://djhpv1nmyp6e2"]
+[gd_scene load_steps=40 format=4 uid="uid://djhpv1nmyp6e2"]
 
 [ext_resource type="Script" path="res://scripts/end.gd" id="1_8j1in"]
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="1_luvxv"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Scenes/sonsahnegecis.gd" id="17_v6wda"]
 [ext_resource type="Texture2D" uid="uid://c6d0y3oqvr0nj" path="res://sprites/kalp.png" id="18_1tk31"]
 [ext_resource type="Texture2D" uid="uid://bdxi6p5a1wrmj" path="res://sprites/unlem.png" id="19_oh4rj"]
+[ext_resource type="PackedScene" uid="uid://dadg158yvuufd" path="res://Scenes/mobile_controls.tscn" id="21_t4pbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwox4"]
 texture = ExtResource("1_luvxv")
@@ -1654,5 +1655,7 @@ texture = ExtResource("19_oh4rj")
 [node name="cafe" type="Marker2D" parent="."]
 position = Vector2(4, -365)
 gizmo_extents = 69.6
+
+[node name="MobileControls" parent="." instance=ExtResource("21_t4pbx")]
 
 [editable path="Player2"]

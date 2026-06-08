@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cb4yiokj0inci"]
+[gd_scene load_steps=26 format=4 uid="uid://cb4yiokj0inci"]
 
 [ext_resource type="Texture2D" uid="uid://gdboh2yv10j5" path="res://tile maps/Sprites/rendered.jpeg" id="1_cxjgq"]
 [ext_resource type="Script" path="res://move.gd" id="1_xlyab"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0dsbrijb03d" path="res://player/player.tscn" id="11_v4fde"]
 [ext_resource type="PackedScene" uid="uid://c2qw65gdlb0om" path="res://Scenes/Portal.tscn" id="12_5tyw2"]
 [ext_resource type="PackedScene" uid="uid://cp68nwjhlg1nt" path="res://Door.tscn" id="13_rmc08"]
+[ext_resource type="PackedScene" uid="uid://dadg158yvuufd" path="res://Scenes/mobile_controls.tscn" id="15_g0pkb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dbmx"]
 texture = ExtResource("1_cxjgq")
@@ -792,3 +793,5 @@ door_id = "town_side"
 position = Vector2(-2380, -713)
 target_scene_path = "res://Scenes/shed_inside.tscn"
 door_id = "shedin"
+
+[node name="MobileControls" parent="." instance=ExtResource("15_g0pkb")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dsufuotqh8x2b"]
+[gd_scene load_steps=15 format=4 uid="uid://dsufuotqh8x2b"]
 
 [ext_resource type="PackedScene" uid="uid://cpdxp0q8u4bod" path="res://Scenes/props.tscn" id="1_bblaw"]
 [ext_resource type="Script" path="res://scripts/cafe.gd" id="1_waum7"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://csvkhb5f7lgre" path="res://Scenes/soul_fragment.tscn" id="9_hqi88"]
 [ext_resource type="PackedScene" uid="uid://dex6n8aq1x2rg" path="res://Scenes/trigger_fragment.tscn" id="11_nyph1"]
 [ext_resource type="PackedScene" uid="uid://ihcgw4m6b1jq" path="res://Scenes/street_lamp.tscn" id="13_hp60e"]
+[ext_resource type="PackedScene" uid="uid://dadg158yvuufd" path="res://Scenes/mobile_controls.tscn" id="14_nbdat"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -138,6 +139,8 @@ position = Vector2(-5, -65)
 
 [node name="CollisionShape2D" parent="StreetLamp4" index="3"]
 position = Vector2(-7, -68)
+
+[node name="MobileControls" parent="StreetLamp4" instance=ExtResource("14_nbdat")]
 
 [editable path="cafeout/Door"]
 [editable path="cafeout/Door2"]
